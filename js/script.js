@@ -104,22 +104,49 @@ document.getElementById('form-login').addEventListener('submit', async (e) => {
         senha: document.getElementById('password-login').value,
     };
 
-    try {
-        const resposta = await fetch('http://localhost:4000/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        });
+  try {
+    const resposta = await fetch('http://localhost:4000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    });
 
-        const resultado = await resposta.json();
-        const mensagem = document.getElementById('mensagem-login');
-        mensagem.textContent = resultado.mensagem;
+    const resultado = await resposta.json();
+    const mensagem = document.getElementById('mensagem-login');
+    mensagem.textContent = resultado.mensagem;
 
-    } catch (erro) {
-        console.error('Erro de conexão:', erro);
-        document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+    if (resultado.auth && resultado.token) {
+      // Salva o token JWT no localStorage
+      localStorage.setItem('token', resultado.token);
+      // Redireciona para a página protegida
+      window.location.href = 'pagina-protegida.html';
     }
+  } catch (erro) {
+    console.error('Erro de conexão:', erro);
+    document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+  }
 });
+
+// Exemplo de como acessar uma rota protegida usando o token salvo
+async function acessarRotaProtegida() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    alert('Você não está autenticado!');
+    return;
+  }
+  try {
+    const resposta = await fetch('http://localhost:4000/api/protegida', {
+      method: 'GET',
+      headers: {
+        'x-access-token': token
+      }
+    });
+    const resultado = await resposta.json();
+    alert(JSON.stringify(resultado));
+  } catch (erro) {
+    alert('Erro ao acessar rota protegida.');
+  }
+}
 
 //* Slider horizontal com arrastar e rolar
 window.addEventListener('DOMContentLoaded', () => {
