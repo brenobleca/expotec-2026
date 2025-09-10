@@ -20,7 +20,7 @@ body.light {
   --gray-400: #1f2937;
   --gray-300: #0f172a;
   --white: #000;
-  --trasparent: rgba(0, 0, 0, 0);
+  --trasparent: rgba(0, 0, 0, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
 }
@@ -48,7 +48,7 @@ body.light {
   --black: #131211;
   --moon-color: rgb(131, 62, 180);
   --sun-color: rgb(255, 165, 80);
-  --trasparent: rgba(255, 255, 255, 0);
+  --trasparent: rgba(255, 255, 255, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
 }

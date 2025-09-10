@@ -20,7 +20,7 @@ body.light {
   --gray-400: #1f2937;
   --gray-300: #0f172a;
   --white: #000;
-  --trasparent: rgba(0, 0, 0, 0);
+  --trasparent: rgba(0, 0, 0, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
 }
@@ -48,7 +48,7 @@ body.light {
   --black: #131211;
   --moon-color: rgb(131, 62, 180);
   --sun-color: rgb(255, 165, 80);
-  --trasparent: rgba(255, 255, 255, 0);
+  --trasparent: rgba(255, 255, 255, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
 }
@@ -145,6 +145,13 @@ img {
   transition: background 0.4s;
 }
 
+.nav-logo,
+.link-casino,
+.link-ngos {
+  color: var(--white);
+  transition: color 0.4s;
+}
+
 .navbar {
   background: var(--purple-dark);
   position: fixed;
@@ -172,7 +179,6 @@ img {
   font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
-  transition: color 0.4s;
 }
 
 /** Paginas */
@@ -184,33 +190,11 @@ img {
 
 .link-casino,
 .link-ngos {
+  color: var(--gray-300);
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   font-size: 0.95rem;
   text-decoration: none;
-}
-
-.link-casino {
-  position: relative;
-  color: var(--orange-primary);
-  padding-bottom: 1px;
-}
-
-.link-casino::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  bottom: 0px;
-  height: 3px;
-  background: var(--orange-primary);
-  border-radius: 50px;
-  z-index: 1;
-}
-
-.link-ngos{
-  color: var(--gray-300);
 }
 
 .link-casino:hover,
@@ -469,4 +453,205 @@ body.light .sun {
   .modal-content h2 {
     font-size: 1.3rem;
   }
+}
+
+/** ===== SIDEBAR ===== */
+.sidebar-menu {
+  padding-top: 5rem;
+  margin: 0;
+  width: 15rem;
+  padding-left: 0;
+  height: 100vh;
+  z-index: 50;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--gray-900);
+  z-index: 50;
+}
+
+.sidebar-menu h2 {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.sidebar-menu h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sidebar-menu-item{
+  background: var(--gray-900);
+  /* background-color: blue; */
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  margin: 0 .25rem .5rem .25rem;
+  transition: background var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+.sidebar-menu-item:hover, .sidebar-submenu-item:hover {
+  background: var(--trasparent);
+}
+
+.sidebar-submenu {
+  margin-top: 5px;
+  margin-left: 10px;
+  display: block;
+  /* começa aberto */
+  flex-direction: column;
+  /* background-color: green; */
+  margin-right: 0.5rem;
+  color: var(--gray-300);
+}
+
+.sidebar-submenu-item {
+  background: var(--gray-900);
+  padding: 10px;
+  margin: 3px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 3rem;
+  /* background-color: purple; */
+  border-radius: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+#sidebar-arrow-down {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+#sidebar-arrow-up {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/** ===== MAIN ===== */
+main {
+  display: inline-block;
+  margin-top: ;
+}
+
+.main-content{ 
+  margin-top: 3rem;
+  margin-left: 15rem; 
+  padding:1.25rem; 
+}
+
+/** ===== JOGOS ===== */
+.game-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  align-items:start;
+  margin-top: .5rem;
+}
+
+/* If you ever want a horizontal scroller, add class .game-scroll to container */
+.game-scroll{
+  display:flex; gap:1rem; overflow-x:auto; padding:1rem 0; -webkit-overflow-scrolling:touch; cursor:grab;
+}
+.game-scroll.active{ cursor:grabbing; }
+.game-scroll::-webkit-scrollbar{ display:none; }
+
+/* card */
+.game-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.game-card:hover{ transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.7); }
+
+.thumb{ position: relative; width:100%; height:140px; overflow:hidden; }
+.thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.overlay{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
+  opacity:0; transition: opacity .22s ease;
+}
+.thumb:hover .overlay{ opacity:1; }
+.btn-small{ padding:.45rem .9rem; border-radius:999px; font-weight:600; }
+
+/* meta */
+.game-card .meta{ padding:.8rem; }
+.meta h3{ font-size:1rem; margin-bottom:4px; color:var(--white); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.meta p{ margin:0; color:var(--gray-400); font-size:.9rem; }
+
+/* ===================== SCROLLBAR (thin / hidden) ===================== */
+.game-grid::-webkit-scrollbar,
+.game-scroll::-webkit-scrollbar { height:8px; display:none; }
+:root, body { -webkit-font-smoothing:antialiased; }
+
+/** ===== FOOTER ===== */
+.container-footer {
+  padding-bottom: 2rem;
+  background: var(--gray-900);
+}
+
+footer {
+  margin-left: -6rem;
+  z-index: 500;
+  background: var(--gray-900);
+  border-top: 1px solid #111827;
+  color: var(--gray-400);
+}
+
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: var(--gray-400);
+}
+
+.footer-list a:hover,
+.footer-media a:hover {
+  color: var(--primary-orange);
+}
+
+.footer-media {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #111827;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-social-media,
+.footer-social-media a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--gray-400);
+}
+
+footer p {
+  color: var(--gray-400);
 }
