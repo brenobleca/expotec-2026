@@ -127,7 +127,7 @@ document.getElementById('form-login').addEventListener('submit', async (e) => {
   }
 });
 
-// Exemplo de como acessar uma rota protegida usando o token salvo
+
 async function acessarRotaProtegida() {
   const token = localStorage.getItem('token');
   if (!token) {
