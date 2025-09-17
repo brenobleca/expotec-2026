@@ -8,10 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Evita que as imagens sejam arrastáveis
-
-
-
-
   slider.querySelectorAll('img').forEach(img => {
     img.draggable = false;
     img.addEventListener('dragstart', e => e.preventDefault());
@@ -35,23 +31,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (e.pointerId && slider.setPointerCapture) {
       try { slider.setPointerCapture(e.pointerId); } catch (err) { }
     }
-
-
-
-
-
-
-
-
-
-
     e.preventDefault();
   };
-
-
-
-
-
 
   const pointerMove = (e) => {
     if (!isDown) return;
@@ -240,7 +221,7 @@ async function acessarRotaProtegida() {
   }
   try {
     const resposta = await fetch('http://localhost:4000/api/protegida', {
-      method: 'GET',
+      method: 'post',
       headers: {
         'x-access-token': token
       }

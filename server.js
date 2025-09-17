@@ -3,11 +3,15 @@ const mysql = require('mysql2'); // Importa o conector
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const app = express();
 const port = 4000;
 const dotenv = require('dotenv');
 dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
+const key=process.env.key;
 const key=process.env.key;
 // Configuração da conexão com o banco de dados
 const db = mysql.createConnection({
@@ -61,10 +65,23 @@ app.post('/api/registrar', (req, res) => {
                     return res.status(500).json({ mensagem: 'Erro ao registrar usuário.' });
                 }
                 res.json({ mensagem: 'Registro realizado com sucesso!', sucesso: true });
+                res.json({ mensagem: 'Registro realizado com sucesso!', sucesso: true });
             });
         });
     });
 });
+
+
+// Middleware para verificar JWT
+function verifyJWT(req, res, next) {
+    const token = req.headers['x-access-token'];
+    if (!token) return res.status(401).json({ auth: false, mensagem: 'Token não fornecido.' });
+    jwt.verify(token, key || 'segredo', function(err, decoded) {
+        if (err) return res.status(500).json({ auth: false, mensagem: 'Falha ao autenticar o token.' });
+        req.userId = decoded.id;
+        next();
+    });
+}
 
 
 // Middleware para verificar JWT
