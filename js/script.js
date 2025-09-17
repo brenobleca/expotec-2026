@@ -1,70 +1,73 @@
-//* ===== DRAGSCROLL HORIZONTAL =====
+//* ===== DRAGSCROLL HORIZONTAL ===== */
 //* Slider horizontal com arrastar e rolar
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const slider = document.querySelector('.game-grid');
   if (!slider) {
-    console.warn('Elemento .game-grid não encontrado');
+    console.warn('game-grid não encontrado');
     return;
   }
 
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  // Impede que imagens sejam arrastadas
+  // Evita que as imagens sejam arrastáveis
   slider.querySelectorAll('img').forEach(img => {
     img.draggable = false;
     img.addEventListener('dragstart', e => e.preventDefault());
   });
 
-  // Mouse
-  slider.addEventListener('mousedown', (e) => {
-    if (e.button !== 0 || e.target.closest('button, a')) return;
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  const pointerDown = (e) => {
+    // Não iniciar drag se clicar em botão ou link
+    if (e.target.closest('button, a')) return;
+
     isDown = true;
     slider.classList.add('active');
-    startX = e.pageX;
+    startX = e.clientX;
     scrollLeft = slider.scrollLeft;
-    slider.style.userSelect = 'none';
-  });
+    document.body.style.userSelect = 'none';
 
-  document.addEventListener('mouseup', () => {
+    if (e.pointerId && slider.setPointerCapture) {
+      try { slider.setPointerCapture(e.pointerId); } catch (err) { }
+    }
+
+    e.preventDefault();
+  };
+
+  const pointerMove = (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const delta = e.clientX - startX;
+    const speed = 1.5; // Sensibilidade do scroll
+    slider.scrollLeft = scrollLeft - delta * speed;
+  };
+
+  const pointerUp = (e) => {
+    if (!isDown) return;
     isDown = false;
     slider.classList.remove('active');
-    slider.style.userSelect = '';
-  });
+    document.body.style.userSelect = '';
 
-  document.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    const x = e.pageX;
-    const walk = (x - startX) * 1.5;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  // Touch
-  slider.addEventListener('touchstart', (e) => {
-    if (e.target.closest('button, a')) return;
-    isDown = true;
-    startX = e.touches[0].pageX;
-    scrollLeft = slider.scrollLeft;
-  });
-
-  slider.addEventListener('touchend', () => {
-    isDown = false;
-  });
-
-  slider.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 1.5;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  // Scroll com roda do mouse
+    if (e.pointerId && slider.releasePointerCapture) {
+      try { slider.releasePointerCapture(e.pointerId); } catch (err) { }
+    }
+  };
   slider.addEventListener('wheel', (e) => {
-    if (e.deltaY === 0) return;
     e.preventDefault();
-    slider.scrollLeft += e.deltaY;
-  }, { passive: false });
+    slider.scrollLeft += e.deltaY; // permite usar a roda do mouse
+  });
+  // Pointer events (mouse + touch)
+  slider.addEventListener('pointerdown', pointerDown, { passive: false });
+  document.addEventListener('pointermove', pointerMove, { passive: false });
+  document.addEventListener('pointerup', pointerUp, { passive: false });
+  document.addEventListener('pointercancel', pointerUp, { passive: false });
+
+  // Fallback para navegadores sem pointer events
+  if (!('onpointerdown' in window)) {
+    slider.addEventListener('mousedown', pointerDown, { passive: false });
+    document.addEventListener('mousemove', pointerMove, { passive: false });
+    document.addEventListener('mouseup', pointerUp, { passive: false });
+  }
 });
 
 // Controle de tema (dark/light)
@@ -82,7 +85,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 
-//* Função para abrir o modal de login
+/* Função para abrir o modal de login */
 const LoginModal = document.getElementById("loginModal");
 
 function openModal() {
@@ -108,7 +111,7 @@ window.addEventListener("click", (event) => {
   }
 });
 
-//* Função para abrir o modal de registro
+/* Função para abrir o modal de registro */
 
 const SignUpmodal = document.getElementById("SignUpModal");
 
@@ -135,7 +138,7 @@ window.addEventListener("click", (event) => {
   }
 });
 
-//* conexão com o banco de dados e exibição dos usuários
+/* conexão com o banco de dados e exibição dos usuários */
 document.getElementById('form-registro').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -173,19 +176,46 @@ document.getElementById('form-login').addEventListener('submit', async (e) => {
         senha: document.getElementById('password-login').value,
     };
 
-    try {
-        const resposta = await fetch('http://localhost:4000/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        });
+  try {
+    const resposta = await fetch('http://localhost:4000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    });
 
-        const resultado = await resposta.json();
-        const mensagem = document.getElementById('mensagem-login');
-        mensagem.textContent = resultado.mensagem;
+    const resultado = await resposta.json();
+    const mensagem = document.getElementById('mensagem-login');
+    mensagem.textContent = resultado.mensagem;
 
-    } catch (erro) {
-        console.error('Erro de conexão:', erro);
-        document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+    if (resultado.auth && resultado.token) {
+      // Salva o token JWT no localStorage
+      localStorage.setItem('token', resultado.token);
+      // Redireciona para a página protegida
+      window.location.href = 'pagina-protegida.html';
     }
+  } catch (erro) {
+    console.error('Erro de conexão:', erro);
+    document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+  }
 });
+
+
+async function acessarRotaProtegida() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    alert('Você não está autenticado!');
+    return;
+  }
+  try {
+    const resposta = await fetch('http://localhost:4000/api/protegida', {
+      method: 'GET',
+      headers: {
+        'x-access-token': token
+      }
+    });
+    const resultado = await resposta.json();
+    alert(JSON.stringify(resultado));
+  } catch (erro) {
+    alert('Erro ao acessar rota protegida.');
+  }
+}
