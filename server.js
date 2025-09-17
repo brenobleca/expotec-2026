@@ -2,9 +2,13 @@ const express = require('express');
 const mysql = require('mysql2'); // Importa o conector
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const app = express();
 const port = 4000;
+const dotenv = require('dotenv');
+dotenv.config();
 
+const key=process.env.key;
 // Configuração da conexão com o banco de dados
 const db = mysql.createConnection({
     host: 'localhost',
@@ -25,23 +29,6 @@ db.connect((err) => {
 app.use(cors());
 // Middleware para entender JSON
 app.use(express.json());
-
-// Rota para buscar dados de usuários do banco de dados
-app.get('/api/usuarios', (req, res) => {
-    const query = 'SELECT nome, idade, cidade FROM usuarios';
-
-    // Executa a consulta no banco de dados
-    db.query(query, (err, results) => {
-        if (err) {
-            console.error('Erro na consulta:', err);
-            res.status(500).json({ error: 'Erro ao buscar dados dos usuários.' });
-            return;
-        }
-
-        // Envia os resultados como JSON
-        res.json(results);
-    });
-});
 
 app.post('/api/registrar', (req, res) => {
     const { nome, data_nasc, email, senha, usuario, cpf } = req.body;
@@ -73,17 +60,57 @@ app.post('/api/registrar', (req, res) => {
                     console.error('Erro ao registrar usuário:', err);
                     return res.status(500).json({ mensagem: 'Erro ao registrar usuário.' });
                 }
-                res.json({ mensagem: 'Registro realizado com sucesso!' });
+                res.json({ mensagem: 'Registro realizado com sucesso!', sucesso: true });
             });
         });
     });
 });
 
+
+// Middleware para verificar JWT
+function verifyJWT(req, res, next) {
+    const token = req.headers['x-access-token'];
+    if (!token) return res.status(401).json({ auth: false, mensagem: 'Token não fornecido.' });
+    jwt.verify(token, key || 'segredo', function(err, decoded) {
+        if (err) return res.status(500).json({ auth: false, mensagem: 'Falha ao autenticar o token.' });
+        req.userId = decoded.id;
+        next();
+    });
+}
+
 app.post('/api/login', (req, res) => {
-    // validação usuário/senha (tenho que fazer)
-    res.json({ mensagem: 'Login realizado com sucesso!' });
+    const { usuario, senha } = req.body;
+    if (!usuario || !senha) {
+        return res.status(400).json({ mensagem: 'Preencha todos os campos.' });
+    }
+    db.query('SELECT * FROM usuarios WHERE usuario = ?', [usuario], (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar usuário:', err);
+            return res.status(500).json({ mensagem: 'Erro ao realizar login.' });
+        }
+        if (results.length === 0) {
+            return res.status(401).json({ mensagem: 'Usuário ou senha inválidos.' });
+        }
+        const user = results[0];
+        bcrypt.compare(senha, user.senha, (err, isMatch) => {
+            if (err) {
+                console.error('Erro ao comparar senha:', err);
+                return res.status(500).json({ mensagem: 'Erro ao realizar login.' });
+            }
+            if (!isMatch) {
+                return res.status(401).json({ mensagem: 'Usuário ou senha inválidos.' });
+            }
+            // Gera o token JWT
+            const token = jwt.sign({ id: user.id, usuario: user.usuario }, key || process.env.key, { expiresIn: 3600 });
+            res.json({ mensagem: 'Login realizado com sucesso!', auth: true, token });
+        });
+    });
 });
 
+// Exemplo de rota protegida
+app.post('/api/protegida', verifyJWT, (req, res) => {
+    res.json({ mensagem: 'Acesso autorizado!', userId: req.userId });
+});
 // Inicia o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);

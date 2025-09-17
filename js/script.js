@@ -1,3 +1,96 @@
+//* ===== DRAGSCROLL HORIZONTAL ===== */
+//* Slider horizontal com arrastar e rolar
+window.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.game-grid');
+  if (!slider) {
+    console.warn('game-grid não encontrado');
+    return;
+  }
+
+  // Evita que as imagens sejam arrastáveis
+
+
+
+
+  slider.querySelectorAll('img').forEach(img => {
+    img.draggable = false;
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  const pointerDown = (e) => {
+    // Não iniciar drag se clicar em botão ou link
+    if (e.target.closest('button, a')) return;
+
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.clientX;
+    scrollLeft = slider.scrollLeft;
+    document.body.style.userSelect = 'none';
+
+
+    if (e.pointerId && slider.setPointerCapture) {
+      try { slider.setPointerCapture(e.pointerId); } catch (err) { }
+    }
+
+
+
+
+
+
+
+
+
+
+    e.preventDefault();
+  };
+
+
+
+
+
+
+  const pointerMove = (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const delta = e.clientX - startX;
+    const speed = 1.5; // Sensibilidade do scroll
+    slider.scrollLeft = scrollLeft - delta * speed;
+  };
+
+  const pointerUp = (e) => {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove('active');
+    document.body.style.userSelect = '';
+
+
+    if (e.pointerId && slider.releasePointerCapture) {
+      try { slider.releasePointerCapture(e.pointerId); } catch (err) { }
+    }
+  };
+  slider.addEventListener('wheel', (e) => {
+
+    e.preventDefault();
+    slider.scrollLeft += e.deltaY; // permite usar a roda do mouse
+  });
+  // Pointer events (mouse + touch)
+  slider.addEventListener('pointerdown', pointerDown, { passive: false });
+  document.addEventListener('pointermove', pointerMove, { passive: false });
+  document.addEventListener('pointerup', pointerUp, { passive: false });
+  document.addEventListener('pointercancel', pointerUp, { passive: false });
+
+  // Fallback para navegadores sem pointer events
+  if (!('onpointerdown' in window)) {
+    slider.addEventListener('mousedown', pointerDown, { passive: false });
+    document.addEventListener('mousemove', pointerMove, { passive: false });
+    document.addEventListener('mouseup', pointerUp, { passive: false });
+  }
+});
+
 // Controle de tema (dark/light)
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
@@ -67,34 +160,45 @@ window.addEventListener("click", (event) => {
 });
 
 /* conexão com o banco de dados e exibição dos usuários */
-document.getElementById('form-registro').addEventListener('submit', async (e) => {
+// Lógica do registro: após sucesso, fecha registro e abre login
+const formRegistro = document.getElementById('form-registro');
+if (formRegistro) {
+  formRegistro.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const dados = {
-        nome: document.getElementById('name').value,
-        data_nasc: document.getElementById('birth-date').value,
-        email: document.getElementById('email').value,
-        senha: document.getElementById('password-register').value,
-        usuario: document.getElementById('username-register').value,
-        cpf: document.getElementById('cpf').value,
+      nome: document.getElementById('name').value,
+      cpf: document.getElementById('cpf').value,
+      data_nasc: document.getElementById('birth-date').value,
+      usuario: document.getElementById('username-register').value,
+      email: document.getElementById('email').value,
+      senha: document.getElementById('password-register').value
     };
 
     try {
-        const resposta = await fetch('http://localhost:4000/api/registrar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        });
+      const resposta = await fetch('http://localhost:4000/api/registrar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
 
-        const resultado = await resposta.json();
-        const mensagem = document.getElementById('mensagem-registro');
-        mensagem.textContent = resultado.mensagem;
+      const resultado = await resposta.json();
+      const mensagem = document.getElementById('mensagem-registro');
+      mensagem.textContent = resultado.mensagem;
 
+      if (resultado.sucesso) {
+        // Cadastro realizado com sucesso: fecha registro e abre login
+        setTimeout(() => {
+          CloseRegisterModal();
+          LoginModal.style.display = "flex";
+        }, 1200); // tempo para mostrar mensagem de sucesso
+      }
     } catch (erro) {
-        console.error('Erro de conexão:', erro);
-        document.getElementById('mensagem-registro').textContent = 'Erro ao conectar com o servidor.';
+      document.getElementById('mensagem-registro').textContent = 'Erro ao conectar com o servidor.';
+
     }
-});
+  });
+}
 
 document.getElementById('form-login').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -104,90 +208,46 @@ document.getElementById('form-login').addEventListener('submit', async (e) => {
         senha: document.getElementById('password-login').value,
     };
 
-    try {
-        const resposta = await fetch('http://localhost:4000/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        });
+  try {
+    const resposta = await fetch('http://localhost:4000/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    });
 
-        const resultado = await resposta.json();
-        const mensagem = document.getElementById('mensagem-login');
-        mensagem.textContent = resultado.mensagem;
+    const resultado = await resposta.json();
+    const mensagem = document.getElementById('mensagem-login');
+    mensagem.textContent = resultado.mensagem;
 
-    } catch (erro) {
-        console.error('Erro de conexão:', erro);
-        document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+    if (resultado.auth && resultado.token) {
+      // Salva o token JWT no localStorage
+      localStorage.setItem('token', resultado.token);
+      // Redireciona para a página protegida
+      window.location.href = 'pagina-protegida.html';
     }
+  } catch (erro) {
+    console.error('Erro de conexão:', erro);
+    document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+  }
 });
 
-//* Slider horizontal com arrastar e rolar
-window.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.game-grid');
-  if (!slider) {
-    console.warn('game-grid não encontrado');
+
+async function acessarRotaProtegida() {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    alert('Você não está autenticado!');
     return;
   }
-
-  // Evita que as imagens sejam arrastáveis
-  slider.querySelectorAll('img').forEach(img => {
-    img.draggable = false;
-    img.addEventListener('dragstart', e => e.preventDefault());
-  });
-
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  const pointerDown = (e) => {
-    // Não iniciar drag se clicar em botão ou link
-    if (e.target.closest('button, a')) return;
-
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.clientX;
-    scrollLeft = slider.scrollLeft;
-    document.body.style.userSelect = 'none';
-
-    if (e.pointerId && slider.setPointerCapture) {
-      try { slider.setPointerCapture(e.pointerId); } catch (err) { }
-    }
-
-    e.preventDefault();
-  };
-
-  const pointerMove = (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const delta = e.clientX - startX;
-    const speed = 1.5; // Sensibilidade do scroll
-    slider.scrollLeft = scrollLeft - delta * speed;
-  };
-
-  const pointerUp = (e) => {
-    if (!isDown) return;
-    isDown = false;
-    slider.classList.remove('active');
-    document.body.style.userSelect = '';
-
-    if (e.pointerId && slider.releasePointerCapture) {
-      try { slider.releasePointerCapture(e.pointerId); } catch (err) { }
-    }
-  };
-  slider.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    slider.scrollLeft += e.deltaY; // permite usar a roda do mouse
-  });
-  // Pointer events (mouse + touch)
-  slider.addEventListener('pointerdown', pointerDown, { passive: false });
-  document.addEventListener('pointermove', pointerMove, { passive: false });
-  document.addEventListener('pointerup', pointerUp, { passive: false });
-  document.addEventListener('pointercancel', pointerUp, { passive: false });
-
-  // Fallback para navegadores sem pointer events
-  if (!('onpointerdown' in window)) {
-    slider.addEventListener('mousedown', pointerDown, { passive: false });
-    document.addEventListener('mousemove', pointerMove, { passive: false });
-    document.addEventListener('mouseup', pointerUp, { passive: false });
+  try {
+    const resposta = await fetch('http://localhost:4000/api/protegida', {
+      method: 'GET',
+      headers: {
+        'x-access-token': token
+      }
+    });
+    const resultado = await resposta.json();
+    alert(JSON.stringify(resultado));
+  } catch (erro) {
+    alert('Erro ao acessar rota protegida.');
   }
-});
+}
