@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const port = 4000;
 const dotenv = require('dotenv');
+dotenv.config();
 
 const key=process.env.key;
 // Configuração da conexão com o banco de dados
@@ -59,7 +60,7 @@ app.post('/api/registrar', (req, res) => {
                     console.error('Erro ao registrar usuário:', err);
                     return res.status(500).json({ mensagem: 'Erro ao registrar usuário.' });
                 }
-                res.json({ mensagem: 'Registro realizado com sucesso!' });
+                res.json({ mensagem: 'Registro realizado com sucesso!', sucesso: true });
             });
         });
     });

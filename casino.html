@@ -85,9 +85,6 @@
               </div>
             </div>
 
-            <!--* Botoes de cadastrar e login -->
-            <button class="nav-btn-register" onclick="SignUpOpenModal()">Cadastre-se</button>
-            <button class="nav-btn-login" onclick="openModal()">Login</button>
           </div>
         </div>
       </div>
@@ -100,15 +97,18 @@
     <div class="modal-content">
       <span class="close" onclick="CloseLoginModal()">&times;</span>
       <h2>Login</h2>
-      <form action="/login" method="POST">
-        <label for="username">Usuário</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required>
-
+      <form id="form-login">
+        <label for="username-login">Usuário</label>
+        <input type="text" id="username-login" name="username" required>
+        <label for="password-login">Senha</label>
+        <input type="password" id="password-login" name="password" required>
         <button type="submit">Entrar</button>
+        <div id="mensagem-login"></div>
       </form>
+      <div style="margin-top:1rem;text-align:center;font-size:.95rem;">
+        Não tem cadastro?
+        <a href="#" style="color:var(--orange-primary);text-decoration:underline;" onclick="OpenRegisterFromLogin()">Clique aqui</a>
+      </div>
     </div>
   </div>
 
@@ -117,28 +117,66 @@
     <div class="modal-content">
       <span class="close" onclick="CloseRegisterModal()">&times;</span>
       <h2>Registre-se</h2>
-      <form action="" method="POST">
+      <form id="form-registro">
         <label for="name">Nome completo</label>
         <input type="text" id="name" name="name" required>
-
         <label for="cpf">CPF</label>
         <input type="text" id="cpf" name="cpf" required>
-
         <label for="birth-date">Data de nascimento</label>
         <input type="date" name="birth-date" id="birth-date" required>
-
-        <label for="username">Usuário</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required>
-
+        <label for="username-register">Usuário</label>
+        <input type="text" id="username-register" name="username-register" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password-register">Senha</label>
+        <input type="password" id="password-register" name="password-register" required>
         <button type="submit">Registrar-se</button>
+        <div id="mensagem-registro"></div>
       </form>
     </div>
   </div>
 
-  <!--! ===== CONTEUDO PRINCIPAL ===== -->
+  <!-- Modal da Roleta -->
+  <div id="rouletteModal" class="modal">
+    <div class="modal-roleta modal-content">
+      <!-- Container ONG + valor -->
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
+        <label for="ong-select">Escolha a ONG para doar:</label>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+          <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
+          </button>
+          <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
+          </button>
+          <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
+          </button>
+          <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
+          </button>
+        </div>
+        <label for="bet-input">Valor da aposta:</label>
+        <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
+        <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
+        <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
+          <strong>Como funciona?</strong><br>
+          Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
+        </div>
+      </div>
+      <!-- Container Roleta -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <span class="close" onclick="closeRouletteModal()" style="position:absolute;top:12px;right:16px;">&times;</span>
+        <div style="margin-bottom:1.5rem;">
+          <div id="rouletteWheel" style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
+            <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);"></div>
+            <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
+          </div>
+        </div>
+        <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()" disabled>Iniciar Jogo</button>
+        <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTEUDO PRINCIPAL ===== -->
   <main>
     <!-- Sidebar menu lateral-->
     <aside class="sidebar-menu" id="sidebar-menu">
@@ -232,6 +270,46 @@
             </div>
           </div>
 
+          <!-- Modal da Roleta (vertical, igual ao index, com lógica de login e ONG) -->
+          <div id="rouletteModal" class="modal">
+            <div class="modal-roleta modal-content">
+              <!-- Container ONG + valor -->
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+                <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
+                <label for="ong-select">Escolha a ONG para doar:</label>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                  <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
+                  </button>
+                  <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
+                  </button>
+                  <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
+                  </button>
+                  <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
+                  </button>
+                </div>
+                <label for="bet-input">Valor da aposta:</label>
+                <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
+                <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
+                <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
+                  <strong>Como funciona?</strong><br>
+                  Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
+                </div>
+              </div>
+              <!-- Container Roleta -->
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                <span class="close" onclick="closeRouletteModal()" style="position:absolute;top:12px;right:16px;">&times;</span>
+                <div style="margin-bottom:1.5rem;">
+                  <div id="rouletteWheel" style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
+                    <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);"></div>
+                    <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
+                  </div>
+                </div>
+                <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()" disabled>Iniciar Jogo</button>
+                <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
+              </div>
+            </div>
+          </div>
+
           <!-- Jogo 2 Tigrinho-->
           <div class="card game-card">
             <div class="thumb">
@@ -304,81 +382,81 @@
         </div>
       </section>
 
-          <!--* ===== FOOTER ===== -->
-    <footer>
-      <div class="container container-footer">
-        <div class="footer-grid">
-          <div>
-            <h3>Doe e Ganhe</h3>
-            <ul class="footer-list">
-              <li><a href="#">Sobre Nós</a></li>
-              <li><a href="#">Responsabilidade</a></li>
-              <li><a href="#">Trabalhe Conosco</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
+      <!--* ===== FOOTER ===== -->
+      <footer>
+        <div class="container container-footer">
+          <div class="footer-grid">
+            <div>
+              <h3>Doe e Ganhe</h3>
+              <ul class="footer-list">
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Responsabilidade</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Cassino</h3>
+              <ul class="footer-list">
+                <li><a href="#">Jogos</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Torneios</a></li>
+                <li><a href="#">VIP</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3>ONGs</h3>
+              <ul class="footer-list">
+                <li><a href="#">Como Funciona</a></li>
+                <li><a href="#">ONGs Parceiras</a></li>
+                <li><a href="#">Relatórios</a></li>
+                <li><a href="#">Seja uma ONG Parceira</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Suporte</h3>
+              <ul class="footer-list">
+                <li><a href="#">Ajuda</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3>Cassino</h3>
-            <ul class="footer-list">
-              <li><a href="#">Jogos</a></li>
-              <li><a href="#">Promoções</a></li>
-              <li><a href="#">Torneios</a></li>
-              <li><a href="#">VIP</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>ONGs</h3>
-            <ul class="footer-list">
-              <li><a href="#">Como Funciona</a></li>
-              <li><a href="#">ONGs Parceiras</a></li>
-              <li><a href="#">Relatórios</a></li>
-              <li><a href="#">Seja uma ONG Parceira</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Suporte</h3>
-            <ul class="footer-list">
-              <li><a href="#">Ajuda</a></li>
-              <li><a href="#">Contato</a></li>
-              <li><a href="#">Termos de Uso</a></li>
-              <li><a href="#">Política de Privacidade</a></li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="footer-media">
-          <p>© 2025 Doe e Ganhe. Todos os direitos reservados.</p>
-          <div class="footer-social-media">
-            <!-- FACEBOOK -->
-            <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-              </svg></a>
+          <div class="footer-media">
+            <p>© 2025 Doe e Ganhe. Todos os direitos reservados.</p>
+            <div class="footer-social-media">
+              <!-- FACEBOOK -->
+              <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                </svg></a>
 
-            <!-- INSTAGRAM -->
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
-                viewBox="0,0,256,256">
-                <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                  style="mix-blend-mode: normal">
-                  <g transform="scale(10.66667,10.66667)">
-                    <path
-                      d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
-                    </path>
+              <!-- INSTAGRAM -->
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
+                  viewBox="0,0,256,256">
+                  <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(10.66667,10.66667)">
+                      <path
+                        d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                      </path>
+                    </g>
                   </g>
-                </g>
-              </svg></a>
+                </svg></a>
 
-            <!-- TWITTER -->
-            <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-              </svg></a>
+              <!-- TWITTER -->
+              <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg></a>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </div>
   </main>
   <script>

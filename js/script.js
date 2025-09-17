@@ -50,51 +50,50 @@ function SignUpOpenModal() {
 
 function CloseRegisterModal() {
   SignUpmodal.style.display = "none";
-
   // Limpa o formulário de registro ao fechar o modal
   const formRegistro = document.getElementById('form-registro');
-  if (formRegistro) {
-    formRegistro.reset();
-    const mensagem = document.getElementById('mensagem-registro');
-    if (mensagem) mensagem.textContent = '';
-  }
+  if (formRegistro) formRegistro.reset();
+  document.getElementById('mensagem-registro').textContent = '';
 }
 
-window.addEventListener("click", (event) => {
-  if (event.target === SignUpmodal) {
-    CloseRegisterModal();
-  }
-});
-
-/* conexão com o banco de dados e exibição dos usuários */
-document.getElementById('form-registro').addEventListener('submit', async (e) => {
+// Lógica do registro: após sucesso, fecha registro e abre login
+const formRegistro = document.getElementById('form-registro');
+if (formRegistro) {
+  formRegistro.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const dados = {
-        nome: document.getElementById('name').value,
-        data_nasc: document.getElementById('birth-date').value,
-        email: document.getElementById('email').value,
-        senha: document.getElementById('password-register').value,
-        usuario: document.getElementById('username-register').value,
-        cpf: document.getElementById('cpf').value,
+      nome: document.getElementById('name').value,
+      cpf: document.getElementById('cpf').value,
+      data_nasc: document.getElementById('birth-date').value,
+      usuario: document.getElementById('username-register').value,
+      email: document.getElementById('email').value,
+      senha: document.getElementById('password-register').value
     };
 
     try {
-        const resposta = await fetch('http://localhost:4000/api/registrar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        });
+      const resposta = await fetch('http://localhost:4000/api/registrar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
 
-        const resultado = await resposta.json();
-        const mensagem = document.getElementById('mensagem-registro');
-        mensagem.textContent = resultado.mensagem;
+      const resultado = await resposta.json();
+      const mensagem = document.getElementById('mensagem-registro');
+      mensagem.textContent = resultado.mensagem;
 
+      if (resultado.sucesso) {
+        // Cadastro realizado com sucesso: fecha registro e abre login
+        setTimeout(() => {
+          CloseRegisterModal();
+          LoginModal.style.display = "flex";
+        }, 1200); // tempo para mostrar mensagem de sucesso
+      }
     } catch (erro) {
-        console.error('Erro de conexão:', erro);
-        document.getElementById('mensagem-registro').textContent = 'Erro ao conectar com o servidor.';
+      document.getElementById('mensagem-registro').textContent = 'Erro ao conectar com o servidor.';
     }
-});
+  });
+}
 
 document.getElementById('form-login').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -218,3 +217,126 @@ window.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mouseup', pointerUp, { passive: false });
   }
 });
+
+/// CASSINO.HTML \\\
+
+// Lógica do fluxo do botão "Jogar agora" da Roleta
+document.getElementById('game-play-roulette').addEventListener('click', function () {
+  if (!localStorage.getItem('token')) {
+    // Não está logado: abre modal de login
+    LoginModal.style.display = "flex";
+  } else {
+    // Está logado: abre modal da roleta
+    openRouletteModal();
+  }
+});
+
+// Troca para modal de cadastro a partir do login
+function OpenRegisterFromLogin() {
+  CloseLoginModal();
+  SignUpOpenModal();
+}
+
+// Modal da Roleta
+const rouletteModal = document.getElementById('rouletteModal');
+function openRouletteModal() {
+  rouletteModal.style.display = 'flex';
+  resetRouletteModal();
+}
+function closeRouletteModal() {
+  rouletteModal.style.display = 'none';
+  resetRouletteModal();
+}
+window.addEventListener("click", (event) => {
+  if (event.target === rouletteModal) {
+    closeRouletteModal();
+  }
+});
+
+// Controle de seleção de ONG
+let selectedOng = null;
+
+// Habilita botão só se ONG e valor válidos
+function checkRoletaForm() {
+  const betInput = document.getElementById('bet-input');
+  const spinBtn = document.getElementById('spinBtn');
+  if (selectedOng && betInput.value && parseFloat(betInput.value) >= 1) {
+    spinBtn.disabled = false;
+    document.getElementById('bet-message').textContent = '';
+  } else {
+    spinBtn.disabled = true;
+    if (!selectedOng) {
+      document.getElementById('bet-message').textContent = 'Escolha uma ONG antes de apostar!';
+    } else if (!betInput.value || parseFloat(betInput.value) < 1) {
+      document.getElementById('bet-message').textContent = 'Digite um valor válido!';
+    }
+  }
+}
+
+document.getElementById('bet-input').addEventListener('input', checkRoletaForm);
+
+function selectOng(num) {
+  selectedOng = num;
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('ong-' + i).classList.remove('btn-primary');
+    document.getElementById('ong-' + i).classList.add('btn-outline');
+  }
+  document.getElementById('ong-' + num).classList.remove('btn-outline');
+  document.getElementById('ong-' + num).classList.add('btn-primary');
+  checkRoletaForm();
+}
+
+// Confirmação de aposta
+function confirmBet() {
+  const betInput = document.getElementById('bet-input');
+  const betMessage = document.getElementById('bet-message');
+  const value = parseFloat(betInput.value);
+  if (!selectedOng) {
+    betMessage.textContent = 'Escolha uma ONG antes de apostar!';
+    document.getElementById('spinBtn').disabled = true;
+    return;
+  }
+  if (!value || value < 1) {
+    betMessage.textContent = 'Digite um valor válido!';
+    document.getElementById('spinBtn').disabled = true;
+    return;
+  }
+  betMessage.textContent = 'Aposta confirmada! Clique em "Iniciar Jogo".';
+  document.getElementById('spinBtn').disabled = false;
+}
+
+// Gira a roleta (simulação)
+function spinRoulette() {
+  const betInput = document.getElementById('bet-input');
+  const betMessage = document.getElementById('bet-message');
+  const result = document.getElementById('result');
+  if (!selectedOng) {
+    betMessage.textContent = 'Escolha uma ONG antes de jogar!';
+    return;
+  }
+  if (!betInput.value || parseFloat(betInput.value) < 1) {
+    betMessage.textContent = 'Digite um valor válido!';
+    return;
+  }
+  result.textContent = 'Girando...';
+  document.getElementById('spinBtn').disabled = true;
+  setTimeout(() => {
+    const win = Math.random() < 0.5;
+    result.textContent = win ? 'Parabéns! Você ganhou!' : 'Não foi dessa vez. Tente novamente!';
+    betMessage.textContent = '';
+    document.getElementById('spinBtn').disabled = false;
+  }, 1500);
+}
+
+// Reset modal roleta
+function resetRouletteModal() {
+  selectedOng = null;
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById('ong-' + i).style.border = '2px solid transparent';
+  }
+  document.getElementById('bet-input').value = '';
+  document.getElementById('bet-message').textContent = '';
+  document.getElementById('result').textContent = '';
+  document.getElementById('spinBtn').disabled = true;
+}
+
