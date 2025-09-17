@@ -1,3 +1,72 @@
+//* ===== DRAGSCROLL HORIZONTAL =====
+//* Slider horizontal com arrastar e rolar
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.game-grid');
+  if (!slider) {
+    console.warn('Elemento .game-grid não encontrado');
+    return;
+  }
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  // Impede que imagens sejam arrastadas
+  slider.querySelectorAll('img').forEach(img => {
+    img.draggable = false;
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
+
+  // Mouse
+  slider.addEventListener('mousedown', (e) => {
+    if (e.button !== 0 || e.target.closest('button, a')) return;
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX;
+    scrollLeft = slider.scrollLeft;
+    slider.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    slider.style.userSelect = '';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const x = e.pageX;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch
+  slider.addEventListener('touchstart', (e) => {
+    if (e.target.closest('button, a')) return;
+    isDown = true;
+    startX = e.touches[0].pageX;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('touchend', () => {
+    isDown = false;
+  });
+
+  slider.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Scroll com roda do mouse
+  slider.addEventListener('wheel', (e) => {
+    if (e.deltaY === 0) return;
+    e.preventDefault();
+    slider.scrollLeft += e.deltaY;
+  }, { passive: false });
+});
+
 // Controle de tema (dark/light)
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
@@ -13,7 +82,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 
-/* Função para abrir o modal de login */
+//* Função para abrir o modal de login
 const LoginModal = document.getElementById("loginModal");
 
 function openModal() {
@@ -39,7 +108,7 @@ window.addEventListener("click", (event) => {
   }
 });
 
-/* Função para abrir o modal de registro */
+//* Função para abrir o modal de registro
 
 const SignUpmodal = document.getElementById("SignUpModal");
 
@@ -66,7 +135,7 @@ window.addEventListener("click", (event) => {
   }
 });
 
-/* conexão com o banco de dados e exibição dos usuários */
+//* conexão com o banco de dados e exibição dos usuários
 document.getElementById('form-registro').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -119,75 +188,4 @@ document.getElementById('form-login').addEventListener('submit', async (e) => {
         console.error('Erro de conexão:', erro);
         document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
     }
-});
-
-//* Slider horizontal com arrastar e rolar
-window.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.game-grid');
-  if (!slider) {
-    console.warn('game-grid não encontrado');
-    return;
-  }
-
-  // Evita que as imagens sejam arrastáveis
-  slider.querySelectorAll('img').forEach(img => {
-    img.draggable = false;
-    img.addEventListener('dragstart', e => e.preventDefault());
-  });
-
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  const pointerDown = (e) => {
-    // Não iniciar drag se clicar em botão ou link
-    if (e.target.closest('button, a')) return;
-
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.clientX;
-    scrollLeft = slider.scrollLeft;
-    document.body.style.userSelect = 'none';
-
-    if (e.pointerId && slider.setPointerCapture) {
-      try { slider.setPointerCapture(e.pointerId); } catch (err) { }
-    }
-
-    e.preventDefault();
-  };
-
-  const pointerMove = (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const delta = e.clientX - startX;
-    const speed = 1.5; // Sensibilidade do scroll
-    slider.scrollLeft = scrollLeft - delta * speed;
-  };
-
-  const pointerUp = (e) => {
-    if (!isDown) return;
-    isDown = false;
-    slider.classList.remove('active');
-    document.body.style.userSelect = '';
-
-    if (e.pointerId && slider.releasePointerCapture) {
-      try { slider.releasePointerCapture(e.pointerId); } catch (err) { }
-    }
-  };
-  slider.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    slider.scrollLeft += e.deltaY; // permite usar a roda do mouse
-  });
-  // Pointer events (mouse + touch)
-  slider.addEventListener('pointerdown', pointerDown, { passive: false });
-  document.addEventListener('pointermove', pointerMove, { passive: false });
-  document.addEventListener('pointerup', pointerUp, { passive: false });
-  document.addEventListener('pointercancel', pointerUp, { passive: false });
-
-  // Fallback para navegadores sem pointer events
-  if (!('onpointerdown' in window)) {
-    slider.addEventListener('mousedown', pointerDown, { passive: false });
-    document.addEventListener('mousemove', pointerMove, { passive: false });
-    document.addEventListener('mouseup', pointerUp, { passive: false });
-  }
 });

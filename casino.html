@@ -139,91 +139,94 @@
   </div>
 
   <!--! ===== CONTEUDO PRINCIPAL ===== -->
-  <main>
-    <!-- Sidebar menu lateral-->
-    <aside class="sidebar-menu" id="sidebar-menu">
-      <div class="sidebar-menu-item" onclick="toggleSubmenu()">
-        <h2>Cassino</h2>
-        <svg id="sidebar-arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-chevron-up-icon lucide-chevron-up">
-          <path d="m18 15-6-6-6 6" />
-        </svg>
-        <svg id="sidebar-arrow-up" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up">
-          <path d="m18 15-6-6-6 6" />
-        </svg>
-      </div>
-      <div class="sidebar-submenu" id="sidebar-submenu">
-        <div class="sidebar-submenu-item">
+  <div class="content">
+    <!--* ====== Sidebar menu lateral ====== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-menu">
+        <div class="sidebar-menu-item" onclick="toggleSubmenu()">
+          <h2>Cassino</h2>
+          <svg id="sidebar-arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-up-icon lucide-chevron-up">
+            <path d="m18 15-6-6-6 6" />
+          </svg>
+        </div>
+        <div class="sidebar-submenu" id="sidebar-submenu">
+          <div class="sidebar-submenu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-sparkles-icon lucide-sparkles">
+              <path
+                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+              <path d="M20 2v4" />
+              <path d="M22 4h-4" />
+              <circle cx="4" cy="20" r="2" />
+            </svg>
+            <h3>Jogos Populares</h3>
+          </div>
+          <div class="sidebar-submenu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-club-icon lucide-club">
+              <path d="M17.28 9.05a5.5 5.5 0 1 0-10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28-8.6Z" />
+              <path d="M12 17.66L12 22" />
+            </svg>
+            <h3>Cartas</h3>
+          </div>
+          <div class="sidebar-submenu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-rocket-icon lucide-rocket">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path
+                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </svg>
+            <h3>Cash</h3>
+          </div>
+          <div class="sidebar-submenu-item">
+            <h3>Roleta</h3>
+          </div>
+          <div class="sidebar-submenu-item">
+            <h3>Slots</h3>
+          </div>
+        </div>
+        <div class="sidebar-menu-item-ranking">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-sparkles-icon lucide-sparkles">
+            class="lucide lucide-medal-icon lucide-medal">
             <path
-              d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
-            <path d="M20 2v4" />
-            <path d="M22 4h-4" />
-            <circle cx="4" cy="20" r="2" />
+              d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+            <path d="M11 12 5.12 2.2" />
+            <path d="m13 12 5.88-9.8" />
+            <path d="M8 7h8" />
+            <circle cx="12" cy="17" r="5" />
+            <path d="M12 18v-2h-.5" />
           </svg>
-          <h3>Jogos Populares</h3>
-        </div>
-        <div class="sidebar-submenu-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-club-icon lucide-club">
-            <path d="M17.28 9.05a5.5 5.5 0 1 0-10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28-8.6Z" />
-            <path d="M12 17.66L12 22" />
-          </svg>
-          <h3>Cartas</h3>
-        </div>
-        <div class="sidebar-submenu-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-rocket-icon lucide-rocket">
-            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-          </svg>
-          <h3>Cash</h3>
-        </div>
-        <div class="sidebar-submenu-item">
-          <h3>Roleta</h3>
-        </div>
-        <div class="sidebar-submenu-item">
-          <h3>Slots</h3>
+          <h2>Ranking</h2>
         </div>
       </div>
     </aside>
 
-    <div class="main-content">
-      <!-- Seção de jogos -->
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <div class="section-title">
-              <h2>Nossos Jogos</h2>
-              <p>Os mais jogados essas semana</p>
-            </div>
-            <div class="section-btn-filter">
-              <button class="btn-outline">Todos</button>
-              <button class="btn-outline">Cartas</button>
-              <button class="btn-outline">Cash</button>
-              <button class="btn-outline">Roleta</button>
-              <button class="btn-outline">Slots</button>
+    <!--* ===== CONTEUDO PRINCIPAL ===== -->
+    <main class="main-content">
+      <!--* Seção de jogos -->
+      <!--* Jodos Populares -->
+      <section class="game-section">
+        <div class="game-title">
 
-            </div>
-          </div>
+          <h2>Jogos Populares</h2>
         </div>
 
         <div class="game-grid">
-          <!-- Jogo 1 Roleta-->
-          <div class="card game-card">
-            <div class="thumb">
-              <img src="https://placehold.co/300x200" alt="">
+
+          <!-- Jogo 1 Roleta -->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_roleta_roleta.png" alt="Imagem do jogo Roleta">
               <div class="overlay">
-                <button class="btn-primary btn-small" id="game-play-roulette">Jogar agora</button>
+                <button class="btn-primary">Jogar</button>
               </div>
             </div>
             <div class="meta">
@@ -232,26 +235,26 @@
             </div>
           </div>
 
-          <!-- Jogo 2 Tigrinho-->
-          <div class="card game-card">
-            <div class="thumb">
-              <img src="img/jogos/jogos-slots-tigrinho.jpeg" alt="">
+          <!-- Jogo 2 Tigrinho -->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_slots_fortune_tiger.jpeg" alt="Imagem do jogo Fortune Tiger">
               <div class="overlay">
-                <button class="btn-primary btn-small" id="game-play-tiger-fortune">Jogar agora</button>
+                <button class="btn-primary">Jogar</button>
               </div>
             </div>
             <div class="meta">
-              <h3 class="truncate">Tigrinho</h3>
+              <h3 class="truncate">Fortune Tiger</h3>
               <p>Slots</p>
             </div>
           </div>
 
           <!-- Jogo 3 Blackjack-->
-          <div class="card game-card">
-            <div class="thumb">
-              <img src="img/jogos/jogos-cartas-blackjack.jpg" alt="">
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cartas_blackjack.jpg" alt="Imagem do jogo Blackjack">
               <div class="overlay">
-                <button class="btn-primary btn-small" id="game-play-blackjack">Jogar agora</button>
+                <button class="btn-primary">Jogar</button>
               </div>
             </div>
             <div class="meta">
@@ -261,11 +264,11 @@
           </div>
 
           <!-- Jogo 4 Aviator -->
-          <div class="card game-card">
-            <div class="thumb">
-              <img src="img/jogos/jogos-cash-aviator.jpg" alt="">
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cash_aviator.jpg" alt="Imagem do jogo Aviator">
               <div class="overlay">
-                <button class="btn-primary btn-small" id="game-play-aviator">Jogar agora</button>
+                <button class="btn-primary">Jogar</button>
               </div>
             </div>
             <div class="meta">
@@ -275,11 +278,11 @@
           </div>
 
           <!-- Jogo 5 Campo Minado-->
-          <div class="card game-card">
-            <div class="thumb">
-              <img src="img/jogos/jogos-cash-mines.png" alt="">
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cash_mines.png" alt="Imagem do jogo Campo Minado">
               <div class="overlay">
-                <button class="btn-primary btn-small" id="game-play-mines">Jogar agora</button>
+                <button class="btn-primary">Jogar</button>
               </div>
             </div>
             <div class="meta">
@@ -289,11 +292,86 @@
           </div>
 
           <!-- Jogo 6 Plinko-->
-          <div class="card game-card">
-            <div class="thumb">
-              <img src="img/jogos/jogos-cash-plinko.jpg" alt="">
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cash_plinko.jpg" alt="Imagem do jogo Plinko">
               <div class="overlay">
-                <button class="btn-primary btn-small" id="game-play-plinko">Jogar agora</button>
+                <button class="btn-primary">Jogar</button>
+              </div>
+            </div>
+            <div class="meta">
+              <h3 class="truncate">Plinko</h3>
+              <p>Cash</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!--* Jogos Cartas -->
+      <section class="game-section">
+        <div class="game-title">
+          <h2>Cartas</h2>
+        </div>
+
+        <div class="game-grid">
+          <!-- Jogo 1 Blackjack-->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cartas_blackjack.jpg" alt="Imagem do jogo Blackjack">
+              <div class="overlay">
+                <button class="btn-primary">Jogar</button>
+              </div>
+            </div>
+            <div class="meta">
+              <h3 class="truncate">Blackjack Clássico</h3>
+              <p>Cartas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--* Jogos Cash  -->
+      <section class="game-section">
+        <div class="game-title">
+          <h2>Cash</h2>
+        </div>
+
+        <div class="game-grid">
+          <!-- Jogo 1 Aviator -->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cash_aviator.jpg" alt="Imagem do jogo Aviator">
+              <div class="overlay">
+                <button class="btn-primary">Jogar</button>
+              </div>
+            </div>
+            <div class="meta">
+              <h3 class="truncate">Aviator</h3>
+              <p>Cash</p>
+            </div>
+          </div>
+
+          <!-- Jogo 2 Campo Minado-->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cash_mines.png" alt="Imagem do jogo Campo Minado">
+              <div class="overlay">
+                <button class="btn-primary">Jogar</button>
+              </div>
+            </div>
+            <div class="meta">
+              <h3 class="truncate">Campo Minado</h3>
+              <p>Cash</p>
+            </div>
+          </div>
+
+          <!-- Jogo 3 Plinko-->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_cash_plinko.jpg" alt="Imagem do jogo Plinko">
+              <div class="overlay">
+                <button class="btn-primary">Jogar</button>
               </div>
             </div>
             <div class="meta">
@@ -304,83 +382,143 @@
         </div>
       </section>
 
-          <!--* ===== FOOTER ===== -->
-    <footer>
-      <div class="container container-footer">
-        <div class="footer-grid">
-          <div>
-            <h3>Doe e Ganhe</h3>
-            <ul class="footer-list">
-              <li><a href="#">Sobre Nós</a></li>
-              <li><a href="#">Responsabilidade</a></li>
-              <li><a href="#">Trabalhe Conosco</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Cassino</h3>
-            <ul class="footer-list">
-              <li><a href="#">Jogos</a></li>
-              <li><a href="#">Promoções</a></li>
-              <li><a href="#">Torneios</a></li>
-              <li><a href="#">VIP</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>ONGs</h3>
-            <ul class="footer-list">
-              <li><a href="#">Como Funciona</a></li>
-              <li><a href="#">ONGs Parceiras</a></li>
-              <li><a href="#">Relatórios</a></li>
-              <li><a href="#">Seja uma ONG Parceira</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Suporte</h3>
-            <ul class="footer-list">
-              <li><a href="#">Ajuda</a></li>
-              <li><a href="#">Contato</a></li>
-              <li><a href="#">Termos de Uso</a></li>
-              <li><a href="#">Política de Privacidade</a></li>
-            </ul>
-          </div>
+
+      <!--* Jogos Roleta  -->
+      <section class="game-section">
+        <div class="game-title">
+          <h2>Roleta</h2>
         </div>
 
-        <div class="footer-media">
-          <p>© 2025 Doe e Ganhe. Todos os direitos reservados.</p>
-          <div class="footer-social-media">
-            <!-- FACEBOOK -->
-            <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-              </svg></a>
-
-            <!-- INSTAGRAM -->
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
-                viewBox="0,0,256,256">
-                <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                  style="mix-blend-mode: normal">
-                  <g transform="scale(10.66667,10.66667)">
-                    <path
-                      d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
-                    </path>
-                  </g>
-                </g>
-              </svg></a>
-
-            <!-- TWITTER -->
-            <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-              </svg></a>
+        <div class="game-grid">
+          <!-- Jogo 1 Roleta -->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_roleta_roleta.png" alt="Imagem do jogo Roleta">
+              <div class="overlay">
+                <button class="btn-primary">Jogar</button>
+              </div>
+            </div>
+            <div class="meta">
+              <h3 class="truncate">Roleta</h3>
+              <p>Roleta</p>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-    </div>
-  </main>
+      </section>
+
+      <!--* Jogos Slots  -->
+      <section class="game-section">
+        <div class="game-title">
+          <h2>Slots</h2>
+        </div>
+
+        <div class="game-grid">
+          <!-- Jogo 1 Tigrinho -->
+          <div class="game-card">
+            <div class="game-thumb">
+              <img src="img/jogos/jogos_slots_fortune_tiger.jpeg" alt="Imagem do jogo Fortune Tiger">
+              <div class="overlay">
+                <button class="btn-primary">Jogar</button>
+              </div>
+            </div>
+            <div class="meta">
+              <h3 class="truncate">Fortune Tiger</h3>
+              <p>Slots</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--* ===== RANKING ===== -->
+      <div class="ranking-wins">
+        <div class="wins-header">
+          <div class="wins-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-trophy-icon lucide-trophy">
+              <path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978" />
+              <path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978" />
+              <path d="M18 9h1.5a1 1 0 0 0 0-5H18" />
+              <path d="M4 22h16" />
+              <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
+              <path d="M6 9H4.5a1 1 0 0 1 0-5H6" />
+            </svg>
+            <h2>Ranking de Vitórias</h2>
+          </div>
+          <button class="wins-live-button">
+            <div class="wins-pulse-effect"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-radio-icon lucide-radio">
+              <path d="M16.247 7.761a6 6 0 0 1 0 8.478" />
+              <path d="M19.075 4.933a10 10 0 0 1 0 14.134" />
+              <path d="M4.925 19.067a10 10 0 0 1 0-14.134" />
+              <path d="M7.753 16.239a6 6 0 0 1 0-8.478" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+            <span>AO VIVO</span>
+          </button>
+        </div>
+
+        <div class="wins-list" id="wins-list">
+          <div class="wins-item">
+            <div class="wins-user">
+              <div class="wins-user-avatar">86</div>
+              <div class="wins-user-info">
+                <div class="wins-username">Jogador86</div>
+                <div class="wins-time-ago">Tigrinho • 3h atrás</div>
+              </div>
+            </div>
+            <div class="wins-amount">R$ 7.550</div>
+          </div>
+
+          <div class="wins-item">
+            <div class="wins-user">
+              <div class="wins-user-avatar">26</div>
+              <div class="wins-user-info">
+                <div class="wins-username">Jogador526</div>
+                <div class="wins-time-ago">Roleta • 16h atrás</div>
+              </div>
+            </div>
+            <div class="wins-amount">R$ 4.288</div>
+          </div>
+
+          <div class="wins-item">
+            <div class="wins-user">
+              <div class="wins-user-avatar">64</div>
+              <div class="wins-user-info">
+                <div class="wins-username">Jogador264</div>
+                <div class="wins-time-ago">Aviador • 22h atrás</div>
+              </div>
+            </div>
+            <div class="wins-amount">R$ 2.163</div>
+          </div>
+
+          <div class="wins-item">
+            <div class="wins-user">
+              <div class="wins-user-avatar">23</div>
+              <div class="wins-user-info">
+                <div class="wins-username">Jogador923</div>
+                <div class="wins-time-ago">Plinko • 10h atrás</div>
+              </div>
+            </div>
+            <div class="wins-amount">R$ 909</div>
+          </div>
+
+          <div class="wins-item">
+            <div class="wins-user">
+              <div class="wins-user-avatar">69</div>
+              <div class="wins-user-info">
+                <div class="wins-username">Jogador869</div>
+                <div class="wins-time-ago">Blackjack • 5h atrás</div>
+              </div>
+            </div>
+            <div class="wins-amount">R$ 763</div>
+          </div>
+        </div>
+        </section>
+    </main>
+  </div>
   <script>
     function toggleSubmenu() {
       const submenu = document.getElementById("sidebar-submenu");
@@ -395,6 +533,8 @@
         arrowDown.style.transform = "rotate(180deg)";
       }
     }
+
+
   </script>
   <script src="js/script.js"></script>
 </body>

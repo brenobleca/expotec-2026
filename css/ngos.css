@@ -169,7 +169,7 @@ img {
 /** Logo Doe e Ganhe */
 .nav-logo {
   color: var(--white);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: color 0.4s;
@@ -185,7 +185,6 @@ img {
 .link-casino,
 .link-ngos {
   padding: 0.5rem 0.75rem;
-
   font-size: 0.95rem;
   text-decoration: none;
 }
