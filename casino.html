@@ -4,96 +4,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/casino.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Doe e Ganhe - Cassino</title>
 </head>
 
 <body>
   <!-- navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="nav-inner" role="navigation" aria-label="Navegação principal">
-        <!-- paginas -->
-        <div class="nav-container">
-          <!-- logo "Doe & Ganhe" -->
-          <div class="nav-logo">
+  <div class="navbar-bg">
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-inner" role="navigation" aria-label="Navegação principal">
+          <!-- paginas -->
+          <div class="nav-container">
+            <!-- logo "Doe & Ganhe" -->
+            <div class="nav-logo">
 
-            <h1 onclick="window.location.href='index.html'">Doe e Ganhe</h1>
+              <h1 onclick="window.location.href='index.html'">Doe e Ganhe</h1>
+            </div>
+            <!-- links/paginas cassino e ongs -->
+            <div class="nav-links">
+              <a class="casino-link-casino" href="casino.html">Cassino</a>
+              <a class="link-ngos" href="ngos.html">ONGs</a>
+            </div>
           </div>
-          <!-- links/paginas cassino e ongs -->
-          <div class="nav-links">
-            <a class="link-casino" href="casino.html">Cassino</a>
-            <a class="link-ngos" href="ngos.html">ONGs</a>
-          </div>
-        </div>
-        <div class="nav-container">
-          <!--* Botoes de acoes da navbar -->
-          <div class="nav-actions">
-            <!-- Buscar -->
-            <button class="nav-btn-icon" title="buscar" aria-label="buscar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-search-icon lucide-search">
-                <path d="m21 21-4.34-4.34" />
-                <circle cx="11" cy="11" r="8" />
-              </svg>
-            </button>
-            <!-- Ofertas -->
-            <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-gift-icon lucide-gift">
-                <rect x="3" y="8" width="18" height="4" rx="1" />
-                <path d="M12 8v13" />
-                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-              </svg>
-            </button>
-            <!-- Configurações -->
-            <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-settings-icon lucide-settings">
-                <path
-                  d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </button>
-            <div class="nav-btn-theme">
-              <!-- Botão de tema -->
-              <div class="theme-toggle" id="themeToggle" title="Alternar tema">
-                <div class="circle">
-                  <!-- Lua -->
-                  <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                  </svg>
-                  <!-- Sol -->
-                  <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                  </svg>
+          <div class="nav-container">
+            <!--* Botoes de acoes da navbar -->
+            <div class="nav-actions">
+              <!-- Buscar -->
+              <button class="nav-btn-icon" title="buscar" aria-label="buscar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-search-icon lucide-search">
+                  <path d="m21 21-4.34-4.34" />
+                  <circle cx="11" cy="11" r="8" />
+                </svg>
+              </button>
+              <!-- Ofertas -->
+              <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-gift-icon lucide-gift">
+                  <rect x="3" y="8" width="18" height="4" rx="1" />
+                  <path d="M12 8v13" />
+                  <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                  <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+                </svg>
+              </button>
+              <!-- Configurações -->
+              <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-settings-icon lucide-settings">
+                  <path
+                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+              <div class="nav-btn-theme">
+                <!-- Botão de tema -->
+                <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                  <div class="circle">
+                    <!-- Lua -->
+                    <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                    <!-- Sol -->
+                    <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="5" />
+                      <line x1="12" y1="1" x2="12" y2="3" />
+                      <line x1="12" y1="21" x2="12" y2="23" />
+                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                      <line x1="1" y1="12" x2="3" y2="12" />
+                      <line x1="21" y1="12" x2="23" y2="12" />
+                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-
-
-
-
           </div>
         </div>
       </div>
-
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- Modal de Login -->
   <div id="loginModal" class="modal">
@@ -112,7 +109,8 @@
       </form>
       <div style="margin-top:1rem;text-align:center;font-size:.95rem;">
         Não tem cadastro?
-        <a href="#" style="color:var(--orange-primary);text-decoration:underline;" onclick="OpenRegisterFromLogin()">Clique aqui</a>
+        <a href="#" style="color:var(--orange-primary);text-decoration:underline;"
+          onclick="OpenRegisterFromLogin()">Clique aqui</a>
       </div>
     </div>
   </div>
@@ -173,12 +171,16 @@
       <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
         <span class="close" onclick="closeRouletteModal()" style="position:absolute;top:12px;right:16px;">&times;</span>
         <div style="margin-bottom:1.5rem;">
-          <div id="rouletteWheel" style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
-            <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);"></div>
+          <div id="rouletteWheel"
+            style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
+            <div
+              style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);">
+            </div>
             <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
           </div>
         </div>
-        <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()" disabled>Iniciar Jogo</button>
+        <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()"
+          disabled>Iniciar Jogo</button>
         <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
       </div>
     </div>
@@ -186,19 +188,19 @@
 
   <div class="content">
     <!--* ====== Sidebar menu lateral ====== -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-menu">
-        <div class="sidebar-menu-item" onclick="toggleSubmenu()">
+    <aside class="casino-sidebar" id="casino-sidebar">
+      <div class="casino-sidebar-menu">
+        <div class="casino-sidebar-menu-item" onclick="toggleSubmenu()">
           <h2>Cassino</h2>
-          <svg id="sidebar-arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          <svg id="casino-sidebar-arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-chevron-up-icon lucide-chevron-up">
             <path d="m18 15-6-6-6 6" />
           </svg>
 
         </div>
-        <div class="sidebar-submenu" id="sidebar-submenu">
-          <div class="sidebar-submenu-item">
+        <div class="casino-sidebar-submenu" id="casino-sidebar-submenu">
+          <div class="casino-sidebar-submenu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-sparkles-icon lucide-sparkles">
@@ -210,7 +212,7 @@
             </svg>
             <h3>Jogos Populares</h3>
           </div>
-          <div class="sidebar-submenu-item">
+          <div class="casino-sidebar-submenu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-club-icon lucide-club">
@@ -219,7 +221,7 @@
             </svg>
             <h3>Cartas</h3>
           </div>
-          <div class="sidebar-submenu-item">
+          <div class="casino-sidebar-submenu-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-rocket-icon lucide-rocket">
@@ -231,14 +233,14 @@
             </svg>
             <h3>Cash</h3>
           </div>
-          <div class="sidebar-submenu-item">
+          <div class="casino-sidebar-submenu-item">
             <h3>Roleta</h3>
           </div>
-          <div class="sidebar-submenu-item">
+          <div class="casino-sidebar-submenu-item">
             <h3>Slots</h3>
           </div>
         </div>
-        <div class="sidebar-menu-item-ranking">
+        <div class="casino-sidebar-menu-item-ranking">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="lucide lucide-medal-icon lucide-medal">
@@ -255,137 +257,142 @@
       </div>
     </aside>
 
-          <!-- Modal da Roleta (vertical, igual ao index, com lógica de login e ONG) -->
-          <div id="rouletteModal" class="modal">
-            <div class="modal-roleta modal-content">
-              <!-- Container ONG + valor -->
-              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-                <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
-                <label for="ong-select">Escolha a ONG para doar:</label>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                  <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
-                  </button>
-                  <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
-                  </button>
-                  <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
-                  </button>
-                  <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
-                  </button>
-                </div>
-                <label for="bet-input">Valor da aposta:</label>
-                <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
-                <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
-                <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
-                  <strong>Como funciona?</strong><br>
-                  Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
-                </div>
+    <!-- Modal da Roleta (vertical, igual ao index, com lógica de login e ONG) -->
+    <div id="rouletteModal" class="modal">
+      <div class="modal-roleta modal-content">
+        <!-- Container ONG + valor -->
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+          <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
+          <label for="ong-select">Escolha a ONG para doar:</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
+            </button>
+            <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
+            </button>
+            <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
+            </button>
+            <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
+            </button>
+          </div>
+          <label for="bet-input">Valor da aposta:</label>
+          <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
+          <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
+          <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
+            <strong>Como funciona?</strong><br>
+            Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
+          </div>
+        </div>
+        <!-- Container Roleta -->
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <span class="close" onclick="closeRouletteModal()"
+            style="position:absolute;top:12px;right:16px;">&times;</span>
+          <div style="margin-bottom:1.5rem;">
+            <div id="rouletteWheel"
+              style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
+              <div
+                style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);">
               </div>
-              <!-- Container Roleta -->
-              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-                <span class="close" onclick="closeRouletteModal()" style="position:absolute;top:12px;right:16px;">&times;</span>
-                <div style="margin-bottom:1.5rem;">
-                  <div id="rouletteWheel" style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
-                    <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);"></div>
-                    <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
-                  </div>
-                </div>
-                <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()" disabled>Iniciar Jogo</button>
-                <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
-              </div>
+              <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
             </div>
           </div>
+          <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()"
+            disabled>Iniciar Jogo</button>
+          <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
+        </div>
+      </div>
+    </div>
 
-          <!--* ===== CONTEUDO PRINCIPAL ===== -->
-    <main class="main-content">
+    <!--* ===== CONTEUDO PRINCIPAL ===== -->
+    <main class="casino-main-content">
       <!--* Seção de jogos -->
       <!--* Jodos Populares -->
-      <section class="game-section">
-        <div class="game-title">
+      <section class="casino-game-section">
+        <div class="casino-game-title">
           <h2>Jogos Populares</h2>
         </div>
 
-        <div class="game-grid">
+        <div class="casino-game-grid">
 
           <!-- Jogo 1 Roleta -->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_roleta_roleta.png" alt="Imagem do jogo Roleta">
-              <div class="overlay">
-                <button class="btn-primary" id="game-play-roulette">Jogar</button>
+              <div class="casino-overlay">
+                <button class="casino-btn-primary" id="game-play-roulette">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Roleta</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Roleta</h3>
               <p>Roleta</p>
             </div>
           </div>
 
           <!-- Jogo 2 Tigrinho -->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_slots_fortune_tiger.jpeg" alt="Imagem do jogo Fortune Tiger">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-tiger-fortune">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Fortune Tiger</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Fortune Tiger</h3>
               <p>Slots</p>
             </div>
           </div>
 
           <!-- Jogo 3 Blackjack-->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cartas_blackjack.jpg" alt="Imagem do jogo Blackjack">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-blackjack">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Blackjack Clássico</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Blackjack Clássico</h3>
               <p>Cartas</p>
             </div>
           </div>
 
           <!-- Jogo 4 Aviator -->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cash_aviator.jpg" alt="Imagem do jogo Aviator">
-              <div class="overlay">
-                <button class="btn-primary" id="game-play-aviator" >Jogar</button>
+              <div class="casino-overlay">
+                <button class="btn-primary" id="game-play-aviator">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Aviator</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Aviator</h3>
               <p>Cash</p>
             </div>
           </div>
 
           <!-- Jogo 5 Campo Minado-->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cash_mines.png" alt="Imagem do jogo Campo Minado">
-              <div class="overlay">
-                <button class="btn-primary"  id="game-play-mines">Jogar</button>
+              <div class="casino-overlay">
+                <button class="btn-primary" id="game-play-mines">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Campo Minado</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Campo Minado</h3>
               <p>Cash</p>
             </div>
           </div>
 
           <!-- Jogo 6 Plinko-->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cash_plinko.jpg" alt="Imagem do jogo Plinko">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-plinko">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Plinko</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Plinko</h3>
               <p>Cash</p>
             </div>
           </div>
@@ -394,22 +401,22 @@
       </section>
 
       <!--* Jogos Cartas -->
-      <section class="game-section">
-        <div class="game-title">
+      <section class="casino-game-section">
+        <div class="casino-game-title">
           <h2>Cartas</h2>
         </div>
 
-        <div class="game-grid">
+        <div class="casino-game-grid">
           <!-- Jogo 1 Blackjack-->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cartas_blackjack.jpg" alt="Imagem do jogo Blackjack">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-blackjack">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Blackjack Clássico</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Blackjack Clássico</h3>
               <p>Cartas</p>
             </div>
           </div>
@@ -417,50 +424,50 @@
       </section>
 
       <!--* Jogos Cash  -->
-      <section class="game-section">
-        <div class="game-title">
+      <section class="casino-game-section">
+        <div class="casino-game-title">
           <h2>Cash</h2>
         </div>
 
-        <div class="game-grid">
+        <div class="casino-game-grid">
           <!-- Jogo 1 Aviator -->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cash_aviator.jpg" alt="Imagem do jogo Aviator">
-              <div class="overlay">
-                <button class="btn-primary" id="game-play-aviator" >Jogar</button>
+              <div class="casino-overlay">
+                <button class="btn-primary" id="game-play-aviator">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Aviator</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Aviator</h3>
               <p>Cash</p>
             </div>
           </div>
 
           <!-- Jogo 2 Campo Minado-->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cash_mines.png" alt="Imagem do jogo Campo Minado">
-              <div class="overlay">
-                <button class="btn-primary"  id="game-play-mines">Jogar</button>
+              <div class="casino-overlay">
+                <button class="btn-primary" id="game-play-mines">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Campo Minado</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Campo Minado</h3>
               <p>Cash</p>
             </div>
           </div>
 
           <!-- Jogo 3 Plinko-->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_cash_plinko.jpg" alt="Imagem do jogo Plinko">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-plinko">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Plinko</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Plinko</h3>
               <p>Cash</p>
             </div>
           </div>
@@ -469,22 +476,22 @@
 
 
       <!--* Jogos Roleta  -->
-      <section class="game-section">
-        <div class="game-title">
+      <section class="casino-game-section">
+        <div class="casino-game-title">
           <h2>Roleta</h2>
         </div>
 
-        <div class="game-grid">
+        <div class="casino-game-grid">
           <!-- Jogo 1 Roleta -->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_roleta_roleta.png" alt="Imagem do jogo Roleta">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-roulette">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Roleta</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Roleta</h3>
               <p>Roleta</p>
             </div>
           </div>
@@ -492,22 +499,22 @@
       </section>
 
       <!--* Jogos Slots  -->
-      <section class="game-section">
-        <div class="game-title">
+      <section class="casino-game-section">
+        <div class="casino-game-title">
           <h2>Slots</h2>
         </div>
 
-        <div class="game-grid">
+        <div class="casino-game-grid">
           <!-- Jogo 1 Tigrinho -->
-          <div class="game-card">
-            <div class="game-thumb">
+          <div class="casino-game-card">
+            <div class="casino-game-thumb">
               <img src="img/jogos/jogos_slots_fortune_tiger.jpeg" alt="Imagem do jogo Fortune Tiger">
-              <div class="overlay">
+              <div class="casino-overlay">
                 <button class="btn-primary" id="game-play-tiger-fortune">Jogar</button>
               </div>
             </div>
-            <div class="meta">
-              <h3 class="truncate">Fortune Tiger</h3>
+            <div class="casino-meta">
+              <h3 class="casino-truncate">Fortune Tiger</h3>
               <p>Slots</p>
             </div>
           </div>
@@ -515,9 +522,9 @@
       </section>
 
       <!--* ===== RANKING ===== -->
-      <div class="ranking-wins">
-        <div class="wins-header">
-          <div class="wins-title">
+      <div class="casino-ranking-wins">
+        <div class="casino-wins-header">
+          <div class="casino-wins-title">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-trophy-icon lucide-trophy">
@@ -530,8 +537,8 @@
             </svg>
             <h2>Ranking de Vitórias</h2>
           </div>
-          <button class="wins-live-button">
-            <div class="wins-pulse-effect"></div>
+          <button class="casino-wins-live-button">
+            <div class="casino-wins-pulse-effect"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-radio-icon lucide-radio">
@@ -545,60 +552,60 @@
           </button>
         </div>
 
-        <div class="wins-list" id="wins-list">
-          <div class="wins-item">
-            <div class="wins-user">
-              <div class="wins-user-avatar">86</div>
-              <div class="wins-user-info">
-                <div class="wins-username">Jogador86</div>
-                <div class="wins-time-ago">Tigrinho • 3h atrás</div>
+        <div class="casino-wins-list" id="casino-wins-list">
+          <div class="casino-wins-item">
+            <div class="casino-wins-user">
+              <div class="casino-wins-user-avatar">86</div>
+              <div class="casino-wins-user-info">
+                <div class="casino-wins-username">Jogador86</div>
+                <div class="casino-wins-time-ago">Tigrinho • 3h atrás</div>
               </div>
             </div>
-            <div class="wins-amount">R$ 7.550</div>
+            <div class="casino-wins-amount">R$ 7.550</div>
           </div>
 
-          <div class="wins-item">
-            <div class="wins-user">
-              <div class="wins-user-avatar">26</div>
-              <div class="wins-user-info">
-                <div class="wins-username">Jogador526</div>
-                <div class="wins-time-ago">Roleta • 16h atrás</div>
+          <div class="casino-wins-item">
+            <div class="casino-wins-user">
+              <div class="casino-wins-user-avatar">26</div>
+              <div class="casino-wins-user-info">
+                <div class="casino-wins-username">Jogador526</div>
+                <div class="casino-wins-time-ago">Roleta • 16h atrás</div>
               </div>
             </div>
-            <div class="wins-amount">R$ 4.288</div>
+            <div class="casino-wins-amount">R$ 4.288</div>
           </div>
 
-          <div class="wins-item">
-            <div class="wins-user">
-              <div class="wins-user-avatar">64</div>
-              <div class="wins-user-info">
-                <div class="wins-username">Jogador264</div>
-                <div class="wins-time-ago">Aviador • 22h atrás</div>
+          <div class="casino-wins-item">
+            <div class="casino-wins-user">
+              <div class="casino-wins-user-avatar">64</div>
+              <div class="casino-wins-user-info">
+                <div class="casino-wins-username">Jogador264</div>
+                <div class="casino-wins-time-ago">Aviador • 22h atrás</div>
               </div>
             </div>
-            <div class="wins-amount">R$ 2.163</div>
+            <div class="casino-wins-amount">R$ 2.163</div>
           </div>
 
-          <div class="wins-item">
-            <div class="wins-user">
-              <div class="wins-user-avatar">23</div>
-              <div class="wins-user-info">
-                <div class="wins-username">Jogador923</div>
-                <div class="wins-time-ago">Plinko • 10h atrás</div>
+          <div class="casino-wins-item">
+            <div class="casino-wins-user">
+              <div class="casino-wins-user-avatar">23</div>
+              <div class="casino-wins-user-info">
+                <div class="casino-wins-username">Jogador923</div>
+                <div class="casino-wins-time-ago">Plinko • 10h atrás</div>
               </div>
             </div>
-            <div class="wins-amount">R$ 909</div>
+            <div class="casino-wins-amount">R$ 909</div>
           </div>
 
-          <div class="wins-item">
-            <div class="wins-user">
-              <div class="wins-user-avatar">69</div>
-              <div class="wins-user-info">
-                <div class="wins-username">Jogador869</div>
-                <div class="wins-time-ago">Blackjack • 5h atrás</div>
+          <div class="casino-wins-item">
+            <div class="casino-wins-user">
+              <div class="casino-wins-user-avatar">69</div>
+              <div class="casino-wins-user-info">
+                <div class="casino-wins-username">Jogador869</div>
+                <div class="casino-wins-time-ago">Blackjack • 5h atrás</div>
               </div>
             </div>
-            <div class="wins-amount">R$ 763</div>
+            <div class="casino-wins-amount">R$ 763</div>
           </div>
         </div>
         </section>
@@ -625,4 +632,3 @@
   <script src="js/script.js"></script>
   <script src="js/casino.js"></script>
 </body>
-

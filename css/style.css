@@ -3,33 +3,40 @@
 /** Terceiro comentario */
 /* Quarto comentario */
 
-/*#4B0082  #D3D4D9 #FF7F50 #4B88A2 #FFF9FB*/
 /*! Temas */
 /*? Tema Claro */
 body.light {
+  --navbar-bg: #f9fafb;
   --purple-primary: #ff7f50;
   --purple-dark: rgba(232, 235, 237, 0.98);
-  --purple-primary-transparent: rgba(255, 127, 80, 0.3);
+  --purple-primay-transparent: rgba(255, 127, 80, 0.3);
   --orange-primary: #6a0dad;
   --orange-primary-hover: rgba(106, 13, 173, 0.5);
   --orange-primary-transparent: rgba(106, 13, 173, 0.3);
   --orange-light: #4b0082;
-  --gray-900: #c6c9ce;
-  --gray-800: #9ca3af;
+  --red: rgb(160, 50, 52);
+  --red-transparent: rgba(184, 2, 5, 0.4);
+  --red-transparent-pulsing: #ec0101;
+  --red-light: #ff9696;
+  --yellow-primary: #fbbf24;
+  --gray-1000: #f9fafb;
+  --gray-900: #dee0e4;
+  --gray-800: #c5c9d1;
   --gray-700: #374151;
   --gray-400: #1f2937;
   --gray-300: #0f172a;
   --white: #000;
-  --trasparent: rgba(0, 0, 0, .05);
+  --trasparent-color: rgba(0, 0, 0, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
 }
 
 /*? Tema padrão - Escuro */
 :root {
+  --navbar-bg: rgba(106, 13, 173, 0.95);
   --purple-primary: #6a0dad;
   --purple-dark: rgba(76, 0, 130, 0.98);
-  --purple-primary-transparent: rgba(106, 13, 173, 0.3);
+  --purple-primay-transparent: rgba(106, 13, 173, 0.3);
   --orange-primary: #ff7f50;
   --orange-primary-hover: rgba(255, 127, 80, 0.5);
   --orange-primary-transparent: rgba(255, 127, 80, 0.3);
@@ -39,6 +46,7 @@ body.light {
   --red-transparent-pulsing: #ef4444;
   --red-light: #ef4444;
   --yellow-primary: #fbbf24;
+  --gray-1000: #020617;
   --gray-900: #0f172a;
   --gray-800: #1f2937;
   --gray-700: #374151;
@@ -48,13 +56,14 @@ body.light {
   --black: #131211;
   --moon-color: rgb(131, 62, 180);
   --sun-color: rgb(255, 165, 80);
-  --trasparent: rgba(255, 255, 255, .05);
+  --trasparent-color: rgba(255, 255, 255, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
 }
 
 * {
   box-sizing: border-box;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 html,
@@ -68,7 +77,6 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--gray-900);
   color: var(--white);
-  transition: background-color 0.4s, color 0.4s;
 }
 
 img {
@@ -85,8 +93,7 @@ img {
   padding-right: 1rem;
 }
 
-/** ===== BOTÕES ===== */
-
+/** BOTÕES */
 /* Botão primário */
 .btn-primary {
   background: linear-gradient(135deg,
@@ -105,6 +112,18 @@ img {
 .btn-primary:hover {
   transition: var(--transition-fast);
   filter: brightness(1.1)
+}
+
+.btn-secundary {
+  background: transparent;
+  color: var(--white);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid var(--orange-primary);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
 }
 
 /* Botão de largura total */
@@ -132,7 +151,6 @@ img {
   border-radius: 8px;
   border: 1px solid var(--orange-primary);
   cursor: pointer;
-  transition: background 200ms;
 }
 
 .btn-outline:hover {
@@ -140,24 +158,27 @@ img {
 }
 
 /** ===== NAVBAR ===== */
-.navbar {
-  background: var(--purple-dark);
-  transition: background 0.4s;
-}
-
-.nav-logo,
-.link-casino,
-.link-ngos {
-  color: var(--white);
-  transition: color 0.4s;
-}
-
-.navbar {
-  background: var(--purple-dark);
+.navbar-bg {
   position: fixed;
   width: 100%;
-  z-index: 60;
-  box-shadow: 0px .5rem .5rem 0px rgba(0, 0, 0, 0.5);
+  height: 7rem;
+  z-index: 1;
+  background: linear-gradient(to bottom, var(--purple-dark) 0%, var(--purple-dark) 25%, transparent 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background: var(--navbar-bg);
+  position: fixed;
+  width: 97vw;
+  z-index: 2;
+  box-shadow: 0px .5rem .5rem 0px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--trasparent-color);
+  display: flex;
+  align-items: center;
 }
 
 .nav-inner {
@@ -173,7 +194,7 @@ img {
   gap: 0.5rem;
 }
 
-/** Logo Doe e Ganhe */
+/* Logo Doe e Ganhe */
 .nav-logo {
   color: var(--white);
   font-size: .9rem;
@@ -189,12 +210,56 @@ img {
 }
 
 .link-casino,
-.link-ngos {
+.link-ngos,
+.ngos-link-ngos,
+.casino-link-casino {
   color: var(--gray-300);
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
   font-size: 0.95rem;
   text-decoration: none;
+}
+
+.link-casino{
+  color: var(--gray-300);
+}
+
+.casino-link-casino {
+  position: relative;
+  color: var(--orange-primary);
+  padding-bottom: 1px;
+}
+
+.casino-link-casino::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0px;
+  height: 3px;
+  background: var(--orange-primary);
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.ngos-link-ngos {
+  position: relative;
+  color: var(--orange-primary);
+  padding-bottom: 1px;
+}
+
+.ngos-link-ngos::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0px;
+  height: 3px;
+  background: var(--orange-primary);
+  border-radius: 50px;
+  z-index: 1;
 }
 
 .link-casino:hover,
@@ -220,7 +285,6 @@ img {
 
 .nav-btn-icon:hover {
   color: var(--white);
-  /* transform: scale(1.05); */
   transition: var(--transition-fast);
 }
 
@@ -238,12 +302,10 @@ img {
   border-color: var(--orange-primary);
   border-width: 1px;
   border-style: solid;
-  /* background: rgba(0, 0, 0, 0.30); */
   cursor: pointer;
   display: flex;
   align-items: center;
   padding: 3px;
-  transition: background 0.3s;
 }
 
 .circle {
@@ -298,7 +360,6 @@ body.light .sun {
   color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  /* font-size:1rem; */
   font-weight: 600;
   border: 0;
   cursor: pointer;
@@ -310,14 +371,12 @@ body.light .sun {
   color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  /* font-size:1rem; */
   border: 1px solid var(--orange-primary);
   margin-left: 0.5rem;
 }
 
 .nav-btn-register:hover,
 .nav-btn-login:hover {
-  /* transform: scale(1.05); */
   transition: var(--transition-fast);
   filter: brightness(1.1);
 }
@@ -326,7 +385,7 @@ body.light .sun {
   background: var(--orange-primary);
 }
 
-/** ===== MODAL ===== */
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
@@ -340,7 +399,7 @@ body.light .sun {
   padding: 1rem;
 }
 
-/** ===== CONTEÚDO DO MODAL ===== */
+/* ===== CONTEÚDO DO MODAL ===== */
 .modal-content {
   background: var(--gray-900);
   color: var(--gray-400);
@@ -382,7 +441,7 @@ body.light .sun {
   color: var(--primary-color);
 }
 
-/** ===== FORMULÁRIO ===== */
+/* ===== FORMULÁRIO ===== */
 .modal-content h2 {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -459,6 +518,7 @@ body.light .sun {
 .banner {
   position: relative;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+  margin-top: -6rem;
 }
 
 .banner img {
@@ -607,21 +667,6 @@ body.light .sun {
   cursor: grab;
   padding: 1rem 1rem 2rem 3rem;
 }
-
-/* .game-grid {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto !important;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 1rem 0 2rem 3rem;
-  cursor: grab;
-  min-width: 100vw;
-  width: 100%;
-  max-width: 100vw;
-  scroll-padding-left: 1rem;
-} */
 
 .game-grid.active {
   cursor: grabbing;
@@ -834,7 +879,6 @@ body.light .sun {
 /* Ranking Wins Section */
 .ranking-wins {
   backdrop-filter: brightness(0.8);
-  /* background: rgba(31, 41, 55, 0.3); */
   border: 1px solid var(--gray-800);
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -1000,12 +1044,6 @@ footer .footer-grid {
   color: var(--gray-400);
 }
 
-/* .footer-list a:hover,
-.footer-media a:hover,
-.footer-grid a:hover {
-  color: var(--primary-orange);
-} */
-
 .container-footer a:hover{
   color: var(--orange-primary);
 }
@@ -1031,4 +1069,573 @@ footer .footer-grid {
 
 footer p {
   color: var(--gray-400);
+}
+
+/*! ========== CASINO.HTML ===========  */ 
+/** ===== MAIN =====  */
+.content{
+  padding-top: 4rem;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/** ===== SIDEBAR ===== */
+.casino-sidebar {
+  padding-top: 6rem;
+  width: 15rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--gray-900);
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  border-right: 1px solid var(--gray-800);
+}
+
+.casino-sidebar h2 {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.casino-sidebar h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.casino-sidebar-menu{
+  background: var(--gray-900);
+}
+
+.casino-sidebar-menu-item, .casino-sidebar-menu-item-ranking {
+  background: var(--gray-900);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  margin: 0 .25rem .5rem .25rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  height: 3rem;
+}
+
+.casino-sidebar-menu-item{
+  justify-content: space-between;
+}
+
+.casino-sidebar-menu-item:hover, .casino-sidebar-menu-item-ranking:hover,.casino-sidebar-submenu-item:hover {
+  background: var(--trasparent);
+}
+
+.casino-sidebar-submenu {
+  margin: 0 .5rem .5rem .5rem;
+  display: block;
+  flex-direction: column;
+  color: var(--gray-300);
+}
+
+.casino-sidebar-submenu-item {
+  background: var(--gray-900);
+  padding: 10px;
+  margin: 3px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 3rem;
+  border-radius: 30px;
+}
+
+.casino-hidden {
+  display: none;
+}
+
+#casino-sidebar-arrow-down {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+#casino-sidebar-arrow-up {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/** ===== MAIN CONTENT ===== */
+.casino-main-content {
+  margin-left: 16rem; /* igual à sidebar */
+  padding: 1rem;
+  width: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/** ===== JOGOS ===== */
+/* Section e Cards */
+.casino-game-section {
+  margin-bottom: 4rem;
+}
+
+.casino-game-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.casino-game-card{
+  background: var(--gray-800);
+  border-radius: 12px;
+  flex: 0 0 auto;
+  min-width: 10rem;
+  width: 10rem;
+  max-width: 90vw;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.casino-game-thumb {
+  position: relative;
+}
+
+.casino-game-card img {
+  height: 10rem;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.casino-game-card img:hover {
+  opacity: 1;
+}
+
+.casino-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.casino-game-thumb:hover .casino-overlay {
+  opacity: 1;
+}
+
+.casino-meta {
+  /* padding: 0rem, 1rem, 1rem, 1rem; */
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.casino-truncate{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.05rem;
+  margin: .75rem 0 .5rem 0;
+}
+
+
+.casino-meta p{
+  margin:0;
+  color:var(--gray-400);
+  font-size:.85rem;
+}
+
+/** ===== RANKING DE VITORIAS =====  */
+/* Ranking Wins Section */
+.casino-ranking-wins {
+  backdrop-filter: brightness(0.8);
+  /* background: rgba(31, 41, 55, 0.3); */
+  border: 1px solid var(--gray-800);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.casino-wins-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.casino-wins-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.casino-wins-title svg {
+  color: var(--yellow-primary);
+}
+
+.casino-wins-title h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.casino-wins-live-button {
+  background: var(--red-transparent);
+  color: var(--red-light);
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.casino-wins-live-button:hover {
+  background: var(--red);
+}
+
+.casino-wins-pulse-effect {
+  position: absolute;
+  inset: 0;
+  background: var(--red-transparent-pulsing);
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.casino-wins-live-button svg,
+.casino-wins-live-button span {
+  position: relative;
+  z-index: 10;
+}
+
+.casino-wins-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.casino-wins-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(17, 24, 39, 0.4);
+  border: 1px solid rgba(55, 65, 81, 0.2);
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.casino-wins-item:hover {
+  background: rgba(17, 24, 39, 0.6);
+}
+
+.casino-wins-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.casino-wins-user-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--purple-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.casino-wins-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.casino-wins-username {
+  color: white;
+  font-weight: 500;
+}
+
+.casino-wins-time-ago {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.casino-wins-amount {
+  color: #fbbf24;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+/** ===== MODAL DOS JOGOS =====  */
+
+/* Modal da Roleta: layout horizontal, input funcional */
+  .modal-roleta {
+    max-width: 700px;
+    width: 100%;
+    display: flex !important;
+    gap: 2rem;
+    align-items: center;
+    height: auto;
+    overflow: visible;
+    background: var(--gray-900);
+    color: var(--gray-400);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: fadeIn 0.6s ease;
+  }
+
+  .modal-roleta input[type="number"] {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    background: var(--gray-800);
+    color: var(--white);
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  .modal-roleta input[type="number"]:focus {
+    outline: none;
+    border-color: var(--orange-primary);
+    box-shadow: 0 0 6px var(--orange-primary);
+  }
+
+
+
+/*! ========== NGOS.HTML ===========  */ 
+/** ===== MAIN ===== */
+main {
+  align-items: center;
+  padding-top: 6rem;
+}
+
+/** ===== BANNER ===== */
+.ngos-banner {
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  height: 65vh;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.ngos-banner img {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.ngos-banner-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(11,16,32,0.85), rgba(11,16,32,0.18));
+  justify-content: space-between;
+}
+
+.ngos-banner-badge{
+  display: flex;
+  width:max-content;
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .75rem;
+  background: linear-gradient(135deg, var(--purple-primary), var(--orange-primary));
+  color: white;
+  text-align: center;
+  align-items: center;
+  gap: .25rem;
+}
+
+/** texto do banner */
+.ngos-banner-text-inner {
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.ngos-banner-text-orange {
+  color: var(--orange-primary);
+  font-weight: 700;
+}
+
+.ngos-banner-text-purple {
+  color: var(--purple-primary);
+  font-weight: 700;
+}
+
+.ngos-banner h1 {
+  font-size: 2.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ngos-banner-text-gradient{
+  background: linear-gradient(180deg, var(--purple-primary), var(--orange-primary));
+  -webkit-background-clip: text;
+  background-clip:text;
+  color:transparent;
+}
+
+.ngos-banner p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  max-width: 50rem;
+}
+
+/* Botões */
+
+.ngos-banner-btns{
+  display: flex;
+  gap: 1rem;
+}
+
+/** ===== DADOS ===== */
+
+
+/** ===== COMO FUNCIONA ===== */
+.ngos-how{
+  padding: 1rem 3rem;
+  background-color: var(--trasparent-color);
+  border-radius: 14px;
+  border: 1px solid var(--gray-800);
+}
+
+.ngos-how-header{
+  text-align: center;
+  align-items: center;
+}
+
+.ngos-how-grid{
+  display:grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap:1rem; 
+  margin: 3rem 2rem 2rem 2rem;
+}
+
+.ngos-how-grid-step{
+  text-align: center;
+}
+
+.ngos-how-grid-step-bubble{
+  margin:0 auto 12px; 
+  width:64px; 
+  height:64px; 
+  border-radius:50%; 
+  display:flex; align-items:center; 
+  justify-content:center; 
+  font-weight:700;
+  background: linear-gradient(135deg, var(--purple-primary), var(--orange-primary)); 
+  color:white; 
+  font-size:20px;
+}
+
+
+/** ===== CATEGORIAS ===== */
+
+
+/** ===== ONGS ===== */
+.ngos-section {
+  padding: 3rem 0;
+}
+
+.ngos-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ngos-card {
+  background: var(--gray-800);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.ngos-card .ngos-card-body {
+  padding: 1rem;
+}
+
+.ngos-container-ongs {
+  text-align: center;
+}
+
+.ngos-ongs-grid {
+  margin-top: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem 3rem;
+}
+
+.ngos-progress-outer {
+  background: #374151;
+  border-radius: 9999px;
+  height: 0.625rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.ngos-progress-inner {
+  height: 0.625rem;
+  border-radius: 9999px;
+}
+
+.ngos-progress-inner-1 {
+  width: 40%;
+  background: var(--purple-primary);
+  width: 75%;
+  background: var(--orange-primary)
+}
+
+.ngos-progress-inner-2 {
+  height: 0.625rem;
+  border-radius: 9999px;
+  width: 40%;
+  background: var(--purple-primary)
+}
+
+.ngos-card-body p {
+  color: var(--gray-400);
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+.ngos-progress-inner-3 {
+  height: 0.625rem;
+  border-radius: 9999px;
+  width: 90%;
+  background: var(--orange-primary)
 }

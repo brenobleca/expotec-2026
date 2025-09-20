@@ -1,98 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/ngos.css">
-    <title>Doe e Ganhe</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Doe e Ganhe - Ongs</title>
 </head>
 
 <body>
   <!-- navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="nav-inner" role="navigation" aria-label="Navegação principal">
-        <!-- paginas -->
-        <div class="nav-container">
-          <!-- logo "Doe & Ganhe" -->
-          <div class="nav-logo">
+  <div class="navbar-bg">
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-inner" role="navigation" aria-label="Navegação principal">
+          <!-- paginas -->
+          <div class="nav-container">
+            <!-- logo "Doe & Ganhe" -->
+            <div class="nav-logo">
 
-            <h1 onclick="window.location.href='index.html'">Doe e Ganhe</h1>
+              <h1 onclick="window.location.href='index.html'">Doe e Ganhe</h1>
+            </div>
+            <!-- links/paginas cassino e ongs -->
+            <div class="nav-links">
+              <a class="link-casino" href="casino.html">Cassino</a>
+              <a class="ngos-link-ngos" href="ngos.html">ONGs</a>
+            </div>
           </div>
-          <!-- links/paginas cassino e ongs -->
-          <div class="nav-links">
-            <a class="link-casino" href="casino.html">Cassino</a>
-            <a class="link-ngos" href="ngos.html">ONGs</a>
-          </div>
-        </div>
-        <div class="nav-container">
-          <!--* Botoes de acoes da navbar -->
-          <div class="nav-actions">
-            <!-- Buscar -->
-            <button class="nav-btn-icon" title="buscar" aria-label="buscar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-search-icon lucide-search">
-                <path d="m21 21-4.34-4.34" />
-                <circle cx="11" cy="11" r="8" />
-              </svg>
-            </button>
-            <!-- Ofertas -->
-            <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-gift-icon lucide-gift">
-                <rect x="3" y="8" width="18" height="4" rx="1" />
-                <path d="M12 8v13" />
-                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-              </svg>
-            </button>
-            <!-- Configurações -->
-            <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-settings-icon lucide-settings">
-                <path
-                  d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </button>
-            <div class="nav-btn-theme">
-              <!-- Botão de tema -->
-              <div class="theme-toggle" id="themeToggle" title="Alternar tema">
-                <div class="circle">
-                  <!-- Lua -->
-                  <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                  </svg>
-                  <!-- Sol -->
-                  <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                  </svg>
+          <div class="nav-container">
+            <!--* Botoes de acoes da navbar -->
+            <div class="nav-actions">
+              <!-- Buscar -->
+              <button class="nav-btn-icon" title="buscar" aria-label="buscar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-search-icon lucide-search">
+                  <path d="m21 21-4.34-4.34" />
+                  <circle cx="11" cy="11" r="8" />
+                </svg>
+              </button>
+              <!-- Ofertas -->
+              <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-gift-icon lucide-gift">
+                  <rect x="3" y="8" width="18" height="4" rx="1" />
+                  <path d="M12 8v13" />
+                  <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                  <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+                </svg>
+              </button>
+              <!-- Configurações -->
+              <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-settings-icon lucide-settings">
+                  <path
+                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+              <div class="nav-btn-theme">
+                <!-- Botão de tema -->
+                <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                  <div class="circle">
+                    <!-- Lua -->
+                    <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                    <!-- Sol -->
+                    <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="5" />
+                      <line x1="12" y1="1" x2="12" y2="3" />
+                      <line x1="12" y1="21" x2="12" y2="23" />
+                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                      <line x1="1" y1="12" x2="3" y2="12" />
+                      <line x1="21" y1="12" x2="23" y2="12" />
+                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!--* Botoes de cadastrar e login -->
-            <button class="nav-btn-register" onclick="SignUpOpenModal()">Cadastre-se</button>
-            <button class="nav-btn-login" onclick="openModal()">Login</button>
+              <!--* Botoes de cadastrar e login -->
+              <button class="nav-btn-register" onclick="SignUpOpenModal()">Cadastre-se</button>
+              <button class="nav-btn-login" onclick="openModal()">Login</button>
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
-  </nav>
+      </div>
+    </nav>
+  </div>
 
   <!-- Modal de Login -->
   <div id="loginModal" class="modal">
@@ -111,7 +114,7 @@
     </div>
   </div>
 
-  <!-- Modal de Registro -->
+  <!--* Modal de Registro -->
   <div id="SignUpModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="CloseRegisterModal()">&times;</span>
@@ -139,11 +142,136 @@
 
   <!--! ===== CONTEUDO PRINCIPAL ===== -->
   <main>
+    <div class="container">
+      <section class="ngos-banner">
+        <img src="https://placehold.co/600x300" alt="Banner de Ongs" />
+        <div class="ngos-banner-inner">
+          <div class="ngos-banner-badge">
+            <div class="ngos-banner-badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-heart-handshake-icon lucide-heart-handshake">
+                <path
+                  d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762" />
+              </svg>
+            </div> FAÇA A DIFERENÇA
+          </div>
+          <div class="ngos-banner-text-inner">
+            <h1>
+              <span class="ngos-banner-text-gradient">Jogue</span><br>
+              <span class="ngos-banner-text-white">e Transforme Vidas</span>
+            </h1>
+            <p>
+              A cada aposta que você faz, uma porcentagem é destinada automaticamente para a ONG de sua escolha.
+              Diversão com propósito social!
+            </p>
+          </div>
+          <div class="ngos-banner-btns">
+            <button id="ngos-banner-btns-choose-ngo" class="btn-primary">Escolher Minha ONG</button>
+            <button id="ngos-banner-btns-how-it-works" class="btn-secundary">Como Funciona</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--* ===== DADOS ===== -->
+
+
+    <!--* ===== COMO FUNCIONA ===== -->
+    <div class="container">
+      <section class="ngos-how" id="ngos-how">
+        <div class="ngos-how-header">
+          <h2>Como Funciona</h2>
+          <p>Simples, transparente e automático</p>
+        </div>
+        <div class="ngos-how-grid">
+          <div class="ngos-how-grid-step">
+            <div class="ngos-how-grid-step-bubble">1</div>
+            <h3>Escolha sua ONG</h3>
+            <p>Selecione uma das nossas ONGs parceiras verificadas que mais te inspira</p>
+          </div>
+
+          <div class="ngos-how-grid-step">
+            <div class="ngos-how-grid-step-bubble">2</div>
+            <h3>Jogue e Doe</h3>
+            <p>Divirta-se com nossos jogos de cassino como sempre fez ou doe diretamente</p>
+          </div>
+
+          <div class="ngos-how-grid-step">
+            <div class="ngos-how-grid-step-bubble">3</div>
+            <h3>Doe automaticamente</h3>
+            <p>50% de cada aposta é automaticamente destinado à sua ONG escolhida</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!--* ===== CATEGORIAS ===== -->
+    <div class="container">
+      <section class="ngos-categories">
+        <div class="ngos-categories-header">
+          <h2><span class="ngos-categories-header-icon">🎯</span> Categorias</h2>
+          <p>Escolha a causa que mais te inspira</p>
+        </div>
+        <div class="ngos-categories-grid">
+      </section>
+    </div>
+
+    <!--* ===== ONGS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="ngos-container-ongs">
+          <h2>ONGs Parceiras</h2>
+          <p>Organizações que fazem a diferença</p>
+        </div>
+      </div>
+      <div class="grid ongs-grid">
+        <div class="card">
+          <img src="https://placehold.co/600x300" alt="">
+          <div class="card-body">
+            <h3>Educação para Todos</h3>
+            <p>Leva educação de qualidade para comunidades carentes</p>
+            <div class="progress-outer">
+              <div class="progress-inner progress-inner-1"></div>
+            </div>
+            <p>R$75.000 arrecadados de R$100.000</p>
+            <button class="btn-full-width">Doar Agora</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://placehold.co/600x300" alt="">
+          <div class="card-body">
+            <h3>Patas Felizes</h3>
+            <p>Resgate e cuidado de animais abandonados</p>
+            <div class="progress-outer">
+              <div class="progress-inner progress-inner-2"></div>
+            </div>
+            <p>R$40.000 arrecadados de R$100.000</p>
+            <button class="btn-full-width">Doar Agora</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://placehold.co/600x300" alt="">
+          <div class="card-body">
+            <h3>Natureza Viva</h3>
+            <p>Preservação de áreas ambientais ameaçadas</p>
+            <div class="progress-outer">
+              <div class="progress-inner progress-inner-3"></div>
+            </div>
+            <p>R$90.000 arrecadados de R$100.000</p>
+            <button class="btn-full-width">Doar Agora</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
   </main>
   <script src="js/script.js"></script>
   <script>
-
+    
   </script>
 </body>
+
 </html>
