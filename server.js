@@ -3,15 +3,11 @@ const mysql = require('mysql2'); // Importa o conector
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const jwt = require('jsonwebtoken');
 const app = express();
 const port = 4000;
 const dotenv = require('dotenv');
 dotenv.config();
-const dotenv = require('dotenv');
-dotenv.config();
 
-const key=process.env.key;
 const key=process.env.key;
 // Configuração da conexão com o banco de dados
 const db = mysql.createConnection({

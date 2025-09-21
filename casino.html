@@ -19,73 +19,84 @@
             <!-- logo "Doe & Ganhe" -->
             <div class="nav-logo">
 
-              <h1 onclick="window.location.href='index.html'">Doe e Ganhe</h1>
-            </div>
-            <!-- links/paginas cassino e ongs -->
-            <div class="nav-links">
-              <a class="casino-link-casino" href="casino.html">Cassino</a>
-              <a class="link-ngos" href="ngos.html">ONGs</a>
-            </div>
+            <h1 id="home" onclick="window.location.href='index.html'">Doe e Ganhe</h1>
           </div>
-          <div class="nav-container">
-            <!--* Botoes de acoes da navbar -->
-            <div class="nav-actions">
-              <!-- Buscar -->
-              <button class="nav-btn-icon" title="buscar" aria-label="buscar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-search-icon lucide-search">
-                  <path d="m21 21-4.34-4.34" />
-                  <circle cx="11" cy="11" r="8" />
-                </svg>
-              </button>
-              <!-- Ofertas -->
-              <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-gift-icon lucide-gift">
-                  <rect x="3" y="8" width="18" height="4" rx="1" />
-                  <path d="M12 8v13" />
-                  <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                  <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-                </svg>
-              </button>
-              <!-- Configurações -->
-              <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-settings-icon lucide-settings">
-                  <path
-                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              </button>
-              <div class="nav-btn-theme">
-                <!-- Botão de tema -->
-                <div class="theme-toggle" id="themeToggle" title="Alternar tema">
-                  <div class="circle">
-                    <!-- Lua -->
-                    <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                    </svg>
-                    <!-- Sol -->
-                    <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="5" />
-                      <line x1="12" y1="1" x2="12" y2="3" />
-                      <line x1="12" y1="21" x2="12" y2="23" />
-                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                      <line x1="1" y1="12" x2="3" y2="12" />
-                      <line x1="21" y1="12" x2="23" y2="12" />
-                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                    </svg>
-                  </div>
+          <!-- links/paginas cassino e ongs -->
+          <div class="nav-links">
+            <a class="link-casino" href="casino.html">Cassino</a>
+            <a class="link-ngos" href="ngos.html">ONGs</a>
+          </div>
+        </div>
+        <div class="nav-container">
+          <!--* Botoes de acoes da navbar -->
+          <div class="nav-actions">
+            <!-- Buscar -->
+            <button class="nav-btn-icon" title="buscar" aria-label="buscar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-search-icon lucide-search">
+                <path d="m21 21-4.34-4.34" />
+                <circle cx="11" cy="11" r="8" />
+              </svg>
+            </button>
+            <!-- Ofertas -->
+            <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-gift-icon lucide-gift">
+                <rect x="3" y="8" width="18" height="4" rx="1" />
+                <path d="M12 8v13" />
+                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+              </svg>
+            </button>
+            <!-- Configurações -->
+            <button class="nav-btn-icon invisible" id="config" title="Configurações" aria-label="Configurações">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-settings-icon lucide-settings">
+                <path
+                  d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+            <div class="nav-btn-theme">
+              <!-- Botão de tema -->
+              <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <div class="circle">
+                  <!-- Lua -->
+                  <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                  </svg>
+                  <!-- Sol -->
+                  <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                  </svg>
                 </div>
               </div>
             </div>
+            <!-- logout -->
+            <button class="nav-btn-icon invisible" id="logout" title="logout" aria-label="logout">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out-icon lucide-log-out">
+                <path d="m16 17 5-5-5-5"/>
+                <path d="M21 12H9"/>
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+              </svg>
+            </button>
+
+
+
+
           </div>
         </div>
       </div>
@@ -144,44 +155,84 @@
 
   <!-- Modal da Roleta -->
   <div id="rouletteModal" class="modal">
-    <div class="modal-roleta modal-content">
-      <!-- Container ONG + valor -->
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-        <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
-        <label for="ong-select">Escolha a ONG para doar:</label>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-          <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
-          </button>
-          <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
-          </button>
-          <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
-          </button>
-          <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
-          </button>
+    <div class="modal-roleta-content">
+      <!-- ESQUERDA: ONG + input -->
+      <div class="modal-roleta-left">
+        <h2>Escolha sua ONG</h2>
+        <p>Selecione a ONG que receberá parte da sua aposta</p>
+        <div class="ongs-list">
+          <!-- Cards de ONG -->
+          <div class="ong-card" onclick="selectOng(1)">
+            <img src="img/ongs/ayrton_senna.jpg" alt="Instituto Ayrton Senna">
+            <div class="ong-info">
+              <span class="ong-tag">Educação</span>
+              <h3>Instituto Ayrton Senna</h3>
+              <p>Educação de qualidade para crianças e jovens em situação de vulnerabilidade.</p>
+              <span class="ong-location">São Paulo, SP</span>
+              <span class="ong-supporters">2.847 apoiadores</span>
+              <span class="ong-impact">45.000 crianças atendidas</span>
+            </div>
+          </div>
+          <div class="ong-card" onclick="selectOng(2)">
+            <img src="img/ongs/acao_cidadania.jpg" alt="Ação da Cidadania">
+            <div class="ong-info">
+              <span class="ong-tag">Combate à Fome</span>
+              <h3>Ação da Cidadania</h3>
+              <p>Combate à fome e à pobreza, promovendo inclusão social.</p>
+              <span class="ong-location">Rio de Janeiro, RJ</span>
+              <span class="ong-supporters">1.653 apoiadores</span>
+              <span class="ong-impact">12.000 famílias atendidas</span>
+            </div>
+          </div>
+          <div class="ong-card" onclick="selectOng(3)">
+            <img src="img/ongs/wwf.jpg" alt="WWF Brasil">
+            <div class="ong-info">
+              <span class="ong-tag">Meio Ambiente</span>
+              <h3>WWF Brasil</h3>
+              <p>Conservação da natureza e promoção do uso sustentável.</p>
+              <span class="ong-location">Brasília, DF</span>
+              <span class="ong-supporters">3.921 apoiadores</span>
+              <span class="ong-impact">2.500 hectares protegidos</span>
+            </div>
+          </div>
+          <div class="ong-card" onclick="selectOng(4)">
+            <img src="img/ongs/sos_mata.jpg" alt="SOS Mata Atlântica">
+            <div class="ong-info">
+              <span class="ong-tag">Meio Ambiente</span>
+              <h3>SOS Mata Atlântica</h3>
+              <p>Proteção e recuperação da Mata Atlântica brasileira.</p>
+              <span class="ong-location">São Paulo, SP</span>
+              <span class="ong-supporters">2.156 apoiadores</span>
+              <span class="ong-impact">2.156 árvores plantadas</span>
+            </div>
+          </div>
+          <div class="ong-card" onclick="selectOng(5)">
+            <img src="img/ongs/crianca_esperanca.jpg" alt="Criança Esperança">
+            <div class="ong-info">
+              <span class="ong-tag">Infância</span>
+              <h3>Criança Esperança</h3>
+              <p>Projetos sociais para crianças e adolescentes em todo o Brasil.</p>
+              <span class="ong-location">Brasil</span>
+              <span class="ong-supporters">5.000 apoiadores</span>
+              <span class="ong-impact">100.000 crianças atendidas</span>
+            </div>
+          </div>
+          <!-- Adicione mais cards se quiser -->
         </div>
-        <label for="bet-input">Valor da aposta:</label>
-        <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
-        <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
-        <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
-          <strong>Como funciona?</strong><br>
-          Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
+        <!-- Input de valor de aposta EMBAIXO das ONGs -->
+        <div class="bet-input-container">
+          <label for="bet-input">Valor da aposta:</label>
+          <input type="number" id="bet-input" placeholder="Digite o valor" min="1" disabled>
+          <div id="bet-message"></div>
         </div>
       </div>
-      <!-- Container Roleta -->
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <span class="close" onclick="closeRouletteModal()" style="position:absolute;top:12px;right:16px;">&times;</span>
-        <div style="margin-bottom:1.5rem;">
-          <div id="rouletteWheel"
-            style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
-            <div
-              style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);">
-            </div>
-            <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
-          </div>
+      <!-- DIREITA: Roleta + botão -->
+      <div class="modal-roleta-right">
+        <div class="roulette-wheel-container">
+          <canvas id="rouletteWheel" width="220" height="220"></canvas>
+          <div id="result"></div>
         </div>
-        <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()"
-          disabled>Iniciar Jogo</button>
-        <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
+        <button id="spinBtn" class="btn-primary" onclick="spinRoulette()" disabled>Iniciar Jogo</button>
       </div>
     </div>
   </div>
@@ -257,50 +308,45 @@
       </div>
     </aside>
 
-    <!-- Modal da Roleta (vertical, igual ao index, com lógica de login e ONG) -->
-    <div id="rouletteModal" class="modal">
-      <div class="modal-roleta modal-content">
-        <!-- Container ONG + valor -->
-        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
-          <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
-          <label for="ong-select">Escolha a ONG para doar:</label>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-            <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
-            </button>
-            <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
-            </button>
-            <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
-            </button>
-            <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
-            </button>
-          </div>
-          <label for="bet-input">Valor da aposta:</label>
-          <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
-          <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
-          <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
-            <strong>Como funciona?</strong><br>
-            Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
-          </div>
-        </div>
-        <!-- Container Roleta -->
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-          <span class="close" onclick="closeRouletteModal()"
-            style="position:absolute;top:12px;right:16px;">&times;</span>
-          <div style="margin-bottom:1.5rem;">
-            <div id="rouletteWheel"
-              style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
-              <div
-                style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);">
+          <!-- Modal da Roleta (vertical, igual ao index, com lógica de login e ONG)
+          <div id="rouletteModal" class="modal">
+            <div class="modal-roleta modal-content">
+               Container ONG + valor
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+                <h2 style="color:var(--orange-primary);margin-bottom:1.5rem;">Roleta Solidária</h2>
+                <label for="ong-select">Escolha a ONG para doar:</label>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                  <button type="button" class="btn-outline" onclick="selectOng(1)" id="ong-1">Educação para Todos
+                  </button>
+                  <button type="button" class="btn-outline" onclick="selectOng(2)" id="ong-2">Patas Felizes
+                  </button>
+                  <button type="button" class="btn-outline" onclick="selectOng(3)" id="ong-3">Natureza Viva
+                  </button>
+                  <button type="button" class="btn-outline" onclick="selectOng(4)" id="ong-4">Criança Esperança
+                  </button>
+                </div>
+                <label for="bet-input">Valor da aposta:</label>
+                <input type="number" id="bet-input" placeholder="Digite o valor" min="1" required>
+                <div id="bet-message" style="margin-top:8px;color:var(--orange-primary);font-size:.95rem;"></div>
+                <div style="margin-top:1.5rem;color:var(--gray-400);font-size:.95rem;">
+                  <strong>Como funciona?</strong><br>
+                  Escolha uma ONG para doar parte da sua aposta. 50% do valor apostado será destinado à causa escolhida!
+                </div>
               </div>
-              <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
+               Container Roleta
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                <span class="close" onclick="closeRouletteModal()" style="position:absolute;top:12px;right:16px;">&times;</span>
+                <div style="margin-bottom:1.5rem;">
+                  <div id="rouletteWheel" style="width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--orange-primary) 0 45deg,var(--purple-primary) 45deg 90deg,var(--orange-primary) 90deg 135deg,var(--purple-primary) 135deg 180deg,var(--orange-primary) 180deg 225deg,var(--purple-primary) 225deg 270deg,var(--orange-primary) 270deg 315deg,var(--purple-primary) 315deg 360deg);border:6px solid var(--orange-primary);box-shadow:0 8px 20px rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;position:relative;">
+                    <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid var(--orange-primary);"></div>
+                    <span style="color:var(--white);font-weight:700;font-size:1.2rem;">?</span>
+                  </div>
+                </div>
+                <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()" disabled>Iniciar Jogo</button>
+                <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
+              </div>
             </div>
-          </div>
-          <button id="spinBtn" class="btn-primary" style="width:100%;margin-bottom:1rem;" onclick="spinRoulette()"
-            disabled>Iniciar Jogo</button>
-          <div id="result" style="margin-top:8px;color:var(--orange-primary);font-size:1.1rem;"></div>
-        </div>
-      </div>
-    </div>
+          </div> -->
 
     <!--* ===== CONTEUDO PRINCIPAL ===== -->
     <main class="casino-main-content">
@@ -629,6 +675,7 @@
 
 
   </script>
+   <script src="js/casino.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/casino.js"></script>
+
 </body>

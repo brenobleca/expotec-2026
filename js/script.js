@@ -181,37 +181,14 @@ if (formRegistro) {
   });
 }
 
-document.getElementById('form-login').addEventListener('submit', async (e) => {
-    e.preventDefault();
 
-    const dados = {
-        usuario: document.getElementById('username-login').value,
-        senha: document.getElementById('password-login').value,
-    };
 
-  try {
-    const resposta = await fetch('http://localhost:4000/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dados)
-    });
-
-    const resultado = await resposta.json();
-    const mensagem = document.getElementById('mensagem-login');
-    mensagem.textContent = resultado.mensagem;
-
-    if (resultado.auth && resultado.token) {
-      // Salva o token JWT no localStorage
-      localStorage.setItem('token', resultado.token);
-      // Redireciona para a página protegida
-      window.location.href = 'pagina-protegida.html';
-    }
-  } catch (erro) {
-    console.error('Erro de conexão:', erro);
-    document.getElementById('mensagem-login').textContent = 'Erro ao conectar com o servidor.';
+  const logoutBtn = document.getElementById('logout');
+  if (localStorage.getItem('token')) {
+    logoutBtn.style.display = 'inline-block';
+  } else {
+    logoutBtn.style.display = 'none';
   }
-});
-
 
 async function acessarRotaProtegida() {
   const token = localStorage.getItem('token');
@@ -232,3 +209,15 @@ async function acessarRotaProtegida() {
     alert('Erro ao acessar rota protegida.');
   }
 }
+
+//logout
+document.getElementById('logout').addEventListener('click', function() {
+  localStorage.removeItem('token');
+  this.style.display = 'none';
+  location.reload();
+});
+
+// config button
+document.getElementById('config').addEventListener('click', function(){
+window.location.href = 'settings.html';
+} );

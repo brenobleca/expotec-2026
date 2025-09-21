@@ -294,6 +294,10 @@ img {
   align-items: center;
 }
 
+.invisible{
+  display: none;
+} 
+
 .theme-toggle {
   position: relative;
   width: 50px;
