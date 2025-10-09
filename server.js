@@ -53,8 +53,8 @@ app.post('/api/registrar', (req, res) => {
                 console.error('Erro ao criptografar senha:', err);
                 return res.status(500).json({ mensagem: 'Erro ao registrar usuário.' });
             }
-            const query = 'INSERT INTO usuarios (nome, data_nasc, email, senha, usuario, cpf) VALUES (?, ?, ?, ?, ?, ?)';
-            const values = [nome, data_nasc, email, senhaHash, usuario, cpf];
+            const query = 'INSERT INTO usuarios (nome, data_nasc, senha, usuario, cpf) VALUES (?, ?, ?, ?, ?, ?)';
+            const values = [nome, data_nasc, senhaHash, usuario, cpf];
             db.query(query, values, (err, result) => {
                 if (err) {
                     console.error('Erro ao registrar usuário:', err);

@@ -89,11 +89,23 @@
 
 
               <!--* Botoes de cadastrar e login -->
-              <button class="nav-btn-register" onclick="SignUpOpenModal()">Cadastre-se</button>
-              <button class="nav-btn-login" onclick="openModal()">Login</button>
+              <button id="Registerbtn" class="nav-btn-register" onclick="SignUpOpenModal()">Cadastre-se</button>
+              <button id="Loginbtn" class="nav-btn-login" onclick="openModal()">Login</button>
+
+              <!-- logout-->
+            <button class="nav-btn-icon invisible" id="logout" title="logout" aria-label="logout">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out-icon lucide-log-out">
+                <path d="m16 17 5-5-5-5"/>
+                <path d="M21 12H9"/>
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+              </svg>
+            </button>
             </div>
           </div>
         </div>
+
+
+
 
 
       </div>
@@ -105,13 +117,13 @@
     <div class="modal-content">
       <span class="close" onclick="CloseLoginModal()">&times;</span>
       <h2>Login</h2>
-      <form action="/login" method="POST">
+      <form id="form-login">
         <label for="username">Usuário</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username-login" name="username" required>
 
         <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required>
-
+        <input type="password" id="password-login" name="password" required>
+         <div id="mensagem-login"></div>
         <button type="submit">Entrar</button>
       </form>
     </div>
@@ -122,7 +134,7 @@
     <div class="modal-content">
       <span class="close" onclick="CloseRegisterModal()">&times;</span>
       <h2>Registre-se</h2>
-      <form action="" method="POST">
+      <form id="form-registro">
         <label for="name">Nome completo</label>
         <input type="text" id="name" name="name" required>
 
@@ -133,11 +145,11 @@
         <input type="date" name="birth-date" id="birth-date" required>
 
         <label for="username">Usuário</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username-register" name="username" required>
 
         <label for="password">Senha</label>
-        <input type="password" id="password" name="password" required>
-
+        <input type="password" id="password-register" name="password" required>
+        <div id="mensagem-registro"></div>
         <button type="submit">Registrar-se</button>
       </form>
     </div>
@@ -399,7 +411,7 @@
           <h2>Estatísticas ao Vivo</h2>
           <p>Acompanhe o impacto social em tempo real</p>
         </div>
-        <div class="stats-grid">
+         <div class="stats-grid">
           <!-- Jogadores online -->
           <div class="stats-card-odd">
             <div class="stats-card-inner">
@@ -561,6 +573,8 @@
                 <div class="wins-time-ago">Blackjack • 5h atrás</div>
               </div>
 
+
+
             </div>
             <div class="wins-amount">R$ 763</div>
           </div>
@@ -645,3 +659,5 @@
 
   </main>
   <script src="js/script.js"></script>
+</body>
+<html></html>
