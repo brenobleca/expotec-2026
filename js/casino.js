@@ -1,12 +1,6 @@
 // Lógica do fluxo do botão "Jogar agora" da Roleta
 document.getElementById('game-play-roulette').addEventListener('click', function () {
-  if (!localStorage.getItem('token')) {
-    // Não está logado: abre modal de login
-    LoginModal.style.display = "flex";
-  } else {
-    // Está logado: abre modal da roleta
     openRouletteModal();
-  }
 });
 
 // Troca para modal de cadastro a partir do login
