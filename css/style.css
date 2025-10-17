@@ -59,6 +59,15 @@ body.light {
   --trasparent-color: rgba(255, 255, 255, .05);
   --transition-fast: 200ms;
   --max-width: 1280px;
+  --cat-educacao: rgb(106, 13, 173, .8); /* roxo principal do tema */
+  --cat-saude: rgb(239, 68, 68, .8); /* vermelho suave */
+  --cat-meioambiente: rgb(22, 163, 74, .8); /* verde consistente (Tailwind emerald-600) */
+  --cat-fome: rgb(217, 119, 6, .8); /* âmbar/âmbar escuro (amber-600) */
+  --cat-direitos: rgb(251, 113, 133, .8); /* rosa suave */
+  --cat-animais: rgb(255, 127, 80, .8); /* laranja do tema */
+  --cat-social: rgb(96, 165, 250, .8); /* azul claro */
+  --cat-default: rgba(255,255,255,0.03);
+  --cat-total-raised: linear-gradient(135deg, #6a0dad, #ff7f50);
 }
 
 * {
@@ -109,6 +118,7 @@ img {
   border: 0;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+  z-index: 1;
 }
 
 .btn-primary:hover {
@@ -126,6 +136,26 @@ img {
   border: 1px solid var(--orange-primary);
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+}
+
+.btn-secundary:hover {
+  filter: brightness(1.1);
+  background-color: var(--orange-primary);
+}
+
+.btn-see-more {
+  background: transparent;
+  color: var(--orange-light);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--orange-primary);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+}
+
+.btn-see-more:hover {
+  color: var(--white);
+  filter: brightness(1.1);
 }
 
 .invisible {
@@ -170,12 +200,10 @@ img {
   position: fixed;
   width: 100%;
   height: 7rem;
-  z-index: 1;
+  z-index: 2;
   background: linear-gradient(to bottom, var(--purple-dark) 0%, var(--purple-dark) 25%, transparent 100%);
   align-items: center;
   justify-content: center;
-
-
 }
 
 .navbar {
@@ -207,7 +235,7 @@ img {
 /* Logo Doe e Ganhe */
 .nav-logo {
   color: var(--white);
-  font-size: .9rem;
+  font-size: .75rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -246,7 +274,7 @@ img {
   position: absolute;
   left: 10%;
   right: 10%;
-  bottom: 0px;
+  bottom: -10px;
   height: 3px;
   background: var(--orange-primary);
   border-radius: 50px;
@@ -265,7 +293,7 @@ img {
   position: absolute;
   left: 10%;
   right: 10%;
-  bottom: 0px;
+  bottom: -10px;
   height: 3px;
   background: var(--orange-primary);
   border-radius: 50px;
@@ -388,14 +416,14 @@ body.light .sun {
   margin-left: 0.5rem;
 }
 
+/** Botão cadastrar e login*/
 .nav-btn-register {
   background: linear-gradient(135deg,
       var(--purple-primary),
       var(--orange-primary));
   color: var(--white);
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
-
   font-weight: 600;
   border: 0;
   cursor: pointer;
@@ -407,14 +435,12 @@ body.light .sun {
   color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-
   border: 1px solid var(--orange-primary);
   margin-left: 0.5rem;
 }
 
 .nav-btn-register:hover,
 .nav-btn-login:hover {
-
   transition: var(--transition-fast);
   filter: brightness(1.1);
 }
@@ -557,6 +583,7 @@ body.light .sun {
   position: relative;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
   margin-top: -6rem;
+  z-index: 1;
 }
 
 .banner img {
@@ -635,12 +662,12 @@ body.light .sun {
   margin-top: 0.25rem;
 }
 
-.link-offers {
+.link-see-more {
   color: var(--orange-primary);
   text-decoration: none;
 }
 
-.link-offers:hover {
+.link-see-more:hover {
   text-decoration: underline;
 }
 
@@ -803,10 +830,21 @@ body.light .sun {
   text-align: center;
 }
 
+.container-ongs-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-ongs-head-text{
+  margin: auto;
+  margin-left: auto;
+  padding-left: 7.5rem;
+}
+
 .ongs-grid {
-  margin-top: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  margin: 2rem 3rem;
+  margin: 2rem 0;
 }
 
 .progress-outer {
@@ -822,31 +860,10 @@ body.light .sun {
   border-radius: 9999px;
 }
 
-.progress-inner-1 {
-  width: 40%;
-  background: var(--purple-primary);
-  width: 75%;
-  background: var(--orange-primary)
-}
-
-.progress-inner-2 {
-  height: 0.625rem;
-  border-radius: 9999px;
-  width: 40%;
-  background: var(--purple-primary)
-}
-
 .card-body p {
   color: var(--gray-400);
   margin-bottom: 1rem;
   font-size: .9rem;
-}
-
-.progress-inner-3 {
-  height: 0.625rem;
-  border-radius: 9999px;
-  width: 90%;
-  background: var(--orange-primary)
 }
 
 /** ===== ESTATISTICAS =====  */
@@ -1981,7 +1998,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*! ========== JOGO AVIATOR ========== */
 
-/* ====== AVIATOR GAME - CSS ORGANIZADO ====== */
+/** ====== AVIATOR GAME - CSS ORGANIZADO ====== */
 
 /* Variáveis do Aviator */
 :root {
@@ -2808,6 +2825,7 @@ main {
   background-color: var(--trasparent-color);
   border-radius: 14px;
   border: 1px solid var(--gray-800);
+  margin: 3rem 0;
 }
 
 .ngos-how-header {
@@ -2842,8 +2860,179 @@ main {
 
 
 /** ===== CATEGORIAS ===== */
+.ngos-categories-grid{
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.ngos-categories-grid-card{
+  border-radius: 12px;
+  border: 1px solid var(--gray-800);
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.ngos-categories-grid-card-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 50px;
+  width: 4rem;
+  height: 4rem; 
+}
+
+.ngos-categories-grid-card p{
+  font-weight: 600;
+}
+
+.ngos-ong-tag{
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin: .25rem 0;
+}
+
+/* Cores de categoria — paleta ajustada para combinar com o tema do site */
+
+/* Aplica cor à tag dentro do card quando data-category estiver presente */
+/* Sincroniza cor da tag (.ngos-ong-tag) e o ícone das categorias (.ngos-categories-grid-card-icon)
+   para que ambos usem exatamente a mesma cor por categoria. Colocar após as variáveis de cor. */
+
+.ngos-ong-tag[data-category="educacao"],
+.ngos-categories-grid-card[data-category="educacao"] .ngos-categories-grid-card-icon{
+  background: var(--cat-educacao);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(106,13,173,0.15);
+}
+
+.ngos-ong-tag[data-category="saude"],
+.ngos-categories-grid-card[data-category="saude"] .ngos-categories-grid-card-icon {
+  background: var(--cat-saude);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(239,68,68,0.12);
+}
+
+.ngos-ong-tag[data-category="meio-ambiente"],
+.ngos-categories-grid-card[data-category="meio-ambiente"] .ngos-categories-grid-card-icon {
+  background: var(--cat-meioambiente);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(22,163,74,0.12);
+}
+
+.ngos-ong-tag[data-category="combate-a-fome"],
+.ngos-categories-grid-card[data-category="combate-a-fome"] .ngos-categories-grid-card-icon {
+  background: var(--cat-fome);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(217,119,6,0.12);
+}
+
+.ngos-ong-tag[data-category="direitos-humanos"],
+.ngos-categories-grid-card[data-category="direitos-humanos"] .ngos-categories-grid-card-icon {
+  background: var(--cat-direitos);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(251,113,133,0.12);
+}
+
+.ngos-ong-tag[data-category="causa-animal"],
+.ngos-categories-grid-card[data-category="causa-animal"] .ngos-categories-grid-card-icon {
+  background: var(--cat-animais);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(255,127,80,0.12);
+}
+
+.ngos-ong-tag[data-category="assistencia-social"],
+.ngos-categories-grid-card[data-category="assistencia-social"] .ngos-categories-grid-card-icon {
+  background: var(--cat-social);
+  color: var(--white);
+  box-shadow: 0 6px 18px rgba(96,165,250,0.12);
+}
+
+.ngos-card[data-category="educacao"] .progress-inner,
+.ngos-card[data-category="educacao"] .ngos-progress-inner {
+  background: var(--cat-educacao);
+}
+
+.ngos-card[data-category="saude"] .progress-inner,
+.ngos-card[data-category="saude"] .ngos-progress-inner {
+  background: var(--cat-saude);
+}
+
+.ngos-card[data-category="meio-ambiente"] .progress-inner,
+.ngos-card[data-category="meio-ambiente"] .ngos-progress-inner {
+  background: var(--cat-meioambiente);
+}
+
+.ngos-card[data-category="combate-a-fome"] .progress-inner,
+.ngos-card[data-category="combate-a-fome"] .ngos-progress-inner {
+  background: var(--cat-fome);
+}
+
+.ngos-card[data-category="direitos-humanos"] .progress-inner,
+.ngos-card[data-category="direitos-humanos"] .ngos-progress-inner {
+  background: var(--cat-direitos);
+}
+
+.ngos-card[data-category="causa-animal"] .progress-inner,
+.ngos-card[data-category="causa-animal"] .ngos-progress-inner {
+  background: var(--cat-animais);
+}
+
+.ngos-card[data-category="assistencia-social"] .progress-inner,
+.ngos-card[data-category="assistencia-social"] .ngos-progress-inner {
+  background: var(--cat-social);
+}
+
+/* fallback: cards sem data-category usam o estilo padrão já existente */
+.ngos-card .progress-inner {
+  background: linear-gradient(135deg, var(--purple-primary), var(--orange-primary));
+}
+
+/* Fallback: quando o card de categoria não tiver data-category, aplica cor por posição (mantém comportamento já existente) */
+.ngos-categories-grid-card:nth-child(1) .ngos-categories-grid-card-icon { background: var(--cat-educacao); color: var(--white); }
+.ngos-categories-grid-card:nth-child(2) .ngos-categories-grid-card-icon { background: var(--cat-saude); color: var(--white); }
+.ngos-categories-grid-card:nth-child(3) .ngos-categories-grid-card-icon { background: var(--cat-meioambiente); color: var(--white); }
+.ngos-categories-grid-card:nth-child(4) .ngos-categories-grid-card-icon { background: var(--cat-fome); color: var(--white); }
+.ngos-categories-grid-card:nth-child(5) .ngos-categories-grid-card-icon { background: var(--cat-direitos); color: var(--white); }
+.ngos-categories-grid-card:nth-child(6) .ngos-categories-grid-card-icon { background: var(--cat-animais); color: var(--white); }
+.ngos-categories-grid-card:nth-child(7) .ngos-categories-grid-card-icon { background: var(--cat-social); color: var(--white); }
+
+/* tag padrão */
+.ong-card .ong-tag {
+  background: var(--cat-default);
+  color: var(--white);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* leve destaque ao passar o mouse */
+.ngos-categories-grid-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
 
 /** ===== ONGS ===== */
+.ngos-container-ongs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.ngos-container-ongs h2{
+  display: flex;
+}
+
 .ngos-section {
   padding: 3rem 0;
 }
@@ -2853,12 +3042,17 @@ main {
   gap: 1.5rem;
 }
 
-.ngos-card {
-  background: var(--gray-800);
+.ngos-card-body {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.6);
   transition: transform 220ms ease, box-shadow 220ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1 1 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .ngos-card .ngos-card-body {
@@ -2872,7 +3066,39 @@ main {
 .ngos-ongs-grid {
   margin-top: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  margin: 2rem 3rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-rows: 1fr;
+}
+
+.ngos-ongs-grid .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ngos-ong-location {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ngos-categories-grid-card-icon svg {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.ngos-ong-location p {
+  margin: 0;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
 }
 
 .ngos-progress-outer {
@@ -2888,29 +3114,38 @@ main {
   border-radius: 9999px;
 }
 
-.ngos-progress-inner-1 {
-  width: 40%;
-  background: var(--purple-primary);
-  width: 75%;
-  background: var(--orange-primary)
+/* Responsivo: em telas menores mantém layout empilhado */
+@media (max-width: 900px) {
+  .ngos-ongs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .ngos-ongs-grid { grid-template-columns: 1fr; }
 }
 
-.ngos-progress-inner-2 {
-  height: 0.625rem;
-  border-radius: 9999px;
-  width: 40%;
-  background: var(--purple-primary)
+/** ===== Total Arrecadado ===== */
+.ngos-total-raised {
+  /* height: 75vh; */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
 }
 
-.ngos-card-body p {
-  color: var(--gray-400);
-  margin-bottom: 1rem;
-  font-size: .9rem;
+.ngos-total-raised img {
+  height: 15rem;
 }
 
-.ngos-progress-inner-3 {
-  height: 0.625rem;
-  border-radius: 9999px;
-  width: 90%;
-  background: var(--orange-primary)
+.progress-outer {
+  width: 100%;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-inner {
+  width: 0%; /* começa zerada, JS controla */
+  height: 100%;
+  background-color: var(--cat-default); /* cor padrão, JS pode sobrescrever */
+  transition: width 0.4s ease;
 }
