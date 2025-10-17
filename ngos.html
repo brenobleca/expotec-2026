@@ -141,32 +141,33 @@
   <!--! ===== CONTEUDO PRINCIPAL ===== -->
   <main>
     <div class="container">
-      <section class="ngos-banner">
-        <img src="https://placehold.co/600x300" alt="Banner de Ongs" />
-        <div class="ngos-banner-inner">
-          <div class="ngos-banner-badge">
-            <div class="ngos-banner-badge-icon">
+      <section class="banner">
+        <img src="img/ongs-banner-ongs.jpg" alt="Banner de Ongs" />
+        <div class="banner-inner">
+          <div class="banner-badge">
+            <div class="banner-badge-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-heart-handshake-icon lucide-heart-handshake">
                 <path
                   d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762" />
               </svg>
-            </div> FAÇA A DIFERENÇA
+            </div>
+            <span>FAÇA A DIFERENÇA</span>
           </div>
-          <div class="ngos-banner-text-inner">
+          <div class="banner-text-inner">
             <h1>
-              <span class="ngos-banner-text-gradient">Jogue</span><br>
-              <span class="ngos-banner-text-white">e Transforme Vidas</span>
+              <span class="banner-text-gradient">Jogue</span><br>
+              <span class="banner-text-white">e Transforme Vidas</span>
             </h1>
             <p>
               A cada aposta que você faz, uma porcentagem é destinada automaticamente para a ONG de sua escolha.
               Diversão com propósito social!
             </p>
           </div>
-          <div class="ngos-banner-btns">
-            <button id="ngos-banner-btns-choose-ngo" class="btn-primary">Escolher Minha ONG</button>
-            <button id="ngos-banner-btns-how-it-works" class="btn-secundary">Como Funciona</button>
+          <div class="banner-btns">
+            <button id="banner-btns-choose-ngo" class="btn-primary">Escolher Minha ONG</button>
+            <button id="banner-btns-how-it-works" class="btn-secundary">Como Funciona</button>
           </div>
         </div>
       </section>
@@ -229,42 +230,84 @@
 
           <div class="ngos-categories-grid-card" data-category="saude">
             <div class="ngos-categories-grid-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-plus-icon lucide-heart-plus"><path d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49"/><path d="M15 15h6"/><path d="M18 12v6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-heart-plus-icon lucide-heart-plus">
+                <path
+                  d="m14.479 19.374-.971.939a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5a5.2 5.2 0 0 1-.219 1.49" />
+                <path d="M15 15h6" />
+                <path d="M18 12v6" />
+              </svg>
             </div>
             <p>Saúde</p>
           </div>
 
           <div class="ngos-categories-grid-card" data-category="meio-ambiente">
             <div class="ngos-categories-grid-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf-icon lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-leaf-icon lucide-leaf">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
             </div>
             <p>Meio Ambiente</p>
           </div>
 
           <div class="ngos-categories-grid-card" data-category="combate-a-fome">
             <div class="ngos-categories-grid-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils-icon lucide-utensils"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-utensils-icon lucide-utensils">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                <path d="M7 2v20" />
+                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+              </svg>
             </div>
             <p>Combate à Fome</p>
           </div>
 
           <div class="ngos-categories-grid-card" data-category="direitos-humanos">
             <div class="ngos-categories-grid-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale-icon lucide-scale"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-scale-icon lucide-scale">
+                <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                <path d="M7 21h10" />
+                <path d="M12 3v18" />
+                <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+              </svg>
             </div>
             <p>Direitos Humanos</p>
           </div>
 
           <div class="ngos-categories-grid-card" data-category="causa-animal">
             <div class="ngos-categories-grid-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paw-print-icon lucide-paw-print"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paw-print-icon lucide-paw-print">
+                <circle cx="11" cy="4" r="2" />
+                <circle cx="18" cy="8" r="2" />
+                <circle cx="20" cy="16" r="2" />
+                <path
+                  d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z" />
+              </svg>
             </div>
             <p>Causa Animal</p>
           </div>
 
           <div class="ngos-categories-grid-card" data-category="assistencia-social">
             <div class="ngos-categories-grid-card-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-heart-icon lucide-hand-heart"><path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95"/><path d="m2 15 6 6"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-hand-heart-icon lucide-hand-heart">
+                <path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" />
+                <path
+                  d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95" />
+                <path d="m2 15 6 6" />
+                <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91" />
+              </svg>
             </div>
             <p>Assistência Social</p>
           </div>
@@ -779,7 +822,8 @@
             <div class="progress-outer">
               <div id="total-progress-bar" class="progress-inner" aria-valuenow="0" title="0%"></div>
             </div>
-            <p class="total-progress-text" id="expotec-progress-text">R$149 arrecadados de R$1.000</p><!--! MUDAR ISSO AQUI -->
+            <p class="total-progress-text" id="expotec-progress-text">R$149 arrecadados de R$1.000</p>
+            <!--! MUDAR ISSO AQUI -->
             <button class="btn-full-width">Doar Agora</button>
           </div>
         </div>
@@ -789,309 +833,6 @@
   </main>
 
   <script src="js/script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // === UTILITÁRIOS ===
-      function parseBRNumber(str) {
-        if (!str) return 0;
-        const cleaned = str.replace(/[^\d,\.]/g, '').trim();
-        if (!cleaned) return 0;
-        const normalized = cleaned.replace(/\./g, '').replace(',', '.');
-        const n = parseFloat(normalized);
-        return isNaN(n) ? 0 : n;
-      }
-
-      function getCategoryColor(category) {
-        const rootStyles = getComputedStyle(document.documentElement);
-        const map = {
-          'educacao': 'cat-educacao',
-          'saude': 'cat-saude',
-          'meio-ambiente': 'cat-meioambiente',
-          'combate-a-fome': 'cat-fome',
-          'direitos-humanos': 'cat-direitos',
-          'causa-animal': 'cat-animais',
-          'assistencia-social': 'cat-social',
-          'default': 'cat-default',
-          'total-raised': 'cat-total-raised'
-        };
-        const varName = map[category] || 'cat-default';
-        return rootStyles.getPropertyValue(`--${varName}`)?.trim() || '#ccc';
-      }
-
-      // === PROGRESSO DAS ONGs ===
-      document.querySelectorAll('.ngos-card').forEach(card => {
-        const tag = card.querySelector('.ngos-ong-tag');
-        if (!tag) return;
-        let cat = tag.getAttribute('data-category') || tag.textContent.trim().toLowerCase();
-        cat = cat.replace(/\s+/g, '-');
-        card.setAttribute('data-category', cat);
-
-        const infoP = Array.from(card.querySelectorAll('p')).find(p => /arrecad/i.test(p.textContent));
-        if (!infoP) return;
-
-        const nums = Array.from(infoP.textContent.matchAll(/[\d\.\,]+/g)).map(m => m[0]);
-        let raised = 0, target = 0;
-        if (nums.length >= 2) {
-          raised = parseBRNumber(nums[0]);
-          target = parseBRNumber(nums[1]);
-        } else {
-          raised = parseBRNumber(card.dataset.raised);
-          target = parseBRNumber(card.dataset.target);
-        }
-
-        const percent = target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0;
-
-        let progressInner = card.querySelector('.progress-inner') || card.querySelector('.ngos-progress-inner');
-        if (!progressInner) {
-          const outer = card.querySelector('.progress-outer') || card.querySelector('.ngos-progress-outer');
-          if (outer) {
-            progressInner = outer.querySelector('div') || document.createElement('div');
-            progressInner.classList.add('progress-inner');
-            if (!outer.contains(progressInner)) outer.appendChild(progressInner);
-          }
-        }
-
-        if (progressInner) {
-          progressInner.style.width = percent + '%';
-          progressInner.setAttribute('aria-valuenow', String(percent));
-          progressInner.setAttribute('title', percent + '%');
-          progressInner.style.backgroundColor = getCategoryColor(cat);
-        }
-      });
-
-      // === PROGRESSO DO TOTAL ARRECADADO (opcional) ===
-      function atualizarBarraTotal(idTexto, idBarra, categoria = 'total-raised') {
-        const totalText = document.getElementById(idTexto);
-        const totalBar = document.getElementById(idBarra);
-        if (totalText && totalBar) {
-          const nums = Array.from(totalText.textContent.matchAll(/[\d\.\,]+/g)).map(m => m[0]);
-          if (nums.length >= 2) {
-            const raised = parseBRNumber(nums[0]);
-            const target = parseBRNumber(nums[1]);
-            const percent = target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0;
-            totalBar.style.width = percent + '%';
-            totalBar.setAttribute('aria-valuenow', String(percent));
-            totalBar.setAttribute('title', percent + '%');
-            totalBar.style.background = getCategoryColor(categoria);
-          }
-        }
-      }
-
-      // Chamada para a barra de total arrecadado
-      atualizarBarraTotal('expotec-progress-text', 'total-progress-bar', 'total-raised');
-
-
-      // === FILTRO POR CATEGORIA + VER MAIS ===
-      const categoryCards = Array.from(document.querySelectorAll('.ngos-categories-grid-card'));
-      const ngoCards = Array.from(document.querySelectorAll('.ngos-card'));
-      const seeMoreBtn = document.querySelector('.btn-see-more');
-      const initialCount = 3;
-
-      let showingAll = false;
-      let activeCategory = null;
-
-      function applyFilter() {
-        const filtered = ngoCards.filter(card => {
-          if (!activeCategory) return true;
-          const tag = card.querySelector('.ngos-ong-tag');
-          return tag && tag.getAttribute('data-category') === activeCategory;
-        });
-
-        ngoCards.forEach(c => c.style.display = 'none');
-
-        if (activeCategory) {
-          filtered.forEach(c => c.style.display = '');
-          if (seeMoreBtn) seeMoreBtn.style.display = 'none';
-          return;
-        }
-
-        if (showingAll) {
-          filtered.forEach(c => c.style.display = '');
-        } else {
-          filtered.slice(0, initialCount).forEach(c => c.style.display = '');
-        }
-
-        if (seeMoreBtn) {
-          if (filtered.length > initialCount) {
-            seeMoreBtn.style.display = '';
-            seeMoreBtn.textContent = showingAll ? 'Ver Menos' : 'Ver Todas as ONGs';
-          } else {
-            seeMoreBtn.style.display = 'none';
-          }
-        }
-      }
-
-      categoryCards.forEach(card => {
-        card.addEventListener('click', () => {
-          const wasActive = card.classList.contains('active');
-          categoryCards.forEach(c => c.classList.remove('active'));
-          activeCategory = null;
-          showingAll = false;
-
-          if (!wasActive) {
-            card.classList.add('active');
-            activeCategory = card.getAttribute('data-category');
-          }
-
-          applyFilter();
-        });
-      });
-
-      if (seeMoreBtn) {
-        seeMoreBtn.addEventListener('click', () => {
-          if (activeCategory) return;
-          showingAll = !showingAll;
-          applyFilter();
-          if (showingAll) {
-            document.querySelector('.ngos-ongs-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      }
-
-      applyFilter();
-    });
-  </script>
-
-
-
-  <!-- <script>
-    //* Script para ajustar barras de progresso nas ONGs
-    document.addEventListener('DOMContentLoaded', () => {
-      function parseBRNumber(str) {
-        if (!str) return 0;
-        const cleaned = str.replace(/[^\d,\.]/g, '').trim();
-        if (!cleaned) return 0;
-        const normalized = cleaned.replace(/\./g, '').replace(',', '.');
-        const n = parseFloat(normalized);
-        return isNaN(n) ? 0 : n;
-      }
-
-      document.querySelectorAll('.ngos-card').forEach(card => {
-        // obtém a categoria da tag (data-category ou texto)
-        const tag = card.querySelector('.ngos-ong-tag');
-        if (!tag) return;
-        let cat = tag.getAttribute('data-category') || tag.textContent.trim().toLowerCase();
-        cat = cat.replace(/\s+/g, '-'); // normaliza espaços -> hífen
-        card.setAttribute('data-category', cat);
-
-        // encontra o parágrafo que contém "arrecad" (ex. "R$25.000 arrecadados de R$50.000")
-        const infoP = Array.from(card.querySelectorAll('p')).find(p => /arrecad/i.test(p.textContent));
-        if (!infoP) return;
-
-        // extrai dois números (arrecadado e meta)
-        const nums = Array.from(infoP.textContent.matchAll(/[\d\.\,]+/g)).map(m => m[0]);
-        let raised = 0, target = 0;
-        if (nums.length >= 2) {
-          raised = parseBRNumber(nums[0]);
-          target = parseBRNumber(nums[1]);
-        } else {
-          // fallback: usa attributes data-raised / data-target se presentes
-          raised = parseBRNumber(card.dataset.raised);
-          target = parseBRNumber(card.dataset.target);
-        }
-
-        const percent = target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0;
-
-        // procura elemento de progresso dentro do card
-        let progressInner = card.querySelector('.progress-inner') || card.querySelector('.ngos-progress-inner');
-        if (!progressInner) {
-          const outer = card.querySelector('.progress-outer') || card.querySelector('.ngos-progress-outer');
-          if (outer) {
-            progressInner = outer.querySelector('div') || document.createElement('div');
-            progressInner.classList.add('progress-inner');
-            if (!outer.contains(progressInner)) outer.appendChild(progressInner);
-          }
-        }
-
-        if (progressInner) {
-          progressInner.style.width = percent + '%';
-          progressInner.setAttribute('aria-valuenow', String(percent));
-          progressInner.setAttribute('title', percent + '%');
-        }
-      });
-    });
-
-    // Script para filtrar ONGs por categoria
-    document.addEventListener('DOMContentLoaded', () => {
-      const categoryCards = Array.from(document.querySelectorAll('.ngos-categories-grid-card'));
-      const ngoCards = Array.from(document.querySelectorAll('.ngos-card'));
-      const seeMoreBtn = document.querySelector('.btn-see-more');
-      const initialCount = 3;
-
-      let showingAll = false;
-      let activeCategory = null;
-
-      function applyFilter() {
-        const filtered = ngoCards.filter(card => {
-          if (!activeCategory) return true;
-          const tag = card.querySelector('.ngos-ong-tag');
-          return tag && tag.getAttribute('data-category') === activeCategory;
-        });
-
-        // esconde todos inicialmente
-        ngoCards.forEach(c => c.style.display = 'none');
-
-        // Se há categoria ativa: mostra todos os da categoria (sem limite)
-        if (activeCategory) {
-          filtered.forEach(c => c.style.display = '');
-          // botão "Ver Todas" não faz sentido com filtro ativo
-          if (seeMoreBtn) seeMoreBtn.style.display = 'none';
-          return;
-        }
-
-        // Sem categoria: se showingAll true mostra todos, senão só primeiros initialCount
-        if (showingAll) {
-          filtered.forEach(c => c.style.display = '');
-        } else {
-          filtered.slice(0, initialCount).forEach(c => c.style.display = '');
-        }
-
-        // Ajusta visibilidade do botão "Ver Todas" — só mostra se existe mais que initialCount no filtro (sem categoria ativa)
-        if (seeMoreBtn) {
-          if (filtered.length > initialCount) {
-            seeMoreBtn.style.display = '';
-            seeMoreBtn.textContent = showingAll ? 'Ver Menos' : 'Ver Todas as ONGs';
-          } else {
-            seeMoreBtn.style.display = 'none';
-          }
-        }
-      }
-
-      // clique nas categorias (toggle)
-      categoryCards.forEach(card => {
-        card.addEventListener('click', () => {
-          const wasActive = card.classList.contains('active');
-          // limpa ativações
-          categoryCards.forEach(c => c.classList.remove('active'));
-          activeCategory = null;
-          showingAll = false;
-
-          if (!wasActive) {
-            card.classList.add('active');
-            activeCategory = card.getAttribute('data-category');
-          }
-
-          applyFilter();
-        });
-      });
-
-      // botão Ver Todas / Ver Menos (só afeta quando nenhuma categoria está ativa)
-      if (seeMoreBtn) {
-        seeMoreBtn.addEventListener('click', () => {
-          // se houver categoria ativa, não alternar (botão estará oculto), mas guardamos segurança
-          if (activeCategory) return;
-          showingAll = !showingAll;
-          applyFilter();
-          if (showingAll) {
-            document.querySelector('.ngos-ongs-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      }
-
-      // estado inicial: aplica filtro (mostra apenas 3 primeiros)
-      applyFilter();
-    });
-  </script> -->
 </body>
 
 </html>

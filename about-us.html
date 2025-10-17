@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Doe e Ganhe</title>
+    <link rel="stylesheet" href="styles/about.css">
+</head>
+<body class="about-us-dark">
+    <!-- Header -->
+    <header class="about-us-header">
+        <div class="about-us-header-container">
+            <div class="about-us-header-content">
+                <a href="index.html" class="about-us-logo">
+                    <div class="about-us-logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="6" y1="2" x2="6" y2="6"/>
+                            <line x1="10" y1="2" x2="10" y2="6"/>
+                            <line x1="14" y1="2" x2="14" y2="6"/>
+                            <line x1="18" y1="2" x2="18" y2="6"/>
+                            <rect x="2" y="6" width="20" height="16" rx="2"/>
+                            <circle cx="12" cy="14" r="3"/>
+                        </svg>
+                    </div>
+                    <span class="about-us-logo-text">Doe e Ganhe</span>
+                </a>
+
+                <nav class="about-us-nav-desktop">
+                    <a href="index.html" class="about-us-nav-link">Início</a>
+                    <a href="casino.html" class="about-us-nav-link">Cassino</a>
+                    <a href="ongs.html" class="about-us-nav-link">ONGs</a>
+                    <a href="about.html" class="about-us-nav-link active">Sobre Nós</a>
+                    <a href="support.html" class="about-us-nav-link">Suporte</a>
+                </nav>
+
+                <div class="about-us-header-actions">
+                    <button class="about-us-btn-login">Entrar</button>
+                    <button class="about-us-btn-signup">Cadastre-se</button>
+                </div>
+
+                <input type="checkbox" id="menu-toggle" class="about-us-menu-toggle-input">
+                <label for="menu-toggle" class="about-us-menu-toggle">
+                    <svg class="about-us-menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </label>
+            </div>
+
+            <nav class="about-us-nav-mobile">
+                <a href="index.html" class="about-us-nav-link-mobile">Início</a>
+                <a href="casino.html" class="about-us-nav-link-mobile">Cassino</a>
+                <a href="ongs.html" class="about-us-nav-link-mobile">ONGs</a>
+                <a href="about.html" class="about-us-nav-link-mobile active">Sobre Nós</a>
+                <a href="support.html" class="about-us-nav-link-mobile">Suporte</a>
+                <div class="about-us-nav-mobile-actions">
+                    <button class="about-us-btn-login">Entrar</button>
+                    <button class="about-us-btn-signup">Cadastrar</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-us-main-content">
+        <div class="about-us-container">
+            <!-- Hero Section -->
+            <section class="about-us-hero-section">
+                <div class="about-us-hero-background">
+                    <img src="https://images.unsplash.com/photo-1591522810850-58128c5fb089?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFyaXR5JTIwZG9uYXRpb24lMjBoZWxwaW5nfGVufDF8fHx8MTc2MDYwODIzNnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Sobre Nós" class="about-us-hero-img">
+                    <div class="about-us-hero-overlay"></div>
+                </div>
+
+                <div class="about-us-hero-content">
+                    <div class="about-us-hero-text">
+                        <span class="about-us-badge badge-orange">Nossa História</span>
+                        <h1 class="about-us-hero-title">
+                            <span class="about-us-gradient-text">Transformando</span>
+                            <span class="about-us-hero-subtitle">Entretenimento em Impacto Social</span>
+                        </h1>
+                        <p class="about-us-hero-description">
+                            Nascemos da crença de que é possível unir diversão e responsabilidade social. 
+                            Somos o primeiro cassino online do Brasil onde cada aposta contribui automaticamente 
+                            para causas sociais, sem custo adicional para você.
+                        </p>
+                        <div class="about-us-hero-buttons">
+                            <a href="index.html#ngos" class="about-us-btn btn-gradient btn-lg">
+                                Conheça Nossas ONGs
+                                <svg class="about-us-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <a href="#transparencia" class="about-us-btn btn-outline btn-lg">Ver Relatório de Impacto</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Grid -->
+            <section class="about-us-achievements-grid">
+                <div class="about-us-achievement-card">
+                    <div class="about-us-achievement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <div class="about-us-achievement-value">R$ 2,8M+</div>
+                    <div class="about-us-achievement-label">Doados para ONGs</div>
+                </div>
+
+                <div class="about-us-achievement-card">
+                    <div class="about-us-achievement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="about-us-achievement-value">100K+</div>
+                    <div class="about-us-achievement-label">Jogadores Ativos</div>
+                </div>
+
+                <div class="about-us-achievement-card">
+                    <div class="about-us-achievement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <div class="about-us-achievement-value">50+</div>
+                    <div class="about-us-achievement-label">ONGs Parceiras</div>
+                </div>
+
+                <div class="about-us-achievement-card">
+                    <div class="about-us-achievement-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
+                    </div>
+                    <div class="about-us-achievement-value">1M+</div>
+                    <div class="about-us-achievement-label">Vidas Impactadas</div>
+                </div>
+            </section>
+
+            <!-- Nossa Missão -->
+            <section class="about-us-mission-section">
+                <div class="about-us-mission-content">
+                    <span class="about-us-badge badge-purple">Nossa Missão</span>
+                    <h2 class="about-us-section-title">
+                        Diversão que <span class="about-us-gradient-text">Faz a Diferença</span>
+                    </h2>
+                    <p class="about-us-mission-text">
+                        Nossa missão é revolucionar o mercado de entretenimento online no Brasil, 
+                        provando que é possível oferecer diversão de qualidade enquanto geramos 
+                        impacto social positivo e mensurável.
+                    </p>
+                    <p class="about-us-mission-text">
+                        Acreditamos que cada pessoa merece se divertir com responsabilidade, 
+                        e que empresas têm o dever de contribuir ativamente para uma sociedade 
+                        mais justa e igualitária.
+                    </p>
+                    <div class="about-us-mission-stats">
+                        <div class="about-us-player-avatars">
+                            <div class="about-us-avatar"></div>
+                            <div class="about-us-avatar"></div>
+                            <div class="about-us-avatar"></div>
+                            <div class="about-us-avatar"></div>
+                        </div>
+                        <span class="about-us-stats-text">+100.000 jogadores impactando vidas</span>
+                    </div>
+                </div>
+
+                <div class="about-us-mission-image">
+                    <div class="about-us-image-glow"></div>
+                    <img src="https://images.unsplash.com/photo-1690264421892-46e3af5c3455?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMG9mZmljZXxlbnwxfHx8fDE3NjA2MTQ3Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Nossa Equipe">
+                </div>
+            </section>
+
+            <!-- Nossa Equipe -->
+            <section class="about-us-team-section">
+                <div class="about-us-section-header">
+                    <span class="about-us-badge badge-blue">Nossa Equipe</span>
+                    <h2 class="about-us-section-title">
+                        Conheça Quem <span class="about-us-gradient-text">Faz Acontecer</span>
+                    </h2>
+                    <p class="about-us-section-description">
+                        Uma equipe apaixonada por tecnologia, inovação e impacto social, 
+                        trabalhando para transformar o entretenimento online no Brasil.
+                    </p>
+                </div>
+
+                <div class="about-us-team-grid">
+                    <!-- Membro 1 -->
+                    <div class="about-us-team-card">
+                        <div class="about-us-team-image">
+                            <img src="https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHdvbWFufGVufDF8fHx8MTc2MDYzNzE5Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Ana Carolina Santos">
+                            <div class="about-us-team-overlay"></div>
+                        </div>
+                        <div class="about-us-team-info">
+                            <h3 class="about-us-team-name">Ana Carolina Santos</h3>
+                            <p class="about-us-team-role">CEO & Co-fundadora</p>
+                            <p class="about-us-team-description">
+                                Especialista em tecnologia social e inovação. Liderou projetos de impacto em mais de 15 países.
+                            </p>
+                            <div class="about-us-team-social">
+                                <a href="#" class="about-us-social-link social-linkedin">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                        <rect x="2" y="9" width="4" height="12"/>
+                                        <circle cx="4" cy="4" r="2"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:ana@doeeganhe.com" class="about-us-social-link social-email">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membro 2 -->
+                    <div class="about-us-team-card">
+                        <div class="about-us-team-image">
+                            <img src="https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMG1hbnxlbnwxfHx8fDE3NjA2NTUzMTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Rafael Oliveira">
+                            <div class="about-us-team-overlay"></div>
+                        </div>
+                        <div class="about-us-team-info">
+                            <h3 class="about-us-team-name">Rafael Oliveira</h3>
+                            <p class="about-us-team-role">CTO & Co-fundador</p>
+                            <p class="about-us-team-description">
+                                Desenvolvedor full-stack com 10 anos de experiência. Ex-engenheiro de empresas Fortune 500.
+                            </p>
+                            <div class="about-us-team-social">
+                                <a href="#" class="about-us-social-link social-github">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:rafael@doeeganhe.com" class="about-us-social-link social-email">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membro 3 -->
+                    <div class="about-us-team-card">
+                        <div class="about-us-team-image">
+                            <img src="https://images.unsplash.com/photo-1584940121258-c2553b66a739?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHBlcnNvbnxlbnwxfHx8fDE3NjA2Nzc2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mariana Costa">
+                            <div class="about-us-team-overlay"></div>
+                        </div>
+                        <div class="about-us-team-info">
+                            <h3 class="about-us-team-name">Mariana Costa</h3>
+                            <p class="about-us-team-role">Diretora de Impacto Social</p>
+                            <p class="about-us-team-description">
+                                MBA em Responsabilidade Social. Conecta empresas e ONGs há mais de 8 anos.
+                            </p>
+                            <div class="about-us-team-social">
+                                <a href="#" class="about-us-social-link social-linkedin">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                        <rect x="2" y="9" width="4" height="12"/>
+                                        <circle cx="4" cy="4" r="2"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:mariana@doeeganhe.com" class="about-us-social-link social-email">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Membro 4 -->
+                    <div class="about-us-team-card">
+                        <div class="about-us-team-image">
+                            <img src="https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwcHJvZmVzc2lvbmFsJTIwZGV2ZWxvcGVyfGVufDF8fHx8MTc2MDU3MTgxN3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Lucas Ferreira">
+                            <div class="about-us-team-overlay"></div>
+                        </div>
+                        <div class="about-us-team-info">
+                            <h3 class="about-us-team-name">Lucas Ferreira</h3>
+                            <p class="about-us-team-role">Diretor de Tecnologia</p>
+                            <p class="about-us-team-description">
+                                Especialista em segurança digital e blockchain. Garante a transparência e proteção de todos os dados.
+                            </p>
+                            <div class="about-us-team-social">
+                                <a href="#" class="about-us-social-link social-github">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:lucas@doeeganhe.com" class="about-us-social-link social-email">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Quote -->
+                <div class="about-us-team-quote">
+                    <div class="about-us-quote-mark">"</div>
+                    <p class="about-us-quote-text">
+                        Acreditamos que negócios podem ser uma força para o bem. Nossa equipe se dedica 
+                        diariamente para provar que é possível crescer enquanto fazemos a diferença na vida 
+                        de milhares de pessoas.
+                    </p>
+                    <p class="about-us-quote-author">— Equipe Doe e Ganhe</p>
+                </div>
+            </section>
+
+            <!-- Como Funciona -->
+            <section class="about-us-how-it-works-section">
+                <div class="about-us-section-header">
+                    <span class="about-us-badge badge-orange">Como Funciona</span>
+                    <h2 class="about-us-section-title">
+                        Simples, Transparente e <span class="about-us-gradient-text">Efetivo</span>
+                    </h2>
+                    <p class="about-us-section-description">
+                        Em apenas 4 passos, você pode se divertir e fazer a diferença na vida de milhares de pessoas
+                    </p>
+                </div>
+
+                <div class="about-us-steps-grid">
+                    <div class="about-us-step-card">
+                        <div class="about-us-step-number">1</div>
+                        <div class="about-us-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-step-title">Escolha sua ONG</h3>
+                        <p class="about-us-step-description">
+                            Selecione entre mais de 50 ONGs verificadas que atuam em diversas causas sociais.
+                        </p>
+                    </div>
+
+                    <div class="about-us-step-card">
+                        <div class="about-us-step-number">2</div>
+                        <div class="about-us-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-step-title">Jogue e Divirta-se</h3>
+                        <p class="about-us-step-description">
+                            Aproveite nossos jogos de cassino com segurança e entretenimento de qualidade.
+                        </p>
+                    </div>
+
+                    <div class="about-us-step-card">
+                        <div class="about-us-step-number">3</div>
+                        <div class="about-us-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-step-title">Doe Automaticamente</h3>
+                        <p class="about-us-step-description">
+                            2% de cada aposta é automaticamente destinado à ONG escolhida por você.
+                        </p>
+                    </div>
+
+                    <div class="about-us-step-card">
+                        <div class="about-us-step-number">4</div>
+                        <div class="about-us-step-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-step-title">Acompanhe o Impacto</h3>
+                        <p class="about-us-step-description">
+                            Veja em tempo real quanto você já doou e o impacto gerado na comunidade.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Donation Highlight -->
+                <div class="about-us-donation-highlight">
+                    <div class="about-us-highlight-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="5" x2="5" y2="19"/>
+                            <circle cx="6.5" cy="6.5" r="2.5"/>
+                            <circle cx="17.5" cy="17.5" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="about-us-highlight-title">2% de Cada Aposta = 100% de Impacto</h3>
+                    <p class="about-us-highlight-description">
+                        Essa pequena porcentagem já transformou a vida de milhares de pessoas. 
+                        Sem custos extras para você, sem burocracia, apenas impacto real e mensurável.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Nossos Valores -->
+            <section class="about-us-values-section">
+                <div class="about-us-section-header">
+                    <span class="about-us-badge badge-purple">Nossos Valores</span>
+                    <h2 class="about-us-section-title">
+                        O que nos <span class="about-us-gradient-text">Move</span>
+                    </h2>
+                </div>
+
+                <div class="about-us-values-grid">
+                    <div class="about-us-value-card">
+                        <div class="about-us-value-icon value-icon-orange">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-value-title">Impacto Social</h3>
+                        <p class="about-us-value-description">
+                            2% de cada aposta vai diretamente para ONGs verificadas, gerando impacto real na sociedade.
+                        </p>
+                    </div>
+
+                    <div class="about-us-value-card">
+                        <div class="about-us-value-icon value-icon-purple">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-value-title">Transparência Total</h3>
+                        <p class="about-us-value-description">
+                            Relatórios públicos mensais sobre todas as doações realizadas e seu impacto nas comunidades.
+                        </p>
+                    </div>
+
+                    <div class="about-us-value-card">
+                        <div class="about-us-value-icon value-icon-blue">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-value-title">Comunidade</h3>
+                        <p class="about-us-value-description">
+                            Mais de 100.000 jogadores unidos pela mesma causa: diversão com responsabilidade social.
+                        </p>
+                    </div>
+
+                    <div class="about-us-value-card">
+                        <div class="about-us-value-icon value-icon-orange">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"/>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                            </svg>
+                        </div>
+                        <h3 class="about-us-value-title">Jogo Responsável</h3>
+                        <p class="about-us-value-description">
+                            Ferramentas de autocontrole e suporte especializado para garantir uma experiência saudável.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transparência -->
+            <section class="about-us-transparency-section" id="transparencia">
+                <div class="about-us-transparency-image">
+                    <div class="about-us-image-glow"></div>
+                    <img src="https://images.unsplash.com/photo-1640030104754-0a33c686c533?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFuc3BhcmVuY3klMjB0cnVzdCUyMGJ1c2luZXNzfGVufDF8fHx8MTc2MDY3NjgyNHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Transparência">
+                </div>
+
+                <div class="about-us-transparency-content">
+                    <span class="about-us-badge badge-blue">Transparência & Segurança</span>
+                    <h2 class="about-us-section-title">
+                        Confiança <span class="about-us-gradient-text-blue">Construída na Transparência</span>
+                    </h2>
+                    <p class="about-us-transparency-text">
+                        Acreditamos que transparência é a base de qualquer relação de confiança. 
+                        Por isso, publicamos mensalmente relatórios detalhados sobre todas as doações 
+                        realizadas e seu impacto nas comunidades atendidas.
+                    </p>
+
+                    <div class="about-us-principles-list">
+                        <div class="about-us-principle-item">
+                            <svg class="about-us-check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Transparência absoluta em todas as operações</span>
+                        </div>
+                        <div class="about-us-principle-item">
+                            <svg class="about-us-check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Segurança de dados e transações certificada</span>
+                        </div>
+                        <div class="about-us-principle-item">
+                            <svg class="about-us-check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Auditoria independente trimestral</span>
+                        </div>
+                        <div class="about-us-principle-item">
+                            <svg class="about-us-check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Jogo responsável e sustentável</span>
+                        </div>
+                        <div class="about-us-principle-item">
+                            <svg class="about-us-check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Suporte 24/7 em português</span>
+                        </div>
+                        <div class="about-us-principle-item">
+                            <svg class="about-us-check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>Parceria apenas com ONGs verificadas</span>
+                        </div>
+                    </div>
+
+                    <div class="about-us-certifications">
+                        <div class="about-us-cert-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <span>SSL Certificado</span>
+                        </div>
+                        <div class="about-us-cert-badge cert-blue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <span>Licenciado</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Final -->
+            <section class="about-us-cta-section">
+                <div class="about-us-cta-background"></div>
+                <div class="about-us-cta-content">
+                    <h2 class="about-us-cta-title">Faça Parte desta Revolução</h2>
+                    <p class="about-us-cta-description">
+                        Junte-se a milhares de jogadores que já estão transformando entretenimento 
+                        em impacto social real. Comece hoje mesmo!
+                    </p>
+                    <div class="about-us-cta-buttons">
+                        <a href="#" class="about-us-btn btn-white btn-lg">
+                            Criar Conta Grátis
+                            <svg class="about-us-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="index.html#ngos" class="about-us-btn btn-outline-white btn-lg">Conhecer ONGs Parceiras</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="about-us-footer">
+        <div class="about-us-footer-container">
+            <div class="about-us-footer-grid">
+                <div class="about-us-footer-brand">
+                    <div class="about-us-footer-logo">
+                        <div class="about-us-logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="6" y1="2" x2="6" y2="6"/>
+                                <line x1="10" y1="2" x2="10" y2="6"/>
+                                <line x1="14" y1="2" x2="14" y2="6"/>
+                                <line x1="18" y1="2" x2="18" y2="6"/>
+                                <rect x="2" y="6" width="20" height="16" rx="2"/>
+                                <circle cx="12" cy="14" r="3"/>
+                            </svg>
+                        </div>
+                        <span class="about-us-logo-text">Doe e Ganhe</span>
+                    </div>
+                    <p class="about-us-footer-description">
+                        Transformando entretenimento em impacto social. Jogue, divirta-se e 
+                        faça a diferença na vida de milhares de pessoas.
+                    </p>
+                    <div class="about-us-footer-social">
+                        <a href="#" class="about-us-social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="about-us-social-icon" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="about-us-social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about-us-footer-links">
+                    <h3 class="about-us-footer-title">Cassino</h3>
+                    <ul>
+                        <li><a href="casino.html">Todos os Jogos</a></li>
+                        <li><a href="casino.html#slots">Slots</a></li>
+                        <li><a href="casino.html#table">Jogos de Mesa</a></li>
+                        <li><a href="casino.html#live">Cassino ao Vivo</a></li>
+                    </ul>
+                </div>
+
+                <div class="about-us-footer-links">
+                    <h3 class="about-us-footer-title">Empresa</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre Nós</a></li>
+                        <li><a href="ongs.html">ONGs Parceiras</a></li>
+                        <li><a href="#transparencia">Relatórios</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                    </ul>
+                </div>
+
+                <div class="about-us-footer-links">
+                    <h3 class="about-us-footer-title">Suporte</h3>
+                    <ul>
+                        <li><a href="support.html">Central de Ajuda</a></li>
+                        <li><a href="#">Jogo Responsável</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="about-us-footer-bottom">
+                <p>&copy; 2025 Doe e Ganhe. Todos os direitos reservados.</p>
+                <p class="about-us-footer-disclaimer">
+                    Jogue com responsabilidade. Proibido para menores de 18 anos.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

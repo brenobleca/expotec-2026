@@ -2,725 +2,736 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark light" />
-  <title>Doe e Ganhe</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Doe e Ganhe</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- navbar -->
-  <div class="navbar-bg">
-    <nav class="navbar">
-      <div class="container">
-        <div class="nav-inner" role="navigation" aria-label="Navegação principal">
-          <!-- paginas -->
-          <div class="nav-container">
-            <!-- logo "Doe & Ganhe" -->
-            <div class="nav-logo">
+    <!-- navbar -->
+    <div class="navbar-bg">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-inner" role="navigation" aria-label="Navegação principal">
+                    <!-- paginas -->
+                    <div class="nav-container">
+                        <!-- logo "Doe & Ganhe" -->
+                        <div class="nav-logo">
 
-              <h1 id="home" onclick="window.location.href='index.html'">Doe e Ganhe</h1>
-            </div>
-            <!-- links/paginas cassino e ongs -->
-            <div class="nav-links">
-              <a class="link-casino" href="casino.html">Cassino</a>
-              <a class="link-ngos" href="ngos.html">ONGs</a>
-            </div>
-          </div>
-          <div class="nav-container">
-            <!--* Botoes de acoes da navbar -->
-            <div class="nav-actions">
-              <!-- Buscar -->
-              <button class="nav-btn-icon" title="buscar" aria-label="buscar">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-search-icon lucide-search">
-                  <path d="m21 21-4.34-4.34" />
-                  <circle cx="11" cy="11" r="8" />
-                </svg>
-              </button>
-              <!-- Ofertas -->
-              <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-gift-icon lucide-gift">
-                  <rect x="3" y="8" width="18" height="4" rx="1" />
-                  <path d="M12 8v13" />
-                  <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-                  <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
-                </svg>
-              </button>
-              <!-- Configurações -->
-              <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-settings-icon lucide-settings">
-                  <path
-                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              </button>
-              <div class="nav-btn-theme">
-                <!-- Botão de tema -->
-                <div class="theme-toggle" id="themeToggle" title="Alternar tema">
-                  <div class="circle">
-                    <!-- Lua -->
-                    <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                    </svg>
-                    <!-- Sol -->
-                    <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="5" />
-                      <line x1="12" y1="1" x2="12" y2="3" />
-                      <line x1="12" y1="21" x2="12" y2="23" />
-                      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                      <line x1="1" y1="12" x2="3" y2="12" />
-                      <line x1="21" y1="12" x2="23" y2="12" />
-                      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                    </svg>
-                  </div>
+                            <h1 id="home" onclick="window.location.href='index.html'">Doe e Ganhe</h1>
+                        </div>
+                        <!-- links/paginas cassino e ongs -->
+                        <div class="nav-links">
+                            <a class="link-casino" href="casino.html">Cassino</a>
+                            <a class="link-ngos" href="ngos.html">ONGs</a>
+                        </div>
+                    </div>
+                    <div class="nav-container">
+                        <!--* Botoes de acoes da navbar -->
+                        <div class="nav-actions">
+                            <!-- Buscar -->
+                            <button class="nav-btn-icon" title="buscar" aria-label="buscar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-search-icon lucide-search">
+                                    <path d="m21 21-4.34-4.34" />
+                                    <circle cx="11" cy="11" r="8" />
+                                </svg>
+                            </button>
+                            <!-- Ofertas -->
+                            <button class="nav-btn-icon" title="Ofertas" aria-label="Ofertas">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift">
+                                    <rect x="3" y="8" width="18" height="4" rx="1" />
+                                    <path d="M12 8v13" />
+                                    <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+                                    <path
+                                        d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+                                </svg>
+                            </button>
+                            <!-- Configurações -->
+                            <button class="nav-btn-icon" title="Configurações" aria-label="Configurações">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings">
+                                    <path
+                                        d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                            <div class="nav-btn-theme">
+                                <!-- Botão de tema -->
+                                <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                                    <div class="circle">
+                                        <!-- Lua -->
+                                        <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                        </svg>
+                                        <!-- Sol -->
+                                        <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="5" />
+                                            <line x1="12" y1="1" x2="12" y2="3" />
+                                            <line x1="12" y1="21" x2="12" y2="23" />
+                                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                            <line x1="1" y1="12" x2="3" y2="12" />
+                                            <line x1="21" y1="12" x2="23" y2="12" />
+                                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--* Botoes de cadastrar e login -->
+                            <button id="Registerbtn" class="nav-btn-register"
+                                onclick="SignUpOpenModal()">Cadastre-se</button>
+                            <button id="Loginbtn" class="nav-btn-login" onclick="openModal()">Login</button>
+
+                            <!-- logout-->
+                            <button class="nav-btn-icon invisible" id="logout" title="logout" aria-label="logout">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-log-out-icon lucide-log-out">
+                                    <path d="m16 17 5-5-5-5" />
+                                    <path d="M21 12H9" />
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-
-              <!--* Botoes de cadastrar e login -->
-              <button id="Registerbtn" class="nav-btn-register" onclick="SignUpOpenModal()">Cadastre-se</button>
-              <button id="Loginbtn" class="nav-btn-login" onclick="openModal()">Login</button>
-
-              <!-- logout-->
-              <button class="nav-btn-icon invisible" id="logout" title="logout" aria-label="logout">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-log-out-icon lucide-log-out">
-                  <path d="m16 17 5-5-5-5" />
-                  <path d="M21 12H9" />
-                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                </svg>
-              </button>
             </div>
-          </div>
-        </div>
-
-      </div>
-    </nav>
-  </div>
-
-  <!-- Modal de Login -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="CloseLoginModal()">&times;</span>
-      <h2>Login</h2>
-      <form id="form-login">
-        <label for="username">Usuário</label>
-        <input type="text" id="username-login" name="username" required>
-
-        <label for="password">Senha</label>
-        <input type="password" id="password-login" name="password" required>
-        <div id="mensagem-login"></div>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Modal de Registro -->
-  <div id="SignUpModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="CloseRegisterModal()">&times;</span>
-      <h2>Registre-se</h2>
-      <form id="form-registro">
-        <label for="name">Nome completo</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" required>
-
-        <label for="birth-date">Data de nascimento</label>
-        <input type="date" name="birth-date" id="birth-date" required>
-
-        <label for="username">Usuário</label>
-        <input type="text" id="username-register" name="username" required>
-
-        <label for="password">Senha</label>
-        <input type="password" id="password-register" name="password" required>
-        <div id="mensagem-registro"></div>
-        <button type="submit">Registrar-se</button>
-      </form>
-    </div>
-  </div>
-
-  <!--! ===== CONTEUDO PRINCIPAL ===== -->
-  <main>
-    <!--* ===== BANNER ===== -->
-    <section class="banner">
-      <img src="img/doe_e_ganhe_banner.jpg" alt="Banner do Doe & Ganhe" />
-      <div class="banner-inner">
-        <div class="banner-text-inner">
-          <h1>
-            <span class="banner-text-orange">Ganhe</span> e
-            <span class="banner-text-purple">Doe</span> ao Mesmo Tempo!
-          </h1>
-          <p>
-            A cada aposta, uma porcentagem é destinada à ONG de sua escolha. Divirta-se no cassino e faça a diferença na
-            vida de quem mais precisa!
-          </p>
-        </div>
-        <button class="btn-primary" onclick="location.href='casino.html'">JOGUE AGORA</button>
-      </div>
-    </section>
-
-    <!--* ===== OFERTAS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-title">
-            <h2>Ofertas Especiais</h2>
-            <p>As melhores ofertas diárias</p>
-          </div>
-          <a href="#" class="link-see-more">Ver todas</a>
-        </div>
-        <div class="grid offers-grid">
-          <div class="card">
-            <img src="img/ofertas/ofertas_pacote_de_boas_vindas.png" alt="">
-            <div class="card-body">
-              <h3>Pacote de Boas-Vindas</h3>
-              <p>100% de bônus até R$500 + 5 rodadas grátis</p>
-              <div class="offers-card-btn">
-                <button class="btn-full-width">Resgatar</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="img/ofertas/ofertas_rodadas_gratis.png" alt="">
-            <div class="card-body">
-              <h3>Rodadas Grátis</h3>
-              <p>10 rodadas grátis no caça-níqueis Starburst</p>
-              <div class="offers-card-btn">
-                <button class="btn-full-width">Resgatar</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="img/ofertas/ofertas_torneio.png" alt="">
-            <div class="card-body">
-              <h3>Torneio Especial</h3>
-              <p>Participe e concorra a R$10.000 em prêmios</p>
-              <div class="offers-card-btn">
-                <button class="btn-full-width">Participar</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="https://placehold.co/600x300" alt="">
-            <div class="card-body">
-              <h3>Cashback Semanal</h3>
-              <p>Até 10% de cashback em suas perdas no cassino</p>
-              <div class="offers-card-btn">
-                <button class="btn-full-width">Saiba mais</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--* ===== JOGOS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-title">
-            <h2>Nossos Jogos</h2>
-            <p>Os mais jogados dessa semana</p>
-          </div>
-          <div class="section-btn-filter">
-            <button class="btn-outline">Todos</button>
-            <button class="btn-outline">Cartas</button>
-            <button class="btn-outline">Cash</button>
-            <button class="btn-outline">Roleta</button>
-            <button class="btn-outline">Slots</button>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="game-grid">
-
-        <!-- Jogo 1 Roleta-->
-        <div class="card game-card">
-          <div class="thumb">
-            <img src="img/jogos/jogos_roleta_roleta.png" alt="Imagem do jogo Roleta">
-            <div class="overlay">
-              <button class="btn-primary">Jogar agora</button>
-            </div>
-          </div>
-          <div class="meta">
-            <h3 class="truncate">Roleta</h3>
-            <p>Roleta</p>
-          </div>
-        </div>
-
-        <!-- Jogo 2 Tigrinho-->
-        <div class="card game-card">
-          <div class="thumb">
-            <img src="img/jogos/jogos_slots_fortune_tiger.jpeg" alt="Imagem do jogo Fortune Tiger">
-            <div class="overlay">
-              <button class="btn-primary">Jogar agora</button>
-            </div>
-          </div>
-          <div class="meta">
-            <h3 class="truncate">Fortune Tiger</h3>
-            <p>Slots</p>
-          </div>
-        </div>
-
-        <!-- Jogo 3 Blackjack-->
-        <div class="card game-card">
-          <div class="thumb">
-            <img src="img/jogos/jogos_cartas_blackjack.jpg" alt="Imagem do jogo Blackjack Clássico">
-            <div class="overlay">
-              <button class="btn-primary">Jogar agora</button>
-            </div>
-          </div>
-          <div class="meta">
-            <h3 class="truncate">Blackjack Clássico</h3>
-            <p>Cartas</p>
-          </div>
-        </div>
-
-        <!-- Jogo 4 Aviator -->
-        <div class="card game-card">
-          <div class="thumb">
-            <img src="img/jogos/jogos_cash_aviator.jpg" alt="Imagem do jogo Aviator">
-            <div class="overlay">
-              <button class="btn-primary">Jogar agora</button>
-            </div>
-          </div>
-          <div class="meta">
-            <h3 class="truncate">Aviator</h3>
-            <p>Cash</p>
-          </div>
-        </div>
-
-        <!-- Jogo 5 Campo Minado-->
-        <div class="card game-card">
-          <div class="thumb">
-            <img src="img/jogos/jogos_cash_mines.png" alt="Imagem do jogo Campo Minado">
-            <div class="overlay">
-              <button class="btn-primary">Jogar agora</button>
-            </div>
-          </div>
-          <div class="meta">
-            <h3 class="truncate">Campo Minado</h3>
-            <p>Cash</p>
-          </div>
-        </div>
-
-        <!-- Jogo 6 Plinko-->
-        <div class="card game-card">
-          <div class="thumb">
-            <img src="img/jogos/jogos_cash_plinko.jpg" alt="Imagem do jogo Plinko">
-            <div class="overlay">
-              <button class="btn-primary">Jogar agora</button>
-            </div>
-          </div>
-          <div class="meta">
-            <h3 class="truncate">Plinko</h3>
-            <p>Cash</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--* ===== DOAÇÃO ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="donation-wrap">
-          <div class="donation-inner">
-            <h2>Jogue e Ajude uma Causa</h2>
-            <p>A cada aposta, 50% do valor é destinado à ONG de sua escolha. Você se diverte e ajuda quem precisa!</p>
-            <button class="btn-primary" onclick="location.href='ngos.html'">Escolher uma ONG</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--* ===== ONGS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="container-ongs">
-          <div class="container-ongs-head">
-            <div class="container-ongs-head-text">
-              <h2>ONGs Parceiras</h2>
-              <p>Organizações que fazem a diferença</p>
-            </div>
-            <div class="container-ongs-head-more">
-              <a href="ngos.html" class="link-see-more container-ongs-link-see-more">Ver Todas as ONGs</a>
-            </div>
-          </div>
-        </div>
-        <div class="grid ongs-grid">
-          <div class="card ngos-card">
-            <img src="img/ongs/ongs-crianca-esperanca.png" alt="">
-            <div class="card-body ngos-card-body">
-              <div class="ngos-card-body-cima">
-                <div class="ngos-ong-tag" data-category="direitos-humanos">Direitos Humanos</div>
-                <h3>Criança Esperança</h3>
-                <p>Campanha nacional em prol dos direitos da criança e do adolescente.</p>
-              </div>
-              <div class="ngos-card-body-baixo">
-                <div class="ngos-ong-location">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <p>Nacional</p>
-                </div>
-                <div class="progress-outer">
-                  <div class="progress-inner progress-inner-1"></div>
-                </div>
-                <p>R$75.000 arrecadados de R$100.000</p>
-                <button class="btn-full-width">Doar Agora</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card ngos-card">
-            <img src="img/ongs/ongs-greenpeace.png" alt="Greenpeace">
-            <div class="card-body ngos-card-body">
-              <div class="ngos-card-body-cima">
-                <div class="ngos-ong-tag" data-category="meio-ambiente">Meio Ambiente</div>
-                <h3>Greenpeace</h3>
-                <p>Proteção do meio ambiente, ações diretas e campanhas por políticas públicas.</p>
-              </div>
-              <div class="ngos-card-body-baixo">
-                <div class="ngos-ong-location">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <p>Internacional</p>
-                </div>
-                <div class="progress-outer">
-                  <div class="progress-inner progress-inner-2"></div>
-                </div>
-                <p>R$40.000 arrecadados de R$100.000</p>
-                <button class="btn-full-width">Doar Agora</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card ngos-card">
-            <img src="img/ongs/ongs-instituto-ayrton-senna.png" alt="Instituto Ayrton Senna">
-            <div class="card-body ngos-card-body">
-              <div class="ngos-card-body-cima">
-                <div class="ngos-ong-tag" data-category="educacao">Educação</div>
-                <h3>Instituto Ayrton Senna</h3>
-                <p>Cria oportunidades de desenvolvimento humano a crianças e jovens por meio da educação.</p>
-              </div>
-              <div class="ngos-card-body-baixo">
-                <div class="ngos-ong-location">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <p>São Paulo</p>
-                </div>
-                <div class="progress-outer">
-                  <div class="progress-inner progress-inner-3"></div>
-                </div>
-                <p>R$90.000 arrecadados de R$100.000</p>
-                <button class="btn-full-width">Doar Agora</button>
-              </div>
-            </div>
-          </div>
-
-    </section>
-
-    <!--* Total Arrecadado  -->
-    <div class="container">
-      <div class="ngos-total-raised-header">
-        <h2><span class="ngos-total-raised-header-icon">💖</span> Total Arrecadado</h2>
-        <p>Veja o impacto que estamos fazendo juntos</p>
-      </div>
-      <div class="grid ngos-total-raised-grid">
-        <div class="card ngos-total-raised">
-          <img src="https://placehold.co/1248x240" alt="">
-          <div class="card-body ngos-total-raised-body">
-            <h3>Total Arrecadado Expotec</h3>
-            <p>Tudo que conseguimos arrecadar para as ONGs hoje nessa Expotec de 2025</p>
-            <div class="progress-outer">
-              <div class="ngos-total-raised-progress-inner"></div>
-            </div>
-            <p>R$0 arrecadados de R$1.000</p> <!--* MUDAR ISSO AQUI -->
-            <button class="btn-full-width" onclick="location.href='ngos.html'">Doar Agora</button>
-          </div>
-        </div>
-      </div>
+        </nav>
     </div>
 
-    <!--* ===== ESTATISTICAS ===== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Estatísticas ao Vivo</h2>
-          <p>Acompanhe o impacto social em tempo real</p>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="CloseLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="form-login">
+                <label for="username">Usuário</label>
+                <input type="text" id="username-login" name="username" required>
+
+                <label for="password">Senha</label>
+                <input type="password" id="password-login" name="password" required>
+                <div id="mensagem-login"></div>
+                <button type="submit">Entrar</button>
+            </form>
         </div>
-        <div class="stats-grid">
-          <!-- Jogadores online -->
-          <div class="stats-card-odd">
-            <div class="stats-card-inner">
-              <div class="stats-card-data">
-                <p>Online Agora</p>
-                <h3 id="stats-players-online">999.999</h3>
-              </div>
-              <div class="stats-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-users-icon lucide-users">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                  <circle cx="9" cy="7" r="4" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <!-- Total de doação diaria -->
-          <div class="stats-card-even">
-            <div class="stats-card-inner">
-              <div class="stats-card-data">
-                <p>Total Doado</p>
-                <h3 id="stats-donation-today">R$ 999.999.999</h3>
-              </div>
-              <div class="stats-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-heart-icon lucide-heart">
-                  <path
-                    d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <!-- Total de jogos jogados hoje -->
-          <div class="stats-card-odd">
-            <div class="stats-card-inner">
-              <div class="stats-card-data">
-                <p>Jogos Hoje</p>
-                <h3 id="stats-played-today">999.999</h3>
-              </div>
-              <div class="stats-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-gamepad2-icon lucide-gamepad-2">
-                  <line x1="6" x2="10" y1="11" y2="11" />
-                  <line x1="8" x2="8" y1="9" y2="13" />
-                  <line x1="15" x2="15.01" y1="12" y2="12" />
-                  <line x1="18" x2="18.01" y1="10" y2="10" />
-                  <path
-                    d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <!-- RTP Médio -->
-          <div class="stats-card-even">
-            <div class="stats-card-inner">
-              <div class="stats-card-data">
-                <p>RTP Médio</p>
-                <h3 id="stats-avarage-rtp">99.99%</h3>
-              </div>
-              <div class="stats-card-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-trending-up-icon lucide-trending-up">
-                  <path d="M16 7h6v6" />
-                  <path d="m22 7-8.5 8.5-5-5L2 17" />
-                </svg>
-              </div>
-            </div>
-          </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="SignUpModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="CloseRegisterModal()">&times;</span>
+            <h2>Registre-se</h2>
+            <form id="form-registro">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" required>
+
+                <label for="birth-date">Data de nascimento</label>
+                <input type="date" name="birth-date" id="birth-date" required>
+
+                <label for="username">Usuário</label>
+                <input type="text" id="username-register" name="username" required>
+
+                <label for="password">Senha</label>
+                <input type="password" id="password-register" name="password" required>
+                <div id="mensagem-registro"></div>
+                <button type="submit">Registrar-se</button>
+            </form>
         </div>
-        <!-- Ranking Wins -->
-        <div class="ranking-wins">
-          <div class="wins-header">
-            <div class="wins-title">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-trophy-icon lucide-trophy">
-                <path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978" />
-                <path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978" />
-                <path d="M18 9h1.5a1 1 0 0 0 0-5H18" />
-                <path d="M4 22h16" />
-                <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
-                <path d="M6 9H4.5a1 1 0 0 1 0-5H6" />
-              </svg>
-              <h2>Ranking de Vitórias</h2>
-            </div>
-            <button class="wins-live-button">
-              <div class="wins-pulse-effect"></div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-radio-icon lucide-radio">
-                <path d="M16.247 7.761a6 6 0 0 1 0 8.478" />
-                <path d="M19.075 4.933a10 10 0 0 1 0 14.134" />
-                <path d="M4.925 19.067a10 10 0 0 1 0-14.134" />
-                <path d="M7.753 16.239a6 6 0 0 1 0-8.478" />
-                <circle cx="12" cy="12" r="2" />
-              </svg>
-              <span>AO VIVO</span>
-            </button>
-          </div>
+    </div>
 
-          <div class="wins-list" id="wins-list">
-            <div class="wins-item">
-              <div class="wins-user">
-                <div class="wins-user-avatar">86</div>
-                <div class="wins-user-info">
-                  <div class="wins-username">Jogador86</div>
-                  <div class="wins-time-ago">Tigrinho • 3h atrás</div>
+    <!--! ===== CONTEUDO PRINCIPAL ===== -->
+    <main>
+        <!--* ===== BANNER ===== -->
+        <section class="banner-full">
+            <img src="img/doe_e_ganhe_banner.jpg" alt="Banner do Doe & Ganhe" />
+            <div class="banner-full-inner">
+                <div class="banner-full-text-inner">
+                    <h1>
+                        <span class="banner-full-text-orange">Ganhe</span> e
+                        <span class="banner-full-text-purple">Doe</span> ao Mesmo Tempo!
+                    </h1>
+                    <p>
+                        A cada aposta, uma porcentagem é destinada à ONG de sua escolha. Divirta-se no cassino e faça a
+                        diferença na
+                        vida de quem mais precisa!
+                    </p>
                 </div>
-              </div>
-              <div class="wins-amount">R$ 7.550</div>
+                <button class="btn-primary" onclick="location.href='casino.html'">JOGUE AGORA</button>
             </div>
+        </section>
 
-            <div class="wins-item">
-              <div class="wins-user">
-                <div class="wins-user-avatar">26</div>
-                <div class="wins-user-info">
-                  <div class="wins-username">Jogador526</div>
-                  <div class="wins-time-ago">Roleta • 16h atrás</div>
+        <!--* ===== OFERTAS ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div class="section-title">
+                        <h2>Ofertas Especiais</h2>
+                        <p>As melhores ofertas diárias</p>
+                    </div>
+                    <a href="#" class="link-see-more">Ver todas</a>
                 </div>
-              </div>
-              <div class="wins-amount">R$ 4.288</div>
-            </div>
+                <div class="grid offers-grid">
+                    <div class="card">
+                        <img src="img/ofertas/ofertas_pacote_de_boas_vindas.png" alt="">
+                        <div class="card-body">
+                            <h3>Pacote de Boas-Vindas</h3>
+                            <p>100% de bônus até R$500 + 5 rodadas grátis</p>
+                            <div class="offers-card-btn">
+                                <button class="btn-full-width">Resgatar</button>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="wins-item">
-              <div class="wins-user">
-                <div class="wins-user-avatar">64</div>
-                <div class="wins-user-info">
-                  <div class="wins-username">Jogador264</div>
-                  <div class="wins-time-ago">Aviador • 22h atrás</div>
+                    <div class="card">
+                        <img src="img/ofertas/ofertas_rodadas_gratis.png" alt="">
+                        <div class="card-body">
+                            <h3>Rodadas Grátis</h3>
+                            <p>10 rodadas grátis no caça-níqueis Starburst</p>
+                            <div class="offers-card-btn">
+                                <button class="btn-full-width">Resgatar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/ofertas/ofertas_torneio.png" alt="">
+                        <div class="card-body">
+                            <h3>Torneio Especial</h3>
+                            <p>Participe e concorra a R$10.000 em prêmios</p>
+                            <div class="offers-card-btn">
+                                <button class="btn-full-width">Participar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/ofertas/ofertas-cashback-semanal.png" alt="">
+                        <div class="card-body">
+                            <h3>Cashback Semanal</h3>
+                            <p>Até 10% de cashback em suas perdas no cassino</p>
+                            <div class="offers-card-btn">
+                                <button class="btn-full-width">Saiba mais</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="wins-amount">R$ 2.163</div>
             </div>
+        </section>
 
-            <div class="wins-item">
-              <div class="wins-user">
-                <div class="wins-user-avatar">23</div>
-                <div class="wins-user-info">
-                  <div class="wins-username">Jogador923</div>
-                  <div class="wins-time-ago">Plinko • 10h atrás</div>
+        <!--* ===== JOGOS ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div class="section-title">
+                        <h2>Nossos Jogos</h2>
+                        <p>Os mais jogados dessa semana</p>
+                    </div>
+                    <div class="section-btn-filter">
+                        <button class="btn-outline">Todos</button>
+                        <button class="btn-outline">Cartas</button>
+                        <button class="btn-outline">Cash</button>
+                        <button class="btn-outline">Roleta</button>
+                        <button class="btn-outline">Slots</button>
+
+                    </div>
                 </div>
-              </div>
-              <div class="wins-amount">R$ 909</div>
             </div>
 
-            <div class="wins-item">
-              <div class="wins-user">
-                <div class="wins-user-avatar">69</div>
-                <div class="wins-user-info">
-                  <div class="wins-username">Jogador869</div>
-                  <div class="wins-time-ago">Blackjack • 5h atrás</div>
+            <div class="game-grid">
+
+                <!-- Jogo 1 Roleta-->
+                <div class="card game-card">
+                    <div class="thumb">
+                        <img src="img/jogos/jogos_roleta_roleta.png" alt="Imagem do jogo Roleta">
+                        <div class="overlay">
+                            <button class="btn-primary">Jogar agora</button>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <h3 class="truncate">Roleta</h3>
+                        <p>Roleta</p>
+                    </div>
                 </div>
 
+                <!-- Jogo 2 Tigrinho-->
+                <div class="card game-card">
+                    <div class="thumb">
+                        <img src="img/jogos/jogos_slots_fortune_tiger.jpeg" alt="Imagem do jogo Fortune Tiger">
+                        <div class="overlay">
+                            <button class="btn-primary">Jogar agora</button>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <h3 class="truncate">Fortune Tiger</h3>
+                        <p>Slots</p>
+                    </div>
+                </div>
 
+                <!-- Jogo 3 Blackjack-->
+                <div class="card game-card">
+                    <div class="thumb">
+                        <img src="img/jogos/jogos_cartas_blackjack.jpg" alt="Imagem do jogo Blackjack Clássico">
+                        <div class="overlay">
+                            <button class="btn-primary">Jogar agora</button>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <h3 class="truncate">Blackjack Clássico</h3>
+                        <p>Cartas</p>
+                    </div>
+                </div>
 
-              </div>
-              <div class="wins-amount">R$ 763</div>
+                <!-- Jogo 4 Aviator -->
+                <div class="card game-card">
+                    <div class="thumb">
+                        <img src="img/jogos/jogos_cash_aviator.jpg" alt="Imagem do jogo Aviator">
+                        <div class="overlay">
+                            <button class="btn-primary">Jogar agora</button>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <h3 class="truncate">Aviator</h3>
+                        <p>Cash</p>
+                    </div>
+                </div>
+
+                <!-- Jogo 5 Campo Minado-->
+                <div class="card game-card">
+                    <div class="thumb">
+                        <img src="img/jogos/jogos_cash_mines.png" alt="Imagem do jogo Campo Minado">
+                        <div class="overlay">
+                            <button class="btn-primary">Jogar agora</button>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <h3 class="truncate">Campo Minado</h3>
+                        <p>Cash</p>
+                    </div>
+                </div>
+
+                <!-- Jogo 6 Plinko-->
+                <div class="card game-card">
+                    <div class="thumb">
+                        <img src="img/jogos/jogos_cash_plinko.jpg" alt="Imagem do jogo Plinko">
+                        <div class="overlay">
+                            <button class="btn-primary">Jogar agora</button>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <h3 class="truncate">Plinko</h3>
+                        <p>Cash</p>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+
+        <!--* ===== DOAÇÃO ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="donation-wrap">
+                    <div class="donation-inner">
+                        <h2>Jogue e Ajude uma Causa</h2>
+                        <p>A cada aposta, 50% do valor é destinado à ONG de sua escolha. Você se diverte e ajuda quem
+                            precisa!</p>
+                        <button class="btn-primary" onclick="location.href='ngos.html'">Escolher uma ONG</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--* ===== ONGS ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="container-ongs">
+                    <div class="container-ongs-head">
+                        <div class="container-ongs-head-text">
+                            <h2>ONGs Parceiras</h2>
+                            <p>Organizações que fazem a diferença</p>
+                        </div>
+                        <div class="container-ongs-head-more">
+                            <a href="ngos.html" class="link-see-more container-ongs-link-see-more">Ver Todas as ONGs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid ongs-grid">
+                    <div class="card ngos-card">
+                        <img src="img/ongs/ongs-crianca-esperanca.png" alt="">
+                        <div class="card-body ngos-card-body">
+                            <div class="ngos-card-body-cima">
+                                <div class="ngos-ong-tag" data-category="direitos-humanos">Direitos Humanos</div>
+                                <h3>Criança Esperança</h3>
+                                <p>Campanha nacional em prol dos direitos da criança e do adolescente.</p>
+                            </div>
+                            <div class="ngos-card-body-baixo">
+                                <div class="ngos-ong-location">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    <p>Nacional</p>
+                                </div>
+                                <div class="progress-outer">
+                                    <div class="progress-inner progress-inner-1"></div>
+                                </div>
+                                <p>R$75.000 arrecadados de R$100.000</p>
+                                <button class="btn-full-width">Doar Agora</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card ngos-card">
+                        <img src="img/ongs/ongs-greenpeace.png" alt="Greenpeace">
+                        <div class="card-body ngos-card-body">
+                            <div class="ngos-card-body-cima">
+                                <div class="ngos-ong-tag" data-category="meio-ambiente">Meio Ambiente</div>
+                                <h3>Greenpeace</h3>
+                                <p>Proteção do meio ambiente, ações diretas e campanhas por políticas públicas.</p>
+                            </div>
+                            <div class="ngos-card-body-baixo">
+                                <div class="ngos-ong-location">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    <p>Internacional</p>
+                                </div>
+                                <div class="progress-outer">
+                                    <div class="progress-inner progress-inner-2"></div>
+                                </div>
+                                <p>R$40.000 arrecadados de R$100.000</p>
+                                <button class="btn-full-width">Doar Agora</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card ngos-card">
+                        <img src="img/ongs/ongs-instituto-ayrton-senna.png" alt="Instituto Ayrton Senna">
+                        <div class="card-body ngos-card-body">
+                            <div class="ngos-card-body-cima">
+                                <div class="ngos-ong-tag" data-category="educacao">Educação</div>
+                                <h3>Instituto Ayrton Senna</h3>
+                                <p>Cria oportunidades de desenvolvimento humano a crianças e jovens por meio da
+                                    educação.</p>
+                            </div>
+                            <div class="ngos-card-body-baixo">
+                                <div class="ngos-ong-location">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                    <p>São Paulo</p>
+                                </div>
+                                <div class="progress-outer">
+                                    <div class="progress-inner progress-inner-3"></div>
+                                </div>
+                                <p>R$90.000 arrecadados de R$100.000</p>
+                                <button class="btn-full-width">Doar Agora</button>
+                            </div>
+                        </div>
+                    </div>
+
+        </section>
+
+        <!--* Total Arrecadado  -->
+        <div class="container">
+            <div class="ngos-total-raised-header">
+                <h2><span class="ngos-total-raised-header-icon">💖</span> Total Arrecadado</h2>
+                <p>Veja o impacto que estamos fazendo juntos</p>
+            </div>
+            <div class="grid ngos-total-raised-grid">
+                <div class="card ngos-total-raised">
+                    <img src="img/ongs/ongs-doe-e-ganhe.png" alt="">
+                    <div class="card-body ngos-total-raised-body">
+                        <h3>Total Arrecadado Expotec</h3>
+                        <p>Tudo que conseguimos arrecadar para as ONGs hoje nessa expotec de 2025</p>
+                        <div class="progress-outer">
+                            <div id="total-progress-bar" class="progress-inner" aria-valuenow="0" title="0%"></div>
+                        </div>
+                        <p class="total-progress-text" id="expotec-progress-text">R$149 arrecadados de R$1.000</p>
+                        <!--! MUDAR ISSO AQUI -->
+                        <button class="btn-full-width">Doar Agora</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <!--* ===== FOOTER ===== -->
-    <footer>
-      <div class="container container-footer">
-        <div class="footer-grid">
-          <div>
-            <h3>Doe e Ganhe</h3>
-            <ul class="footer-list">
-              <li><a href="about-us.html">Sobre Nós</a></li>
-              <li><a href="about-us.html">Responsabilidade</a></li>
-              <li><a href="about-us.html">Trabalhe Conosco</a></li>
-              <li><a href="about-us.html">Blog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Cassino</h3>
-            <ul class="footer-list">
-              <li><a href="casino.html">Jogos</a></li>
-              <li><a href="casino.html">Promoções</a></li>
-              <li><a href="casino.html">Torneios</a></li>
-              <li><a href="casino.html">VIP</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>ONGs</h3>
-            <ul class="footer-list">
-              <li><a href="ngos.html">Como Funciona</a></li>
-              <li><a href="ngos.html">ONGs Parceiras</a></li>
-              <li><a href="ngos.html">Relatórios</a></li>
-              <li><a href="ngos.html">Seja uma ONG Parceira</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Suporte</h3>
-            <ul class="footer-list">
-              <li><a href="#">Ajuda</a></li>
-              <li><a href="#">Contato</a></li>
-              <li><a href="#">Termos de Uso</a></li>
-              <li><a href="#">Política de Privacidade</a></li>
-            </ul>
-          </div>
-        </div>
+        <!--* ===== ESTATISTICAS ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Estatísticas ao Vivo</h2>
+                    <p>Acompanhe o impacto social em tempo real</p>
+                </div>
+                <div class="stats-grid">
+                    <!-- Jogadores online -->
+                    <div class="stats-card-odd">
+                        <div class="stats-card-inner">
+                            <div class="stats-card-data">
+                                <p>Online Agora</p>
+                                <h3 id="stats-players-online">999.999</h3>
+                            </div>
+                            <div class="stats-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-users-icon lucide-users">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Total de doação diaria -->
+                    <div class="stats-card-even">
+                        <div class="stats-card-inner">
+                            <div class="stats-card-data">
+                                <p>Total Doado</p>
+                                <h3 id="stats-donation-today">R$ 999.999.999</h3>
+                            </div>
+                            <div class="stats-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart">
+                                    <path
+                                        d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Total de jogos jogados hoje -->
+                    <div class="stats-card-odd">
+                        <div class="stats-card-inner">
+                            <div class="stats-card-data">
+                                <p>Jogos Hoje</p>
+                                <h3 id="stats-played-today">999.999</h3>
+                            </div>
+                            <div class="stats-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-gamepad2-icon lucide-gamepad-2">
+                                    <line x1="6" x2="10" y1="11" y2="11" />
+                                    <line x1="8" x2="8" y1="9" y2="13" />
+                                    <line x1="15" x2="15.01" y1="12" y2="12" />
+                                    <line x1="18" x2="18.01" y1="10" y2="10" />
+                                    <path
+                                        d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- RTP Médio -->
+                    <div class="stats-card-even">
+                        <div class="stats-card-inner">
+                            <div class="stats-card-data">
+                                <p>RTP Médio</p>
+                                <h3 id="stats-avarage-rtp">99.99%</h3>
+                            </div>
+                            <div class="stats-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-trending-up-icon lucide-trending-up">
+                                    <path d="M16 7h6v6" />
+                                    <path d="m22 7-8.5 8.5-5-5L2 17" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ranking Wins -->
+                <div class="ranking-wins">
+                    <div class="wins-header">
+                        <div class="wins-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy">
+                                <path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978" />
+                                <path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978" />
+                                <path d="M18 9h1.5a1 1 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
+                                <path d="M6 9H4.5a1 1 0 0 1 0-5H6" />
+                            </svg>
+                            <h2>Ranking de Vitórias</h2>
+                        </div>
+                        <button class="wins-live-button">
+                            <div class="wins-pulse-effect"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-radio-icon lucide-radio">
+                                <path d="M16.247 7.761a6 6 0 0 1 0 8.478" />
+                                <path d="M19.075 4.933a10 10 0 0 1 0 14.134" />
+                                <path d="M4.925 19.067a10 10 0 0 1 0-14.134" />
+                                <path d="M7.753 16.239a6 6 0 0 1 0-8.478" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg>
+                            <span>AO VIVO</span>
+                        </button>
+                    </div>
 
-        <div class="footer-media">
-          <p>© 2025 Doe e Ganhe. Todos os direitos reservados.</p>
-          <div class="footer-social-media">
-            <!-- FACEBOOK -->
-            <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-              </svg></a>
+                    <div class="wins-list" id="wins-list">
+                        <div class="wins-item">
+                            <div class="wins-user">
+                                <div class="wins-user-avatar">86</div>
+                                <div class="wins-user-info">
+                                    <div class="wins-username">Jogador86</div>
+                                    <div class="wins-time-ago">Tigrinho • 3h atrás</div>
+                                </div>
+                            </div>
+                            <div class="wins-amount">R$ 7.550</div>
+                        </div>
 
-            <!-- INSTAGRAM -->
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
-                viewBox="0,0,256,256">
-                <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                  style="mix-blend-mode: normal">
-                  <g transform="scale(10.66667,10.66667)">
-                    <path
-                      d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
-                    </path>
-                  </g>
-                </g>
-              </svg></a>
+                        <div class="wins-item">
+                            <div class="wins-user">
+                                <div class="wins-user-avatar">26</div>
+                                <div class="wins-user-info">
+                                    <div class="wins-username">Jogador526</div>
+                                    <div class="wins-time-ago">Roleta • 16h atrás</div>
+                                </div>
+                            </div>
+                            <div class="wins-amount">R$ 4.288</div>
+                        </div>
 
-            <!-- TWITTER -->
-            <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-              </svg></a>
-          </div>
-        </div>
-      </div>
-    </footer>
+                        <div class="wins-item">
+                            <div class="wins-user">
+                                <div class="wins-user-avatar">64</div>
+                                <div class="wins-user-info">
+                                    <div class="wins-username">Jogador264</div>
+                                    <div class="wins-time-ago">Aviador • 22h atrás</div>
+                                </div>
+                            </div>
+                            <div class="wins-amount">R$ 2.163</div>
+                        </div>
 
-  </main>
-  <script src="js/script.js"></script>
+                        <div class="wins-item">
+                            <div class="wins-user">
+                                <div class="wins-user-avatar">23</div>
+                                <div class="wins-user-info">
+                                    <div class="wins-username">Jogador923</div>
+                                    <div class="wins-time-ago">Plinko • 10h atrás</div>
+                                </div>
+                            </div>
+                            <div class="wins-amount">R$ 909</div>
+                        </div>
+
+                        <div class="wins-item">
+                            <div class="wins-user">
+                                <div class="wins-user-avatar">69</div>
+                                <div class="wins-user-info">
+                                    <div class="wins-username">Jogador869</div>
+                                    <div class="wins-time-ago">Blackjack • 5h atrás</div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="wins-amount">R$ 763</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--* ===== FOOTER ===== -->
+        <footer>
+            <div class="container container-footer">
+                <div class="footer-grid">
+                    <div>
+                        <h3>Doe e Ganhe</h3>
+                        <ul class="footer-list">
+                            <li><a href="about-us.html">Sobre Nós</a></li>
+                            <li><a href="about-us.html">Responsabilidade</a></li>
+                            <li><a href="about-us.html">Trabalhe Conosco</a></li>
+                            <li><a href="about-us.html">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Cassino</h3>
+                        <ul class="footer-list">
+                            <li><a href="casino.html">Jogos</a></li>
+                            <li><a href="casino.html">Promoções</a></li>
+                            <li><a href="casino.html">Torneios</a></li>
+                            <li><a href="casino.html">VIP</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>ONGs</h3>
+                        <ul class="footer-list">
+                            <li><a href="ngos.html">Como Funciona</a></li>
+                            <li><a href="ngos.html">ONGs Parceiras</a></li>
+                            <li><a href="ngos.html">Relatórios</a></li>
+                            <li><a href="ngos.html">Seja uma ONG Parceira</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Suporte</h3>
+                        <ul class="footer-list">
+                            <li><a href="#">Ajuda</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-media">
+                    <p>© 2025 Doe e Ganhe. Todos os direitos reservados.</p>
+                    <div class="footer-social-media">
+                        <!-- FACEBOOK -->
+                        <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg></a>
+
+                        <!-- INSTAGRAM -->
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
+                                viewBox="0,0,256,256">
+                                <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(10.66667,10.66667)">
+                                        <path
+                                            d="M8,3c-2.761,0 -5,2.239 -5,5v8c0,2.761 2.239,5 5,5h8c2.761,0 5,-2.239 5,-5v-8c0,-2.761 -2.239,-5 -5,-5zM18,5c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,7c2.761,0 5,2.239 5,5c0,2.761 -2.239,5 -5,5c-2.761,0 -5,-2.239 -5,-5c0,-2.761 2.239,-5 5,-5zM12,9c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg></a>
+
+                        <!-- TWITTER -->
+                        <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+    <script src="js/script.js"></script>
 </body>

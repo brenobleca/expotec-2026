@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
-if(localStorage.getItem('theme') === 'light'){
+if (localStorage.getItem('theme') === 'light') {
   body.classList.add('light');
 } else {
   body.classList.remove('light');
@@ -225,3 +225,165 @@ if (formRegistro) {
     }
   });
 }
+
+//* ===== ONGS =====
+document.addEventListener('DOMContentLoaded', () => {
+  // === UTILITÁRIOS ===
+  function parseBRNumber(str) {
+    if (!str) return 0;
+    const cleaned = str.replace(/[^\d,\.]/g, '').trim();
+    if (!cleaned) return 0;
+    const normalized = cleaned.replace(/\./g, '').replace(',', '.');
+    const n = parseFloat(normalized);
+    return isNaN(n) ? 0 : n;
+  }
+
+  function getCategoryColor(category) {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const map = {
+      'educacao': 'cat-educacao',
+      'saude': 'cat-saude',
+      'meio-ambiente': 'cat-meioambiente',
+      'combate-a-fome': 'cat-fome',
+      'direitos-humanos': 'cat-direitos',
+      'causa-animal': 'cat-animais',
+      'assistencia-social': 'cat-social',
+      'default': 'cat-default',
+      'total-raised': 'cat-total-raised'
+    };
+    const varName = map[category] || 'cat-default';
+    return rootStyles.getPropertyValue(`--${varName}`)?.trim() || '#ccc';
+  }
+
+  // === PROGRESSO DAS ONGs ===
+  document.querySelectorAll('.ngos-card').forEach(card => {
+    const tag = card.querySelector('.ngos-ong-tag');
+    if (!tag) return;
+    let cat = tag.getAttribute('data-category') || tag.textContent.trim().toLowerCase();
+    cat = cat.replace(/\s+/g, '-');
+    card.setAttribute('data-category', cat);
+
+    const infoP = Array.from(card.querySelectorAll('p')).find(p => /arrecad/i.test(p.textContent));
+    if (!infoP) return;
+
+    const nums = Array.from(infoP.textContent.matchAll(/[\d\.\,]+/g)).map(m => m[0]);
+    let raised = 0, target = 0;
+    if (nums.length >= 2) {
+      raised = parseBRNumber(nums[0]);
+      target = parseBRNumber(nums[1]);
+    } else {
+      raised = parseBRNumber(card.dataset.raised);
+      target = parseBRNumber(card.dataset.target);
+    }
+
+    const percent = target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0;
+
+    let progressInner = card.querySelector('.progress-inner') || card.querySelector('.ngos-progress-inner');
+    if (!progressInner) {
+      const outer = card.querySelector('.progress-outer') || card.querySelector('.ngos-progress-outer');
+      if (outer) {
+        progressInner = outer.querySelector('div') || document.createElement('div');
+        progressInner.classList.add('progress-inner');
+        if (!outer.contains(progressInner)) outer.appendChild(progressInner);
+      }
+    }
+
+    if (progressInner) {
+      progressInner.style.width = percent + '%';
+      progressInner.setAttribute('aria-valuenow', String(percent));
+      progressInner.setAttribute('title', percent + '%');
+      progressInner.style.backgroundColor = getCategoryColor(cat);
+    }
+  });
+
+  // === PROGRESSO DO TOTAL ARRECADADO (opcional) ===
+  function atualizarBarraTotal(idTexto, idBarra, categoria = 'total-raised') {
+    const totalText = document.getElementById(idTexto);
+    const totalBar = document.getElementById(idBarra);
+    if (totalText && totalBar) {
+      const nums = Array.from(totalText.textContent.matchAll(/[\d\.\,]+/g)).map(m => m[0]);
+      if (nums.length >= 2) {
+        const raised = parseBRNumber(nums[0]);
+        const target = parseBRNumber(nums[1]);
+        const percent = target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0;
+        totalBar.style.width = percent + '%';
+        totalBar.setAttribute('aria-valuenow', String(percent));
+        totalBar.setAttribute('title', percent + '%');
+        totalBar.style.background = getCategoryColor(categoria);
+      }
+    }
+  }
+
+  // Chamada para a barra de total arrecadado
+  atualizarBarraTotal('expotec-progress-text', 'total-progress-bar', 'total-raised');
+
+
+  // === FILTRO POR CATEGORIA + VER MAIS ===
+  const categoryCards = Array.from(document.querySelectorAll('.ngos-categories-grid-card'));
+  const ngoCards = Array.from(document.querySelectorAll('.ngos-card'));
+  const seeMoreBtn = document.querySelector('.btn-see-more');
+  const initialCount = 3;
+
+  let showingAll = false;
+  let activeCategory = null;
+
+  function applyFilter() {
+    const filtered = ngoCards.filter(card => {
+      if (!activeCategory) return true;
+      const tag = card.querySelector('.ngos-ong-tag');
+      return tag && tag.getAttribute('data-category') === activeCategory;
+    });
+
+    ngoCards.forEach(c => c.style.display = 'none');
+
+    if (activeCategory) {
+      filtered.forEach(c => c.style.display = '');
+      if (seeMoreBtn) seeMoreBtn.style.display = 'none';
+      return;
+    }
+
+    if (showingAll) {
+      filtered.forEach(c => c.style.display = '');
+    } else {
+      filtered.slice(0, initialCount).forEach(c => c.style.display = '');
+    }
+
+    if (seeMoreBtn) {
+      if (filtered.length > initialCount) {
+        seeMoreBtn.style.display = '';
+        seeMoreBtn.textContent = showingAll ? 'Ver Menos' : 'Ver Todas as ONGs';
+      } else {
+        seeMoreBtn.style.display = 'none';
+      }
+    }
+  }
+
+  categoryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const wasActive = card.classList.contains('active');
+      categoryCards.forEach(c => c.classList.remove('active'));
+      activeCategory = null;
+      showingAll = false;
+
+      if (!wasActive) {
+        card.classList.add('active');
+        activeCategory = card.getAttribute('data-category');
+      }
+
+      applyFilter();
+    });
+  });
+
+  if (seeMoreBtn) {
+    seeMoreBtn.addEventListener('click', () => {
+      if (activeCategory) return;
+      showingAll = !showingAll;
+      applyFilter();
+      if (showingAll) {
+        document.querySelector('.ngos-ongs-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  applyFilter();
+});
