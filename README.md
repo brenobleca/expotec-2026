@@ -44,5 +44,5 @@ Minhas principais contribuições neste projeto incluem:
 
 ---
 
-## 📌 Observações
+## Observações
 Projeto desenvolvido em grupo para fins educacionais, com foco no aprendizado de desenvolvimento web, lógica de programação e trabalho em equipe.
